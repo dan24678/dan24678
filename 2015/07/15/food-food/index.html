@@ -14,13 +14,13 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="I ran into this issue at work several weeks back and figured I&amp;#8217;d drop a quick blog post about it, as it&amp;#8217;s kinda nifty. Some string matching code in our backend was reporting mismatches on">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-1024x233.png">
-<meta property="og:image" content="http://yoursite.com/images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_-1024x224.png">
-<meta property="og:updated_time" content="2021-10-14T21:48:59.906Z">
+<meta property="og:image" content="http://yoursite.com/dan24678/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-1024x233.png">
+<meta property="og:image" content="http://yoursite.com/dan24678/images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_-1024x224.png">
+<meta property="og:updated_time" content="2021-10-14T22:45:21.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="food != food">
 <meta name="twitter:description" content="I ran into this issue at work several weeks back and figured I&amp;#8217;d drop a quick blog post about it, as it&amp;#8217;s kinda nifty. Some string matching code in our backend was reporting mismatches on">
-<meta name="twitter:image" content="http://yoursite.com/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-1024x233.png">
+<meta name="twitter:image" content="http://yoursite.com/dan24678/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-1024x233.png">
   
     <link rel="alternate" href="dan24678/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -95,7 +95,7 @@
       
         <p>I ran into this issue at work several weeks back and figured I&#8217;d drop a quick blog post about it, as it&#8217;s kinda nifty.</p>
 <p>Some string matching code in our backend was reporting mismatches on identical text. I found an example of the text and played around with it in console and was able to isolate it to the following:</p>
-<p><a href="/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress.png"><img class="aligncenter size-large wp-image-260" alt="Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress" src="/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-1024x233.png" width="640" height="145" srcset="/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-1024x233.png 1024w, /images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-300x68.png 300w, /images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress.png 1140w" sizes="(max-width: 640px) 100vw, 640px"></a></p>
+<p><a href="/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress.png"><img class="aligncenter size-large wp-image-260" alt="Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress" src="/dan24678/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-1024x233.png" width="640" height="145" srcset="/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-1024x233.png 1024w, /images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-300x68.png 300w, /images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress.png 1140w" sizes="(max-width: 640px) 100vw, 640px"></a></p>
 <p>This was a bit of a headscratcher. If you don&#8217;t believe me, copy and paste this code into console and try it yourself:</p>
 <p><code>&#39;food​&#39; == &#39;food&#39;</code></p>
 <p>So&#8230; can you figure out what&#8217;s going on here?</p>
@@ -105,7 +105,7 @@
 <p>This got me thinking&#8230; I know there are quite a few characters that appear identical but have different code points. So there might be an ê with a little hat on it in one language that appears identical to the ê in a different language, but they are technically different unicode characters and thus not at all the same.</p>
 <p>So, if we can have 2 words that look the same but are different, can we have 2 words that look different but are the same?</p>
 <p>This was the best I could come up with:</p>
-<p><a href="/images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_.png"><img class="aligncenter size-large wp-image-266" alt="Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_" src="/images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_-1024x224.png" width="640" height="140" srcset="/images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_-1024x224.png 1024w, /images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_-300x65.png 300w, /images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_.png 1176w" sizes="(max-width: 640px) 100vw, 640px"></a></p>
+<p><a href="/images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_.png"><img class="aligncenter size-large wp-image-266" alt="Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_" src="/dan24678/images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_-1024x224.png" width="640" height="140" srcset="/images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_-1024x224.png 1024w, /images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_-300x65.png 300w, /images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_.png 1176w" sizes="(max-width: 640px) 100vw, 640px"></a></p>
 <p>There is a unicode character called the <a href="http://www.fileformat.info/info/unicode/char/202e/index.htm" target="_blank" rel="noopener">right-to-left override</a> which basically opens a portal to Hell by turning all the text appearing after it backwards. Go ahead and paste this into your console and play around with it a little. But make sure to step away before you shoot yourself:</p>
 <p><code>&#39;‮food‮&#39; == &#39;‮food‮&#39;</code></p>
 <p>It turns out this character has some interesting security implications, as it can be used to manipulate URLs to make certain phishing attacks easier.</p>
@@ -113,7 +113,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/15/food-food/" data-id="ckuriy17n000jv4s1hw6ltuuh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/15/food-food/" data-id="ckurj66p2000iahs13cl6hnhl" class="article-share-link">Share</a>
       
       
     </footer>
