@@ -14,12 +14,12 @@
 <meta property="og:site_name" content="Dan&#39;s Blog">
 <meta property="og:description" content="&amp;nbsp; I had a pretty interesting bug come up at work a couple days ago. The bug itself and associated events illustrates several things: runaway setIntervals, why I love living on the East Coast, why">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/images/uploads/2014/01/Web_-_sites_aweber_app_views_layouts_default_thtml_-_Aptana_Studio_3_-__Users_dand_Documents_Aptana_Studio_3_Workspace.png">
-<meta property="og:updated_time" content="2021-10-14T23:21:55.152Z">
+<meta property="og:image" content="http://yoursite.com/dan24678/images/uploads/2014/01/Web_-_sites_aweber_app_views_layouts_default_thtml_-_Aptana_Studio_3_-__Users_dand_Documents_Aptana_Studio_3_Workspace.png">
+<meta property="og:updated_time" content="2021-10-14T23:27:25.404Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Runaway Intervals, Stuck Shut-Off Valves and Nacho Cheese">
 <meta name="twitter:description" content="&amp;nbsp; I had a pretty interesting bug come up at work a couple days ago. The bug itself and associated events illustrates several things: runaway setIntervals, why I love living on the East Coast, why">
-<meta name="twitter:image" content="http://yoursite.com/images/uploads/2014/01/Web_-_sites_aweber_app_views_layouts_default_thtml_-_Aptana_Studio_3_-__Users_dand_Documents_Aptana_Studio_3_Workspace.png">
+<meta name="twitter:image" content="http://yoursite.com/dan24678/images/uploads/2014/01/Web_-_sites_aweber_app_views_layouts_default_thtml_-_Aptana_Studio_3_-__Users_dand_Documents_Aptana_Studio_3_Workspace.png">
   
     <link rel="alternate" href="/dan24678/atom.xml" title="Dan&#39;s Blog" type="application/atom+xml">
   
@@ -100,7 +100,7 @@
 <p>The nuts and bolts of what went wrong illustrates the right and wrong way to architect an endpoint that queries an external service. This particular endpoint assembles data from three different resources: our database, our memcached cluster and Facebook&#8217;s external API. There is a central design philosophy that you need to adhere to when working with this kind of system: sever all connections to your own internal resources before you open up any connection to an external API. Let&#8217;s say Facebook has issues on their end and calls to their endpoint don&#8217;t complete for 90 seconds. If you open a database connection to do some queries on your site and don&#8217;t bother to close it before issuing the API call to Facebook, that 90 seconds that you&#8217;re waiting on Facebook is an extra 90 seconds that that database connection is being held open. Multiply that by the number of people trying to use your Facebook integration at that particular moment. Then multiply it again by 2 or 3 to account for people getting fed up waiting and hitting refresh every five seconds to try and get the damn page to load.  Before you know it, your database connections are all gone, and your customers are seeing that hilarious graphic of the nerdy looking hamsters running around the colo cage that your design department came up with last week to display during a site outage.  Who knew it would come in handy so soon?</p>
 <p>A prior outage had led us to ensure our code closes the database connections before querying Facebook, but we had neglected to do the same for memcached. Still, this wasn&#8217;t the only bug that had come into play; there was also a frontend bug that had caused those requests to hammer away at us, every 200ms like clockwork. And this illustrates another important point: Sometimes, when something goes wrong, if you dig deep enough, it&#8217;s actually several somethings. And you should find and fix them all.</p>
 <p>Here&#8217;s how frontends for authorizing a Facebook application typically work. You click a link on the site and it pops open a new window displaying Facebook&#8217;s &#8220;authorize app&#8221; page. The javascript on the page uses setInterval to register a method to run every 200ms to check if the authorization pop-up has been closed. Once you click to authorize the app, the window closes and your Facebook profile can then be accessed via an ajax call to the integration endpoint. Here is some pseudo-code I wrote that shows the general process flow:</p>
-<p><a href="/dan24678/images/uploads/2014/01/Web_-_sites_aweber_app_views_layouts_default_thtml_-_Aptana_Studio_3_-__Users_dand_Documents_Aptana_Studio_3_Workspace.png"><img class=" wp-image-137 alignnone" alt="Web_-_sites_aweber_app_views_layouts_default_thtml_-_Aptana_Studio_3_-__Users_dand_Documents_Aptana_Studio_3_Workspace" src="/images/uploads/2014/01/Web_-_sites_aweber_app_views_layouts_default_thtml_-_Aptana_Studio_3_-__Users_dand_Documents_Aptana_Studio_3_Workspace.png" width="400"></a></p>
+<p><a href="/dan24678/images/uploads/2014/01/Web_-_sites_aweber_app_views_layouts_default_thtml_-_Aptana_Studio_3_-__Users_dand_Documents_Aptana_Studio_3_Workspace.png"><img class=" wp-image-137 alignnone" alt="Web_-_sites_aweber_app_views_layouts_default_thtml_-_Aptana_Studio_3_-__Users_dand_Documents_Aptana_Studio_3_Workspace" src="/dan24678/images/uploads/2014/01/Web_-_sites_aweber_app_views_layouts_default_thtml_-_Aptana_Studio_3_-__Users_dand_Documents_Aptana_Studio_3_Workspace.png" width="400"></a></p>
 <p>There&#8217;s some code that isn&#8217;t shown that opens the new window to Facebook&#8217;s auth page when you click on a button in the #Load-Facebook-Div and then calls the above init() method. So basically:</p>
 <ol>
 <li>Click a button in a DIV to open the new Facebook window</li>
@@ -123,7 +123,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/02/28/2014-02-28-runaway-intervals-stuck-shut-off-valves-and-nacho-cheese/" data-id="ckurkiu8p000invs1bgnluofe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/02/28/2014-02-28-runaway-intervals-stuck-shut-off-valves-and-nacho-cheese/" data-id="ckurknzpx000dv0s1g1d9jxwv" class="article-share-link">Share</a>
       
       
     </footer>
