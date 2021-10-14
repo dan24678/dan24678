@@ -2,31 +2,31 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  
 
-  
-  <title>Fun with MBR and Boot.ini | DrLongGhost.com</title>
+
+
+  <title>Fun with MBR and Boot.ini | dan24678</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="I had a bit of a scare these past 24 hours when I thought that I had fucked up my newly installed and configured Windows XP PC, which for the purposes of this blog I will refer to as Lester. Lester ha">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fun with MBR and Boot.ini">
 <meta property="og:url" content="http://yoursite.com/2008/03/27/fun-with-mbr-and-bootini/index.html">
-<meta property="og:site_name" content="DrLongGhost.com">
+<meta property="og:site_name" content="dan24678">
 <meta property="og:description" content="I had a bit of a scare these past 24 hours when I thought that I had fucked up my newly installed and configured Windows XP PC, which for the purposes of this blog I will refer to as Lester. Lester ha">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-03-25T01:17:46.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fun with MBR and Boot.ini">
 <meta name="twitter:description" content="I had a bit of a scare these past 24 hours when I thought that I had fucked up my newly installed and configured Windows XP PC, which for the purposes of this blog I will refer to as Lester. Lester ha">
-  
-    <link rel="alternate" href="/atom.xml" title="DrLongGhost.com" type="application/atom+xml">
-  
-  
+
+    <link rel="alternate" href="/atom.xml" title="dan24678" type="application/atom+xml">
+
+
     <link rel="icon" href="/favicon.png">
-  
-  
+
+
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
+
   <link rel="stylesheet" href="/css/style.css">
 </head>
 </html>
@@ -38,23 +38,23 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">DrLongGhost.com</a>
+        <a href="/" id="logo">dan24678</a>
       </h1>
-      
+
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"></a>
-        
+
           <a class="main-nav-link" href="/">Home</a>
-        
+
           <a class="main-nav-link" href="/archives">Archives</a>
-        
+
       </nav>
       <nav id="sub-nav">
-        
+
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
+
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
@@ -69,23 +69,23 @@
     <a href="/2008/03/27/fun-with-mbr-and-bootini/" class="article-date">
   <time datetime="2008-03-28T01:09:16.000Z" itemprop="datePublished">2008-03-27</time>
 </a>
-    
+
   </div>
   <div class="article-inner">
-    
-    
+
+
       <header class="article-header">
-        
-  
+
+
     <h1 class="article-title" itemprop="name">
       Fun with MBR and Boot.ini
     </h1>
-  
+
 
       </header>
-    
+
     <div class="article-entry" itemprop="articleBody">
-      
+
         <p>I had a bit of a scare these past 24 hours when I thought that I had fucked up my newly installed and configured Windows XP PC, which for the purposes of this blog I will refer to as Lester. Lester has a 500gig SATA harddrive, as well as an older 250 gig drive, which was a holdover from my prior computer. As a result, the smaller, secondary harddrive had 3 partitions on it: an XP system partition, an Ubuntu partition and an NTFS partition with a buttload of mp3s on it.</p>
 <p>Last night, I decided to delete the 3 separate partitions on my secondary drive and reformat the whole thing as a single NTFS partition for mp3s. I used Partition Magic and some other partition program I had snagged off BitTorrent. I was very cautious while formatting and succeeded in deleting the partitions and wiping the drive. However, when I rebooted, Lester would not start up and displayed an ominous message about no bootable media being found.</p>
 <p>This was pretty damn confusing, since I knew that I had formatted the correct drive and was pretty sure that all my windows files were still present on the main drive. What the fuck had happened? Was it a virus?</p>
@@ -104,43 +104,43 @@
 </ol>
 <p>I must confess that despite the stress of thinking I had lost all my files, it was pretty damn gratifying to actually fix this myself by getting down and dirty with the MBR. Nevermind that I wouldn&#8217;t have ever had this problem if I hadn&#8217;t fucked up in the first place&#8230;</p>
 
-      
+
     </div>
     <footer class="article-footer">
       <a data-url="http://yoursite.com/2008/03/27/fun-with-mbr-and-bootini/" data-id="ck42upa290003lus11ykkkeh3" class="article-share-link">Share</a>
-      
-      
+
+
     </footer>
   </div>
-  
-    
+
+
 <nav id="article-nav">
-  
+
     <a href="/2008/04/12/xbmc-rocks-the-hizzy/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
-        
+
           XBMC Rocks the Hizzy
-        
+
       </div>
     </a>
-  
-  
+
+
     <a href="/2008/03/23/zombies/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Zombie Evacuation Plan **Updated**</div>
     </a>
-  
+
 </nav>
 
-  
+
 </article>
 
 </section>
-        
+
           <aside id="sidebar">
-  
-    
+
+
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
@@ -149,13 +149,13 @@
   </div>
 
 
-  
-    
 
-  
-    
-  
-    
+
+
+
+
+
+
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
@@ -164,43 +164,43 @@
   </div>
 
 
-  
-    
+
+
   <div class="widget-wrap">
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
-        
+
           <li>
             <a href="/2019/12/12/Useless-Stuff-I-Still-Know/">Useless Stuff I Still Know</a>
           </li>
-        
+
           <li>
             <a href="/2017/07/13/dont-let-your-buttons-overlap/">Dont Let Your Buttons Overlap</a>
           </li>
-        
+
           <li>
             <a href="/2016/05/07/campaign-error-logging-with-new-relic-insights/">Campaign Error Logging with New Relic Insights</a>
           </li>
-        
+
           <li>
             <a href="/2016/04/17/ms-7352-manual/">MS-7352 Manual</a>
           </li>
-        
+
           <li>
             <a href="/2015/11/21/connection-management/">Connection Management</a>
           </li>
-        
+
       </ul>
     </div>
   </div>
 
-  
+
 </aside>
-        
+
       </div>
       <footer id="footer">
-  
+
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2019 Dan<br>
@@ -210,13 +210,13 @@
 </footer>
     </div>
     <nav id="mobile-nav">
-  
+
     <a href="/" class="mobile-nav-link">Home</a>
-  
+
     <a href="/archives" class="mobile-nav-link">Archives</a>
-  
+
 </nav>
-    
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
