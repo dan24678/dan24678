@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Validanguage and Node.js | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="It&amp;#8217;s been over 2 years since I last updated my Validanguage javascript library. In that time, several interesting trends emerged in the world of Javascript. One of them is the introduction of HT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Validanguage and Node.js">
+<meta property="og:url" content="http://yoursite.com/2014/02/11/2014-02-11-validanguage-and-node-js/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="It&amp;#8217;s been over 2 years since I last updated my Validanguage javascript library. In that time, several interesting trends emerged in the world of Javascript. One of them is the introduction of HT">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager-1024x664.png">
+<meta property="og:updated_time" content="2021-10-14T21:49:00.237Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Validanguage and Node.js">
+<meta name="twitter:description" content="It&amp;#8217;s been over 2 years since I last updated my Validanguage javascript library. In that time, several interesting trends emerged in the world of Javascript. One of them is the introduction of HT">
+<meta name="twitter:image" content="http://yoursite.com/images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager-1024x664.png">
+  
+    <link rel="alternate" href="dan24678/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="dan24678/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="dan24678/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="dan24678/">Home</a>
+        
+          <a class="main-nav-link" href="dan24678/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="dan24678/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2014-02-11-validanguage-and-node-js" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="dan24678/2014/02/11/2014-02-11-validanguage-and-node-js/" class="article-date">
+  <time datetime="2014-02-11T13:57:11.000Z" itemprop="datePublished">2014-02-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Validanguage and Node.js
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>It&#8217;s been over 2 years since I last updated my <a href="http://www.dan24678/validanguage.php" target="_blank" rel="noopener">Validanguage</a> javascript library. In that time, several interesting trends emerged in the world of Javascript. One of them is the introduction of HTML 5&#8217;s <a href="http://diveintohtml5.info/forms.html" target="_blank" rel="noopener">form validation support</a>. Without getting into too much detail, I feel that HTML 5&#8217;s built-in validation is a good fit for many applications, but other sites will likely still benefit from a more full-featured form validation library. The second and third major trends in the past couple years has been the rise of Node.js and single-page web apps.</p>
+<p>Validanguage was designed for the Web 2.0 world: websites that still use standard forms but augment them with occasional ajax requests to fetch supplemental data. In 2014, however, the bleeding edge has shifted to implementing entire sites as a single app within a framework such as <a href="http://backbonejs.org/" target="_blank" rel="noopener">Backbone.js</a>, <a href="http://emberjs.com/" target="_blank" rel="noopener">Ember</a> or <a href="http://angularjs.org/" target="_blank" rel="noopener">AngularJS</a>; and, often, doing away with forms entirely.</p>
+<h3 id="Tentative-Roadmap"><a href="#Tentative-Roadmap" class="headerlink" title="Tentative Roadmap"></a>Tentative Roadmap</h3><ul>
+<li>Add a shitload of unit tests via Node.js/Grunt/Jasmine/PhantomJS. Manual testing of new versions of Validanguage is excruciating and I need to automate this if I&#8217;m ever going to make progress on any eventual refactoring.</li>
+<li>To fit within the context of a Node.js-based single-page web app, validation rules should be defined once (in a model). This model will then expose the validation rules for use on both the server and client. If the validation needs to change, you change it once in the model and both server and client are updated.</li>
+<li>My vision for future versions of Validanguage is for it to retain its non-reliance on a particular framework. To the extent that it can be easily integrated into existing libraries or frameworks, I&#8217;ll see what I can do, but I&#8217;m not intending it to ever <strong>require</strong> Node.js, jQuery, Angular, etc.</li>
+<li>Currently, Validanguage relies on form tags. I&#8217;d like to do away with this reliance and allow validation behavior to be defined on arbitrary &#8220;groups&#8221; of DOM elements/form controls.</li>
+<li>Similarly, Validanguage is bound to a form control via DOM ID. I&#8217;d like it to support using arbitrary selectors as well.</li>
+<li>Validanguage should be compatible with asynchronous loading and implemented as an AMD module.</li>
+</ul>
+<p>I&#8217;m starting with the first two bullet points. You can view my progress on <a href="https://github.com/DrLongGhost/Validanguage" target="_blank" rel="noopener">Validanguage&#8217;s github page</a>, which is finally seeing some action. I was very fortunate in my choice of JSON and HTML comments as the two methods for defining validation rules in Validanguage. Using Validanguage&#8217;s JSON API within a model on the backend (in Node.js) will work out perfectly. Validanguage middleware (installable via npm) can interpret and execute the rules to validate content posted to the server. To implement the rules client-side, custom helpers for Handlebars, Jade and other template languages can export the rules from the model into either script tags or the HTML markup in comment tags, which will play nicely with asynchronous loading. This approach works well in the CakePHP Validanguage helper I&#8217;d written years ago.</p>
+<p>I&#8217;m really excited to see where this takes me. If you have any interest in collaborating with me, please make sure to <a href="http://www.dan24678/contact.php" target="_blank" rel="noopener">get in touch</a>. Now that I&#8217;m doing all new development against the github project, it should be pretty easy to team up with other interested developers to start moving this forward. As of last night, I have Jasmine installed in the Node project and I&#8217;m ready to start grinding out unit tests before getting started on the fun stuff.</p>
+<p><a href="/images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager.png"><img class="aligncenter size-large wp-image-197" alt="Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager" src="/images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager-1024x664.png" width="640" height="415" srcset="/images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager-1024x664.png 1024w, /images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager-300x194.png 300w, /images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager.png 1104w" sizes="(max-width: 640px) 100vw, 640px"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/02/11/2014-02-11-validanguage-and-node-js/" data-id="ckurit9fj000eezs1ck5oznbx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="dan24678/2014/02/28/2014-02-28-runaway-intervals-stuck-shut-off-valves-and-nacho-cheese/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Runaway Intervals, Stuck Shut-Off Valves and Nacho Cheese
+        
+      </div>
+    </a>
+  
+  
+    <a href="dan24678/2014/02/09/2014-02-09-ubuntu-ink-levels/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Ubuntu Ink Levels</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="dan24678/categories/Uncategorized/">Uncategorized</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2011/05/">May 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2009/12/">December 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2009/10/">October 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/03/">March 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/02/">February 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="dan24678/2019/12/12/Useless-Stuff-I-Still-Know/">Useless Stuff I Still Know</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2017/07/13/2017-07-13-dont-let-your-buttons-overlap/">Dont Let Your Buttons Overlap</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2016/05/07/2016-05-07-campaign-error-logging-with-new-relic-insights/">Campaign Error Logging with New Relic Insights</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2016/04/17/2016-04-17-ms-7352-manual/">MS-7352 Manual</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2015/11/21/2015-11-21-connection-management/">Connection Management</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="dan24678/" class="mobile-nav-link">Home</a>
+  
+    <a href="dan24678/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="dan24678/fancybox/jquery.fancybox.css">
+  <script src="dan24678/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="dan24678/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

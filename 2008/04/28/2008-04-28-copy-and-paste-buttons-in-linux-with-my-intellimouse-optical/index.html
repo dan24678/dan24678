@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Copy and Paste Buttons in Linux with my Intellimouse Optical | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I cannot live without copy and paste buttons on my mouse. When I&amp;#8217;m working on Web Development, I find myself constantly copying and pasting text and being able to do it from my mouse is a conven">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Copy and Paste Buttons in Linux with my Intellimouse Optical">
+<meta property="og:url" content="http://yoursite.com/2008/04/28/2008-04-28-copy-and-paste-buttons-in-linux-with-my-intellimouse-optical/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="I cannot live without copy and paste buttons on my mouse. When I&amp;#8217;m working on Web Development, I find myself constantly copying and pasting text and being able to do it from my mouse is a conven">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://www.activewin.com/reviews/hardware/mice/optical/images/mouse1.jpg">
+<meta property="og:updated_time" content="2019-03-25T01:18:02.806Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Copy and Paste Buttons in Linux with my Intellimouse Optical">
+<meta name="twitter:description" content="I cannot live without copy and paste buttons on my mouse. When I&amp;#8217;m working on Web Development, I find myself constantly copying and pasting text and being able to do it from my mouse is a conven">
+<meta name="twitter:image" content="http://www.activewin.com/reviews/hardware/mice/optical/images/mouse1.jpg">
+  
+    <link rel="alternate" href="dan24678/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="dan24678/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="dan24678/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="dan24678/">Home</a>
+        
+          <a class="main-nav-link" href="dan24678/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="dan24678/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2008-04-28-copy-and-paste-buttons-in-linux-with-my-intellimouse-optical" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="dan24678/2008/04/28/2008-04-28-copy-and-paste-buttons-in-linux-with-my-intellimouse-optical/" class="article-date">
+  <time datetime="2008-04-28T12:23:53.000Z" itemprop="datePublished">2008-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Copy and Paste Buttons in Linux with my Intellimouse Optical
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I cannot live without copy and paste buttons on my mouse.</p>
+<p>When I&#8217;m working on Web Development, I find myself constantly copying and pasting text and being able to do it from my mouse is a convenience I have grown to depend on. Copy and Paste are also useful in general computing terms, when moving files around in a window manager. The mouse I use at home and at work is the Intellimouse Optical.</p>
+<p><img src="http://www.activewin.com/reviews/hardware/mice/optical/images/mouse1.jpg" alt="Intellimouse Optical" align="left" height="192" width="198"> </p>
+<p><strong>Intellimouse Optical</strong>:<br>Featuring five buttons,<br>including a mouse wheel button</p>
+<p>I have had this mouse for about 5 years now and it is very solid and dependable. Microsoft may not even make it anymore, but I have one for home and one for work, and judging by the past 5 years, they aren&#8217;t going to break anytime soon.</p>
+<p>I have the left-side button mapped to paste (which I can trigger with my thumb) and the mouse wheel button mapped to paste. Since it is all too easy to accidentally trigger the mouse wheel button, I opted to map it to paste, which is non-destructive. I keep the right-side button mapped to delete, which is also extremely useful.</p>
+<p>In Windows, the driver CD that came with the mouse makes it a snap to bind copy, paste and delete to the mouse buttons. In Linux, the task is a little more difficult, but after several hours of mucking around, I have it down to a science. Here&#8217;s how I got it working, documented for posterity:</p>
+<ol>
+<li><p>Replace the code referencing your mouse in /etc/X11/xorg.conf with the following definition for the MS Intellimouse: </p>
+<pre><tt><tt>Section "InputDevice"
+   Identifier "Configured Mouse"
+   Driver "mouse"
+   Option "CorePointer"
+   Option "Device" "/dev/input/mice"
+   Option "Protocol" "ExplorerPS/2"
+   Option "Buttons" "7"
+   Option "ZAxisMapping" "4 5"
+   Option "ButtonMapping" "1 2 3 6 7"
+   Option "Resolution" "100"
+EndSection</tt></tt></pre>
+</li>
+<li><p>Install the program <strong>xvkbd</strong>, which is needed by xbindkeys</p>
+</li>
+<li><p>Install the program xbindkeys and place the following in a file named .xbindkeysrc in your home directory: </p>
+<pre><tt><tt>
+"xbindkeys_show"
+control+shift + q
+/usr/X11R6/bin/xvkbd -xsendevent -text "\[Control]c""
+b:2
+/usr/X11R6/bin/xvkbd -xsendevent -text "\[Control]v""
+b:6
+/usr/X11R6/bin/xvkbd -xsendevent -text "\[Delete]""
+b:7</tt></tt></pre>
+</li>
+<li><p>Reboot your computer or restart X windows to load the new xorg.conf file. Then run xbindkeys in the background (xbindkeys &amp;) and you should be all set!</p>
+</li>
+</ol>
+<p>Happy copying and pasting!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2008/04/28/2008-04-28-copy-and-paste-buttons-in-linux-with-my-intellimouse-optical/" data-id="ckurit9f90006ezs19qk7pclw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="dan24678/2008/06/29/2008-06-29-kruger-lives/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Kruger Lives!!
+        
+      </div>
+    </a>
+  
+  
+    <a href="dan24678/2008/04/12/2008-04-12-xbmc-rocks-the-hizzy/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">XBMC Rocks the Hizzy</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="dan24678/categories/Uncategorized/">Uncategorized</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2011/05/">May 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2009/12/">December 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2009/10/">October 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/03/">March 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/02/">February 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="dan24678/2019/12/12/Useless-Stuff-I-Still-Know/">Useless Stuff I Still Know</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2017/07/13/2017-07-13-dont-let-your-buttons-overlap/">Dont Let Your Buttons Overlap</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2016/05/07/2016-05-07-campaign-error-logging-with-new-relic-insights/">Campaign Error Logging with New Relic Insights</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2016/04/17/2016-04-17-ms-7352-manual/">MS-7352 Manual</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2015/11/21/2015-11-21-connection-management/">Connection Management</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="dan24678/" class="mobile-nav-link">Home</a>
+  
+    <a href="dan24678/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="dan24678/fancybox/jquery.fancybox.css">
+  <script src="dan24678/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="dan24678/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
