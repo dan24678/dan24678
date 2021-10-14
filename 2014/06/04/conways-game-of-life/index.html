@@ -2,16 +2,16 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
-  
 
-  
-  <title>Conways Game of Life | DrLongGhost.com</title>
+
+
+  <title>Conways Game of Life | dan24678</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Several months ago I was interviewing with various companies, primarily for senior web developer roles. In total I probably spoke with just under a dozen companies. Some had phone screens and some had">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Conways Game of Life">
 <meta property="og:url" content="http://yoursite.com/2014/06/04/conways-game-of-life/index.html">
-<meta property="og:site_name" content="DrLongGhost.com">
+<meta property="og:site_name" content="dan24678">
 <meta property="og:description" content="Several months ago I was interviewing with various companies, primarily for senior web developer roles. In total I probably spoke with just under a dozen companies. Some had phone screens and some had">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/uploads/2014/06/Conway_s_Life-300x199.png">
@@ -20,15 +20,15 @@
 <meta name="twitter:title" content="Conways Game of Life">
 <meta name="twitter:description" content="Several months ago I was interviewing with various companies, primarily for senior web developer roles. In total I probably spoke with just under a dozen companies. Some had phone screens and some had">
 <meta name="twitter:image" content="http://yoursite.com/images/uploads/2014/06/Conway_s_Life-300x199.png">
-  
-    <link rel="alternate" href="/atom.xml" title="DrLongGhost.com" type="application/atom+xml">
-  
-  
+
+    <link rel="alternate" href="/atom.xml" title="dan24678" type="application/atom+xml">
+
+
     <link rel="icon" href="/favicon.png">
-  
-  
+
+
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
+
   <link rel="stylesheet" href="/css/style.css">
 </head>
 </html>
@@ -40,23 +40,23 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">DrLongGhost.com</a>
+        <a href="/" id="logo">dan24678</a>
       </h1>
-      
+
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"></a>
-        
+
           <a class="main-nav-link" href="/">Home</a>
-        
+
           <a class="main-nav-link" href="/archives">Archives</a>
-        
+
       </nav>
       <nav id="sub-nav">
-        
+
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
+
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
@@ -71,23 +71,23 @@
     <a href="/2014/06/04/conways-game-of-life/" class="article-date">
   <time datetime="2014-06-05T00:45:28.000Z" itemprop="datePublished">2014-06-04</time>
 </a>
-    
+
   </div>
   <div class="article-inner">
-    
-    
+
+
       <header class="article-header">
-        
-  
+
+
     <h1 class="article-title" itemprop="name">
       Conways Game of Life
     </h1>
-  
+
 
       </header>
-    
+
     <div class="article-entry" itemprop="articleBody">
-      
+
         <p>Several months ago I was interviewing with various companies, primarily for senior web developer roles. In total I probably spoke with just under a dozen companies. Some had phone screens and some had in-person interviews. Some had written tests and some used white boards. My favorite of all the different interview approaches were the companies who asked me to build something. And of the companies who asked me to build something, my favorite was being asked to build Conway&#8217;s Game of Life (<a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life" target="_blank">wikipedia link</a>).</p>
 <p><a href="/images/uploads/2014/06/Conway_s_Life.png"><img class="aligncenter size-medium wp-image-226" alt="Conway_s_Life" src="/images/uploads/2014/06/Conway_s_Life-300x199.png" width="300" height="199" srcset="/images/uploads/2014/06/Conway_s_Life-300x199.png 300w, /images/uploads/2014/06/Conway_s_Life-1024x679.png 1024w, /images/uploads/2014/06/Conway_s_Life.png 1422w" sizes="(max-width: 300px) 100vw, 300px"></a></p>
 <p>Before I get into Conway&#8217;s Life (the main thrust of this blog post), let me briefly comment on why open-ended assignments are the way to go when it comes to job interviews:</p>
@@ -100,7 +100,7 @@
 <p>Of the three interviews in which I was given projects, two were open-ended. Of the two, my favorite one was this: &#8220;Build an implementation of Conway&#8217;s Game of Life&#8221;.</p>
 <p>In a nutshell, Conway&#8217;s Life is a programming exercise in which a grid of cells is implemented. Each cell can be either on or off. The number of adjacent cells which are &#8220;on&#8221; determines whether or not a given cell is toggled on during each &#8220;turn&#8221;. This simple logic can result in fairly complicated patterns emerging from an extremely simple starting point.</p>
 <p>My implementation was written in Javascript and HTML.</p>
-<h2 id="Check-it-out-by-visiting-this-page-and-clicking-Play"><a href="#Check-it-out-by-visiting-this-page-and-clicking-Play" class="headerlink" title="Check it out by visiting this page and clicking Play."></a><strong>Check it out by visiting <a href="http://www.drlongghost.com/js/life-program/index.htm" target="_blank">this page</a> and clicking Play.</strong></h2><p>Here are a few interesting points about my design:</p>
+<h2 id="Check-it-out-by-visiting-this-page-and-clicking-Play"><a href="#Check-it-out-by-visiting-this-page-and-clicking-Play" class="headerlink" title="Check it out by visiting this page and clicking Play."></a><strong>Check it out by visiting <a href="http://www.dan24678/js/life-program/index.htm" target="_blank">this page</a> and clicking Play.</strong></h2><p>Here are a few interesting points about my design:</p>
 <ul>
 <li>I split the design into two modules. The <a href="https://github.com/DrLongGhost/life-program/blob/master/src/life.js" target="_blank"><strong>life</strong></a> class implements an internal state of the Life board and the <a href="https://github.com/DrLongGhost/life-program/blob/master/src/lifedom.js" target="_blank"><strong>lifedom</strong></a> class handles exposing this state via the DOM.</li>
 <li>The animation in <strong>lifedom</strong> works by toggling the background of the table cells on and off. Originally, the animation was so fast that I actually needed to slow it down (via setTimeout) to create a more aesthetically appealing effect. I added a slider that lets you slow down or speed up the animation by changing the value of the timeout.</li>
@@ -165,43 +165,43 @@
 <h2 id="What-8217-s-Next"><a href="#What-8217-s-Next" class="headerlink" title="What&#8217;s Next"></a>What&#8217;s Next</h2><p>I&#8217;m happy with the performance aspect of my program at this point. I might eventually add some drag and drop functionality so you can drag gliders, lines, pentominos, etc. onto the game board to more easily build complex patterns. I also toyed with the idea of adding different colors to the animation such that areas of the game board which are more busy would be colored darker than the parts which are burned out.</p>
 <p>If you&#8217;re bored, feel free to fork my implementation, add something cool and send me a pull request.</p>
 
-      
+
     </div>
     <footer class="article-footer">
       <a data-url="http://yoursite.com/2014/06/04/conways-game-of-life/" data-id="ck42upa3l000mlus1ywcc6aek" class="article-share-link">Share</a>
-      
-      
+
+
     </footer>
   </div>
-  
-    
+
+
 <nav id="article-nav">
-  
+
     <a href="/2014/12/27/shortening-the-feedback-path4/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
-        
+
           Shortening the Feedback Path
-        
+
       </div>
     </a>
-  
-  
+
+
     <a href="/2014/02/28/runaway-intervals-stuck-shut-off-valves-and-nacho-cheese/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Runaway Intervals, Stuck Shut-Off Valves and Nacho Cheese</div>
     </a>
-  
+
 </nav>
 
-  
+
 </article>
 
 </section>
-        
+
           <aside id="sidebar">
-  
-    
+
+
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
@@ -210,13 +210,13 @@
   </div>
 
 
-  
-    
 
-  
-    
-  
-    
+
+
+
+
+
+
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
@@ -225,43 +225,43 @@
   </div>
 
 
-  
-    
+
+
   <div class="widget-wrap">
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
-        
+
           <li>
             <a href="/2019/12/12/Useless-Stuff-I-Still-Know/">Useless Stuff I Still Know</a>
           </li>
-        
+
           <li>
             <a href="/2017/07/13/dont-let-your-buttons-overlap/">Dont Let Your Buttons Overlap</a>
           </li>
-        
+
           <li>
             <a href="/2016/05/07/campaign-error-logging-with-new-relic-insights/">Campaign Error Logging with New Relic Insights</a>
           </li>
-        
+
           <li>
             <a href="/2016/04/17/ms-7352-manual/">MS-7352 Manual</a>
           </li>
-        
+
           <li>
             <a href="/2015/11/21/connection-management/">Connection Management</a>
           </li>
-        
+
       </ul>
     </div>
   </div>
 
-  
+
 </aside>
-        
+
       </div>
       <footer id="footer">
-  
+
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2019 Dan<br>
@@ -271,13 +271,13 @@
 </footer>
     </div>
     <nav id="mobile-nav">
-  
+
     <a href="/" class="mobile-nav-link">Home</a>
-  
+
     <a href="/archives" class="mobile-nav-link">Archives</a>
-  
+
 </nav>
-    
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 

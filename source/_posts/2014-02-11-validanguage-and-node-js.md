@@ -1,0 +1,22 @@
+---
+title: Validanguage and Node.js
+date: 2014-02-11T08:57:11+00:00
+---
+It&#8217;s been over 2 years since I last updated my [Validanguage](http://www.dan24678/validanguage.php) javascript library. In that time, several interesting trends emerged in the world of Javascript. One of them is the introduction of HTML 5&#8217;s [form validation support](http://diveintohtml5.info/forms.html). Without getting into too much detail, I feel that HTML 5&#8217;s built-in validation is a good fit for many applications, but other sites will likely still benefit from a more full-featured form validation library. The second and third major trends in the past couple years has been the rise of Node.js and single-page web apps.
+
+Validanguage was designed for the Web 2.0 world: websites that still use standard forms but augment them with occasional ajax requests to fetch supplemental data. In 2014, however, the bleeding edge has shifted to implementing entire sites as a single app within a framework such as [Backbone.js](http://backbonejs.org/), [Ember](http://emberjs.com/) or [AngularJS](http://angularjs.org/); and, often, doing away with forms entirely.
+
+### Tentative Roadmap
+
+  * Add a shitload of unit tests via Node.js/Grunt/Jasmine/PhantomJS. Manual testing of new versions of Validanguage is excruciating and I need to automate this if I&#8217;m ever going to make progress on any eventual refactoring.
+  * To fit within the context of a Node.js-based single-page web app, validation rules should be defined once (in a model). This model will then expose the validation rules for use on both the server and client. If the validation needs to change, you change it once in the model and both server and client are updated.
+  * My vision for future versions of Validanguage is for it to retain its non-reliance on a particular framework. To the extent that it can be easily integrated into existing libraries or frameworks, I&#8217;ll see what I can do, but I&#8217;m not intending it to ever **require** Node.js, jQuery, Angular, etc.
+  * Currently, Validanguage relies on form tags. I&#8217;d like to do away with this reliance and allow validation behavior to be defined on arbitrary &#8220;groups&#8221; of DOM elements/form controls.
+  * Similarly, Validanguage is bound to a form control via DOM ID. I&#8217;d like it to support using arbitrary selectors as well.
+  * Validanguage should be compatible with asynchronous loading and implemented as an AMD module.
+
+I&#8217;m starting with the first two bullet points. You can view my progress on [Validanguage&#8217;s github page](https://github.com/DrLongGhost/Validanguage), which is finally seeing some action. I was very fortunate in my choice of JSON and HTML comments as the two methods for defining validation rules in Validanguage. Using Validanguage&#8217;s JSON API within a model on the backend (in Node.js) will work out perfectly. Validanguage middleware (installable via npm) can interpret and execute the rules to validate content posted to the server. To implement the rules client-side, custom helpers for Handlebars, Jade and other template languages can export the rules from the model into either script tags or the HTML markup in comment tags, which will play nicely with asynchronous loading. This approach works well in the CakePHP Validanguage helper I&#8217;d written years ago.
+
+I&#8217;m really excited to see where this takes me. If you have any interest in collaborating with me, please make sure to [get in touch](http://www.dan24678/contact.php). Now that I&#8217;m doing all new development against the github project, it should be pretty easy to team up with other interested developers to start moving this forward. As of last night, I have Jasmine installed in the Node project and I&#8217;m ready to start grinding out unit tests before getting started on the fun stuff.
+
+[<img class="aligncenter size-large wp-image-197" alt="Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager" src="/images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager-1024x664.png" width="640" height="415" srcset="/images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager-1024x664.png 1024w, /images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager-300x194.png 300w, /images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager.png 1104w" sizes="(max-width: 640px) 100vw, 640px" />](/images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager.png)
