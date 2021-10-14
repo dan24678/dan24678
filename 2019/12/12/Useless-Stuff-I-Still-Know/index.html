@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Useless Stuff I Still Know | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I’ve been doing Web Development since about 2002. In many ways, things are not all that different today than they were 17 years ago. Many of the problems I work on in my current job are similar to tho">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Useless Stuff I Still Know">
+<meta property="og:url" content="http://yoursite.com/2019/12/12/Useless-Stuff-I-Still-Know/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="I’ve been doing Web Development since about 2002. In many ways, things are not all that different today than they were 17 years ago. Many of the problems I work on in my current job are similar to tho">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-12T14:41:59.792Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Useless Stuff I Still Know">
+<meta name="twitter:description" content="I’ve been doing Web Development since about 2002. In many ways, things are not all that different today than they were 17 years ago. Many of the problems I work on in my current job are similar to tho">
+  
+    <link rel="alternate" href="dan24678/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="dan24678/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="dan24678/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="dan24678/">Home</a>
+        
+          <a class="main-nav-link" href="dan24678/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="dan24678/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Useless-Stuff-I-Still-Know" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="dan24678/2019/12/12/Useless-Stuff-I-Still-Know/" class="article-date">
+  <time datetime="2019-12-12T14:41:52.000Z" itemprop="datePublished">2019-12-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Useless Stuff I Still Know
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I’ve been doing Web Development since about 2002. In many ways, things are not all that different today than they were 17 years ago. Many of the problems I work on in my current job are similar to those I worked on almost 2 decades ago when I first learned Javascript by making an insurance calculator for the financial services company I worked for at the time.</p>
+<p>But, while many of the higher-level concepts and core technologies have been around for all this time, there are numerous quirks and behaviors associated with the earlier versions of Internet Explorer, Netscape Navigator, and the first versions of Firefox that simply have no relevance today.</p>
+<p>Those latter pieces of useless, arcane lore are the purpose of this blog post. Here are some of the behaviors, code and bugs that I had to deal with when I was first getting started in this industry. Most of this info is so outdated that knowing this stuff is of no practical use today. But it’s fun to reminisce.</p>
+<h2 id="12-lt-marquee-gt-Tags"><a href="#12-lt-marquee-gt-Tags" class="headerlink" title="#12: &lt;marquee&gt; Tags"></a>#12: <code>&lt;marquee&gt;</code> Tags</h2><p>This one makes the top of the list, since it is arguably still somewhat relevant. The marquee tag lets you easily make a box of scrolling text:</p>
+<marquee>This just in!! The Americans have bombed Sesame Street. There are reports of massive muppet casualties. Stay tuned for more information at the top of the hour.</marquee>
+
+<p>The <a href="https://caniuse.com/#search=marquee" target="_blank" rel="noopener">CanIUse page</a> for this one has an interesting tidbit. While this tag is non-standard and deprecated, it has universal support in all current browsers – as a result of Firefox finally adding support for this tag in January, 2019 after not supporting it for 13 years!</p>
+<p>Oddly, I would bet that more people know about the infamous <blink>blink tag</blink> (which hasn’t worked in a browser since 2013) than know about <code>&lt;marquee&gt;</code>, which still works to this day.</p>
+<h2 id="11-Frames"><a href="#11-Frames" class="headerlink" title="#11: Frames"></a>#11: Frames</h2><p>I’m sure that all web developers are familiar with frames. But I don’t think they all appreciate the nuances of the history around their usage in web development.</p>
+<p>First, it’s important to understand the problem that they were introduced to solve.</p>
+<p>Backend web-centric programming languages like PHP did not exist back in the day. There were certainly ways to use code to programmatically generate HTML – mainly throught CGI code written in Perl or C, or Server-Side Includes in Apache – but these were too complicated and difficult to use for simple tasks.</p>
+<p>That’s where frames came in. If you wanted to have a menu on your website and have the same menu appear on twenty different pages, you had two choices. You could copy and paste the menu 20 times; or you could separate the menu from the rest of your pages and put it in a frame.</p>
+<p>I can also remember doing some projects in the editor Dreamweaver, which let you define reusable templates, such as a “menu”. It would let you change the menu template and then automatically upload the modified versions of all 20 pages that included your inlined menu HTML.</p>
+<p>These days frames are mostly known for their once obscure cousin, the <code>&lt;iframe&gt;</code>. It’s funny to look back and remember a time when regular frames were widespread, and iframes almost unheard of. </p>
+<h2 id="10-Image-Maps"><a href="#10-Image-Maps" class="headerlink" title="#10: Image Maps"></a>#10: Image Maps</h2><p>The <code>&lt;map&gt;</code> tag lets you take a single image and section if off into various links. So you can take a map of the United States in a single image and make each state clickable to take you to a different URL.</p>
+<p>It looks like the <code>&lt;map&gt;</code> tag is still supported today, and not even deprecated. Their biggest use case today is probably in HTML emails, since email clients and rendering are somewhat frozen in time and lag a decade behind the rest of the Internet.</p>
+<p>The interesting thing here is that there really isn’t a better alternative to the <code>&lt;map&gt;</code> tag when you want to do this sort of thing quickly. So the tag didn’t fade from the public eye because there was a better way to do it. It seems to have gone away because designers just stopped using clickable maps as a means of navigation. Honestly, it’s weird to see how such a niche thing caught on and got so popular in the first place.</p>
+<h2 id="9-Netscape-Layers"><a href="#9-Netscape-Layers" class="headerlink" title="#9: Netscape Layers"></a>#9: Netscape Layers</h2><p>Okay! Now, we’re getting into the good stuff.</p>
+<p>Back in the early days of the Browser Wars when Netscape Navigator reigned supreme and Internet Explorer 3 and 4 were nipping at its heels, CSS was still in its infancy. You could do basic stuff, but there was no concept of z-index.</p>
+<p>Netscape introduced their own method of positioning overlapping arbitrary elements called “layers”. It was confusing and did not get much traction. It was pretty quickly abandoned in favor of z-index and the related positioning properties in CSS version 2.</p>
+<p>But, if you search on the Web for “Netscape Layers” there is still plenty of information on them to be found. The brief <a href="https://en.wikipedia.org/wiki/Layer_element" target="_blank" rel="noopener">wikipedia layer_element entry</a> has some interesting tidbits, including how “document.layers” was an early browser-sniffing technique to find Navigator.</p>
+<h2 id="8-Select-Boxes-in-IE6"><a href="#8-Select-Boxes-in-IE6" class="headerlink" title="#8: Select Boxes in IE6"></a>#8: Select Boxes in IE6</h2><p>Speaking of z-indexes, one of the most annoying gotchas with Internet Explorer 6 was that it did not respect z-index when it came to select boxes.</p>
+<p>The developers who added select boxes to Internet Explorer (probably around version 3 or 4) were being lazy that day and just shoehorned in the regular select boxes that were used in Windows programs. Apparently they were called <a href="https://blogs.msdn.microsoft.com/ie/2006/01/17/for-the-select-few/" target="_blank" rel="noopener">Windows Shell ListBox and Combobox controls</a>.</p>
+<p>So when CSS 2 support got added in and z-index allowed positioned items to overlap and hide other elements with varying degrees of opacity, none of that worked with select boxes. They just always showed through anything you tried to position on top of them. So when you wanted to make a modal box that hid all the content underneath it, you would actually need to manually set “visibility: hidden” on every select box on the page so they could not be interacted with. And hopefully you would remember to restore them later when the user closed the modal.</p>
+<p>This bug was eventually fixed in IE 7. However, prior to that, there was one other approach to solving this problem…</p>
+<h2 id="7-showModalDialog-in-IE6"><a href="#7-showModalDialog-in-IE6" class="headerlink" title="#7: showModalDialog in IE6"></a>#7: showModalDialog in IE6</h2><p>IE 6 actually had its own dedicated, proprietary method for showing a modal dialog on a page, and it was awesome.</p>
+<p>Creating a modal dialog in Firefox was always a bit of a pain. The <a href="https://code.google.com/archive/p/submodal/" target="_blank" rel="noopener">submodal library</a> was the goto solution, but the general technique was to overlay a transparent “mask” div on the page to block the user from interacting with anything on the page, and then position a smaller, centered window with your modal content.</p>
+<p>But, if you were working on some corporate Intranet application and didn’t need to worry about supporting non-IE browsers, all you needed was a single method: “<a href="https://docs.microsoft.com/en-us/previous-versions/ms536759%28v%3Dvs.85%29" target="_blank" rel="noopener">showModalDialog</a>“.</p>
+<p>It would let you provide a URL to an HTML file that was used to populate the modal and would just work. It showed a transparent overlay over the rest of the page that even supported covering select boxes. There was even a sister method “showModelessDialog” that would remove the toolbar and scrollbar.</p>
+<h2 id="6-VBScript"><a href="#6-VBScript" class="headerlink" title="#6: VBScript"></a>#6: VBScript</h2><p>IE 6 actually supported two types of scripting languages in <code>&lt;script&gt;</code> tags: JScript and <a href="https://en.wikipedia.org/wiki/VBScript" target="_blank" rel="noopener">VBScript</a>. JScript was, of course, identical to Javascript but Microsoft couldn’t actually call it that because of trademark issues. VBScript, however, was a completely proprietary language that only worked in Windows and Internet Explorer.</p>
+<p>I think the idea was that VBScript would provide a unified scripting experience so that Windows programmers could learn only one scripting language and have it work in Windows applications, Excel macros, and in Web applications. I saw it in the wild once or twice, but for the most part, if you were working on a Web page in the early 2000’s, you were using “JScript”. Every once in awhile though, you’d look in the source of a webpage and see <code>&lt;SCRIPT TYPE=&#39;Text/VBScript&#39;&gt;</code> where some insane person was using it to do roll-overs or a hover menu.</p>
+<h2 id="5-DOM-in-old-IE"><a href="#5-DOM-in-old-IE" class="headerlink" title="#5: DOM in old IE"></a>#5: DOM in old IE</h2><p>IE 6, 7 and 8 would store an incredibly frustrating version of the DOM in memory.</p>
+<p>If you gave it this XHTML:</p>
+<p><code>&lt;h1 class=&quot;header&quot;&gt;Header Here&lt;/h1&gt;</code></p>
+<p>and then queried with some Javascript to read that element back out of the DOM, this is what you would get:</p>
+<p><code>&lt;H1 class=header&gt;Header Here&lt;/H1&gt;</code></p>
+<p>Uppercase element names and no quotes around attribute values…</p>
+<p>This made regular expressions far more complicated than they needed to be and generally just felt ugly and depraved. Every time you would use Internet Explorer to return its version of your carefully crafted, validated, strict XHMTL 1.0 code, you suddenly felt like you needed a shower.</p>
+<h2 id="4-Firefox-eats-its-own-cursor"><a href="#4-Firefox-eats-its-own-cursor" class="headerlink" title="#4: Firefox eats its own cursor"></a>#4: Firefox eats its own cursor</h2><p>Because I’ve been picking on IE so much, it’s only fair that I include at least one Firefox bug. This one was my favorite.</p>
+<p>I couldn’t find the exact bug report to corroborate my memory, but this is how I remember it.</p>
+<p>The cursor, also called a “caret”, in Firefox version 1 (or maybe it was 3) would get eaten and you were unable to get it back.</p>
+<p>Specifically, if an input had focus and the cursor was visible in it and you set “display: none” on the input, both the cursor and the input would disappear. If you clicked in another input box, you could type but your cursor was permanently invisible. There was no way to get it back without reloading the page.</p>
+<p>The fix was to be sure you always called the blur() method on an input before you hid it. Suuuuper annoying.</p>
+<h2 id="3-“Operation-Aborted”"><a href="#3-“Operation-Aborted”" class="headerlink" title="#3: “Operation Aborted”"></a>#3: “Operation Aborted”</h2><p>Our final few tidbits are more of Internet Explorer’s lovely foibles.</p>
+<p>“Operation Aborted” was one of my least favorite IE bugs. There is a pretty good write-up about this bug <a href="https://weblogs.asp.net/infinitiesloop/Dealing-with-IE-_2600_quot_3B00_Operation-Aborted_2600_quot_3B002E00_-Or_2C00_-how-to-Crash-IE" target="_blank" rel="noopener">here</a>.</p>
+<p>The TLDR is that IE 6 &amp; 7 would completely shit the bed and render nothing at all if you tried to append a node to the body of your document. It would show an empty white page with an error alert: “Internet explorer cannot open the internet site {<a href="http://site.com}" target="_blank" rel="noopener">http://site.com}</a>. Operation Aborted.”  That’s pretty bad, right?</p>
+<p>Well… technically, you <em>could</em> append to the body as long as you did it from a script tag that was not a direct child of the body (such as a grandchild or a script in the head). And you could always safely append to nodes other than the body.</p>
+<p>If you remembered the specifics of this weird bug, you were fine. But it was obscure enough that you would often forget about it, despite the catastrophic consequences of doing so.</p>
+<h2 id="2-hasLayout"><a href="#2-hasLayout" class="headerlink" title="#2: hasLayout"></a>#2: hasLayout</h2><p>Internet Explorer 7 and earlier had a proprietary property called “hasLayout”. As the name implies, the property indicates whether an element is able to be rendered on its own, or if it needs to inherit styles from a parent element in order to be rendered.</p>
+<p>The property itself is a read-only property, but its importance belied that fact. If you were trying to structure floats on a page and the page itself exhibited strange behavior and generally did not act as it was supposed to, a good first step was looking at the affected elements’ hasLayout values. When you found an element that contained floats but “did not have a layout” then you had found your cluprit.</p>
+<p>Since you could not simply define “hasLayout: true”, you needed to employ one of several tactics to modify the element(s) to gain layout. You could set width, height, zoom or several other properties. As soon as you did so, like magic, your layout suddenly began working again.</p>
+<p>A decent write-up on hasLayout can be found <a href="https://www.sitepoint.com/internet-explorer-haslayout-property/" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="1-Debugging-in-IE"><a href="#1-Debugging-in-IE" class="headerlink" title="#1: Debugging in IE"></a>#1: Debugging in IE</h2><p>Nothing sucked in early versions of Internet Explorer more than the (lack of) debugging tools.</p>
+<p>Not to sound like the “I walked 80 miles uphill both ways to school” guy, but Web developers today really cannot appreciate the struggle.</p>
+<p>It wasn’t that there was no Web inspector (although there wasn’t).</p>
+<p>It wasn’t that there was no debugger (although there wasn’t).</p>
+<p>It wasn’t that there was no console (although there wasn’t).</p>
+<p>The problem was that when IE hit a Javascript error (because, say, you accidentally included a trailing comma in a JSON structure) all you were given in terms of an error message was some bullshit like this:</p>
+<p><code>Line: 5
+Char: 33
+Error: Unknown Runtime Error</code></p>
+<p>There were like 10 different errors that IE might give you and they all meant nothing. So you were left with a goddamn line number and character number to figure out what went wrong.</p>
+<p>In the nightmare scenario, you had code that you’d written on a Mac or Linux box that had non-Windows carriage returns in it so everything displayed in Notepad on one line with those stupid little squares where there were supposed to be line breaks. Once you had found the right line somehow, you would click the right arrow key counting as you went: one, two, three, four, five, six, seven. All the way up to thirty-three.</p>
+<p>And then you stared at the code for several minutes trying to figure out what it was about that particular character that triggered the error. But, of course, sometimes the actual problem was earlier in the code, so once you realized THAT, you stared at the code for several more minutes, questioning your career choices. What would you be doing right now if you had listened to Greg and gotten into automative HVAC instead?</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/12/Useless-Stuff-I-Still-Know/" data-id="ckurjk96l000nuis11q1dsusc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="dan24678/2017/07/13/2017-07-13-dont-let-your-buttons-overlap/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Dont Let Your Buttons Overlap</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="dan24678/categories/Uncategorized/">Uncategorized</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2011/05/">May 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2009/12/">December 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2009/10/">October 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/03/">March 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/02/">February 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="dan24678/2019/12/12/Useless-Stuff-I-Still-Know/">Useless Stuff I Still Know</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2017/07/13/2017-07-13-dont-let-your-buttons-overlap/">Dont Let Your Buttons Overlap</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2016/05/07/2016-05-07-campaign-error-logging-with-new-relic-insights/">Campaign Error Logging with New Relic Insights</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2016/04/17/2016-04-17-ms-7352-manual/">MS-7352 Manual</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2015/11/21/2015-11-21-connection-management/">Connection Management</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="dan24678/" class="mobile-nav-link">Home</a>
+  
+    <a href="dan24678/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="dan24678/fancybox/jquery.fancybox.css">
+  <script src="dan24678/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="dan24678/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

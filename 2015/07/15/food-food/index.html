@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>food != food | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I ran into this issue at work several weeks back and figured I&amp;#8217;d drop a quick blog post about it, as it&amp;#8217;s kinda nifty. Some string matching code in our backend was reporting mismatches on">
+<meta property="og:type" content="article">
+<meta property="og:title" content="food != food">
+<meta property="og:url" content="http://yoursite.com/2015/07/15//food-food//index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="I ran into this issue at work several weeks back and figured I&amp;#8217;d drop a quick blog post about it, as it&amp;#8217;s kinda nifty. Some string matching code in our backend was reporting mismatches on">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/dan24678/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-1024x233.png">
+<meta property="og:image" content="http://yoursite.com/dan24678/images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_-1024x224.png">
+<meta property="og:updated_time" content="2021-10-14T22:51:43.768Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="food != food">
+<meta name="twitter:description" content="I ran into this issue at work several weeks back and figured I&amp;#8217;d drop a quick blog post about it, as it&amp;#8217;s kinda nifty. Some string matching code in our backend was reporting mismatches on">
+<meta name="twitter:image" content="http://yoursite.com/dan24678/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-1024x233.png">
+  
+    <link rel="alternate" href="dan24678/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="dan24678/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="dan24678/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="dan24678/">Home</a>
+        
+          <a class="main-nav-link" href="dan24678/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="dan24678/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-/food-food/" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="dan24678/2015/07/15/food-food/" class="article-date">
+  <time datetime="2015-07-16T00:51:12.000Z" itemprop="datePublished">2015-07-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="dan24678/categories/Uncategorized/">Uncategorized</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      food != food
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I ran into this issue at work several weeks back and figured I&#8217;d drop a quick blog post about it, as it&#8217;s kinda nifty.</p>
+<p>Some string matching code in our backend was reporting mismatches on identical text. I found an example of the text and played around with it in console and was able to isolate it to the following:</p>
+<p><a href="/dan24678/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress.png"><img class="aligncenter size-large wp-image-260" alt="Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress" src="/dan24678/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-1024x233.png" width="640" height="145" srcset="/images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-1024x233.png 1024w, /images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress-300x68.png 300w, /images/uploads/2015/07/Add_New_Post_‹_Ruminations_from_the_Long_Doctor_—_WordPress.png 1140w" sizes="(max-width: 640px) 100vw, 640px"></a></p>
+<p>This was a bit of a headscratcher. If you don&#8217;t believe me, copy and paste this code into console and try it yourself:</p>
+<p><code>&#39;food​&#39; == &#39;food&#39;</code></p>
+<p>So&#8230; can you figure out what&#8217;s going on here?</p>
+<p>Go ahead. I&#8217;ll wait&#8230;</p>
+<p>It took me a hot minute to suss it out, but for me, the thing that clued me in was using the arrow keys to step through the string. You&#8217;ll notice that it takes an extra keypress to navigate between the letter d in the first &#8220;food&#8221; and the closing apostrophe.</p>
+<p>It turns out there was a unicode character there called the <a href="http://www.fileformat.info/info/unicode/char/200B/index.htm" target="_blank" rel="noopener">zero width space</a>. This character exists on the page and will come into play when doing string comparisons, but is effectively invisible.</p>
+<p>This got me thinking&#8230; I know there are quite a few characters that appear identical but have different code points. So there might be an ê with a little hat on it in one language that appears identical to the ê in a different language, but they are technically different unicode characters and thus not at all the same.</p>
+<p>So, if we can have 2 words that look the same but are different, can we have 2 words that look different but are the same?</p>
+<p>This was the best I could come up with:</p>
+<p><a href="/dan24678/images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_.png"><img class="aligncenter size-large wp-image-266" alt="Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_" src="/dan24678/images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_-1024x224.png" width="640" height="140" srcset="/images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_-1024x224.png 1024w, /images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_-300x65.png 300w, /images/uploads/2015/07/Unicode_Character__RIGHT-TO-LEFT_OVERRIDE___U_202E_.png 1176w" sizes="(max-width: 640px) 100vw, 640px"></a></p>
+<p>There is a unicode character called the <a href="http://www.fileformat.info/info/unicode/char/202e/index.htm" target="_blank" rel="noopener">right-to-left override</a> which basically opens a portal to Hell by turning all the text appearing after it backwards. Go ahead and paste this into your console and play around with it a little. But make sure to step away before you shoot yourself:</p>
+<p><code>&#39;‮food‮&#39; == &#39;‮food‮&#39;</code></p>
+<p>It turns out this character has some interesting security implications, as it can be used to manipulate URLs to make certain phishing attacks easier.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/07/15/food-food/" data-id="ckurjk96e000juis1umkahqil" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="dan24678/2015/11/21/2015-11-21-connection-management/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Connection Management
+        
+      </div>
+    </a>
+  
+  
+    <a href="dan24678/2014/12/27/2014-12-27-shortening-the-feedback-path4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Shortening the Feedback Path</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="dan24678/categories/Uncategorized/">Uncategorized</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2011/05/">May 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2009/12/">December 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2009/10/">October 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/03/">March 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/02/">February 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="dan24678/2019/12/12/Useless-Stuff-I-Still-Know/">Useless Stuff I Still Know</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2017/07/13/2017-07-13-dont-let-your-buttons-overlap/">Dont Let Your Buttons Overlap</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2016/05/07/2016-05-07-campaign-error-logging-with-new-relic-insights/">Campaign Error Logging with New Relic Insights</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2016/04/17/2016-04-17-ms-7352-manual/">MS-7352 Manual</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2015/11/21/2015-11-21-connection-management/">Connection Management</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="dan24678/" class="mobile-nav-link">Home</a>
+  
+    <a href="dan24678/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="dan24678/fancybox/jquery.fancybox.css">
+  <script src="dan24678/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="dan24678/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

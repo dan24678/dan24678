@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Shortening the Feedback Path | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A subconscious best practice I&amp;#8217;ve noticed in the world of web development is the drive to shorten the feedback path. This is best illustrated by an example. Let&amp;#8217;s pretend that a web form h">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Shortening the Feedback Path">
+<meta property="og:url" content="http://yoursite.com/2014/12/27/2014-12-27-shortening-the-feedback-path4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="A subconscious best practice I&amp;#8217;ve noticed in the world of web development is the drive to shorten the feedback path. This is best illustrated by an example. Let&amp;#8217;s pretend that a web form h">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-25T01:20:18.068Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Shortening the Feedback Path">
+<meta name="twitter:description" content="A subconscious best practice I&amp;#8217;ve noticed in the world of web development is the drive to shorten the feedback path. This is best illustrated by an example. Let&amp;#8217;s pretend that a web form h">
+  
+    <link rel="alternate" href="dan24678/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="dan24678/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="dan24678/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="dan24678/">Home</a>
+        
+          <a class="main-nav-link" href="dan24678/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="dan24678/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2014-12-27-shortening-the-feedback-path4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="dan24678/2014/12/27/2014-12-27-shortening-the-feedback-path4/" class="article-date">
+  <time datetime="2014-12-28T01:38:13.000Z" itemprop="datePublished">2014-12-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Shortening the Feedback Path
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>A subconscious best practice I&#8217;ve noticed in the world of web development is the drive to shorten the feedback path. This is best illustrated by an example.</p>
+<p>Let&#8217;s pretend that a web form has various collapsible sections. The top section is expanded by default, pushing the bottom (collapsed) section down below the fold. Once the bottom section is expanded, there is a link that when clicked opens up a modal date-picker.</p>
+<p>If you don&#8217;t optimize things, your workflow may look something like this:</p>
+<ol>
+<li>Make some changes to the date picker javascript</li>
+<li>Refresh the page</li>
+<li>Click to collapse the top section, bringing the bottom section into view</li>
+<li>Click to expand the bottom section</li>
+<li>Click the link to show the date picker</li>
+<li>Test your change</li>
+</ol>
+<p>Obviously, this is a somewhat sub-optimal workflow that can grow quite painful quickly. Luckily, there are a number of different approaches to streamlining things a bit.</p>
+<h2 id="The-Best-Best-Practice-Tests"><a href="#The-Best-Best-Practice-Tests" class="headerlink" title="The Best Best Practice: Tests"></a>The Best Best Practice: Tests</h2><p>The ideal situation for developing your date picker is to do it in a test-driven manner.</p>
+<p>If you can make the case that tests are worth doing (and they usually are), it&#8217;s definitely the way to go.  This is especially true if you are writing a library or a widget that is intended to be used in numerous different places. If our fictitious date picker is something we are writing from scratch, even if it is only likely to be used on this one page, the best way to go about it is to treat it as a widget with its own test suite and develop it in isolation from the rest of the page.</p>
+<p>Tests provide immediate feedback. When you make a change to your date picker, you can have your tests auto-run in a separate window and get instant gratification. This completely side-steps the painful process of testing a widget that is hidden deep in the interactive guts of a complicated form.</p>
+<p>The idea of doing test-driven development in javascript only became a reality fairly recently. There are many different combinations of javascript libraries that can be used to facilitate this, but the ones I find myself using most frequently are:</p>
+<ul>
+<li><a href="http://jasmine.github.io/" target="_blank">Jasmine</a>: Provides a BDD-based testing framework</li>
+<li><a href="http://phantomjs.org/" target="_blank">PhantomJS</a>: Enables headless browser testing. You can run meaningful tests against a WebKit-based browser solely from the commandline</li>
+<li><a href="http://gruntjs.com/" target="_blank">Grunt</a>: A task-runner to tie all the pieces together</li>
+</ul>
+<h2 id="Sometimes-You-Can-8217-t-Do-What-You-Should"><a href="#Sometimes-You-Can-8217-t-Do-What-You-Should" class="headerlink" title="Sometimes You Can&#8217;t Do What You Should"></a>Sometimes You Can&#8217;t Do What You Should</h2><p>I wouldn&#8217;t quite call unit tests for javascript a luxury for the same reason a seatbelt isn&#8217;t a luxury. Actually, a better analogy is probably an air bag in the early-90s.  All the nice cars had them and everyone knew air bags are the way to go and something you should have in your car.  But you spent all summer working at Dairy Queen for $4.65 an hour and only saved up enough money to buy an &#8217;82 Buick Regal with white leather seats, an FM radio and no air bags.</p>
+<p>And so, sometimes we find ourselves debugging a date picker without recourse to tests.</p>
+<p>In order to avoid the painful multi-step process of refresh, click, scroll, then click again to see the results of our change, there are a couple things we can do.</p>
+<h2 id="Automate-the-Clicking"><a href="#Automate-the-Clicking" class="headerlink" title="Automate the Clicking"></a>Automate the Clicking</h2><p>Rather than forcing yourself to click on the page elements each time, figure out what the equivalent jQuery code is to trigger these elements and then automate it.</p>
+<p>The code might look something like this:</p>
+<pre>$('.collapsible-header:first').click(); // hide the top section</pre>
+
+<pre>$('.collapsible-header:nth-child(3)').click(); // show the bottom section</pre>
+
+<pre>$('#dingleberry-form a.picker-trigger').click(); // show the date picker</pre>
+
+<p>There&#8217;s a couple ways you can trigger this code. The easiest is to simply type it into the javascript console as a 1-liner and trigger it manually. You can then use &#8220;arrow-up&#8221; to get to it after each page refresh. This isn&#8217;t a bad way to go, but we can do better.</p>
+<p>Another option is to surround it with a $(function() { }) so it will be called onload and put it into our page&#8217;s JS code somewhere. This completely automates it with only a single drawback: you may forget to remove it later. Add a &#8220;TODO: Remove this shit&#8221; comment above the code to help draw attention to it later.</p>
+<p>Or even better, install <a href="https://chrome.google.com/webstore/detail/dotjs/dlnccnmhpmdidoiecanghgienhoglnim?hl=en" target="_blank">dotjs</a> or a similar extension so you can execute arbitrary javascript on your pages without actually putting it in your versioned, &#8220;production&#8221; files. But at that point, maybe you should just write a test.</p>
+<h2 id="Keep-Shit-Modular"><a href="#Keep-Shit-Modular" class="headerlink" title="Keep Shit Modular"></a>Keep Shit Modular</h2><p>Another way to handle hiding the section you don&#8217;t want to see is to simply delete it off the page temporarily. If you&#8217;ve kept your code modular and concise then each page section will be its own template that you can suppress by commenting out a single line.</p>
+<p>This technique proved invaluable to a page redesign I&#8217;m currently working on. There are 3 sections to the page and I placed each section in its own template. When I need to make a change to one of these sections, I can easily comment out the 2 lines in the parent template that include the sections I don&#8217;t want to see.</p>
+<p>This technique really makes me appreciate jQuery&#8217;s complacent attitude when something doesn&#8217;t exist &#8212; e.g., <em>$(&#8216;.jacobs-ladder&#8217;).css(&#8216;height&#8217;, &#8216;10000px&#8217;)</em> won&#8217;t throw any errors if there are no such elements on the page.</p>
+<h2 id="Auto-Refresh-the-Page"><a href="#Auto-Refresh-the-Page" class="headerlink" title="Auto-Refresh the Page"></a>Auto-Refresh the Page</h2><p>Manually clicking the refresh button on the browser is for suckers. There are a couple good options for automating this:</p>
+<ul>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-watch" target="_blank" rel="noopener">grunt-contrib-watch</a>: A Grunt plugin for directory watching. A great option even for non-javascript projects</li>
+<li><a href="http://tin.cr/" target="_blank" rel="noopener">Tincr</a>: A chrome extension for auto-updating JS/CSS that&#8217;s been changed without needing a full-page reload</li>
+<li><a href="https://github.com/emcrisostomo/fswatch" target="_blank" rel="noopener">fswatch</a>: A general purpose solution that lets you trigger directory monitoring on-the-fly.</li>
+<li><a href="https://github.com/DrLongGhost/reload" target="_blank" rel="noopener">reload.sh</a>: A shell script written by yours truly. It is basically a wrapper around fswatch that lets you specify defaults and has added support for triggering browser reloads on OS-X.</li>
+</ul>
+<p>One interesting aside is I&#8217;ve noticed that none of these solutions (even mine) really give me exactly what I want. Sometimes the detection of when a file has changed is slow and I&#8217;m left staring at the browser waiting on it to pick up the change, until I get frustrated and click it myself (thus defeating the purpose of the directory monitoring)*. Other times I will save a file and I <em>won&#8217;t</em> want it to refresh the browser. Or I&#8217;ll save 5 files and only want a refresh on the last save. Still, it&#8217;s worth it for those times when I make a big change then switch over to my browser and the refreshed code is there waiting for me.</p>
+<p>*One notable instance of when tests take a long time to run in response to a change occurs when VMs are in the mix. I&#8217;ve noticed that if you are monitoring a very large directory on a VM which is using a shared file-system such as NFS, changes can take tens of seconds to be detected. A great workaround is to monitor the large directory natively (outside of the VM) where directory monitoring performs well. When the change is detected, jiggle a file in a small, otherwise empty directory and then have the VM monitor <strong>that</strong>. This generally performs much better.</p>
+<h2 id="Case-Study-Writing-reload-sh"><a href="#Case-Study-Writing-reload-sh" class="headerlink" title="Case Study: Writing reload.sh"></a>Case Study: Writing reload.sh</h2><p>I wrote <a href="https://github.com/DrLongGhost/reload" target="_blank" rel="noopener">reload.sh</a> because I wanted to be able to set up browser reloading on-the-fly without needing to configure a Gruntfile. Also, it was a great excuse to write something in bash. My process for writing the script is itself illustrative of several steps I took to shorten the path to feedback.</p>
+<p>While it would have been ideal to write tests for reload.sh then use it to trigger tests against a separate instance of itself, this wasn&#8217;t to be. This is unfortunate as it would&#8217;ve been super-meta to be able to use this script on itself. Instead, I opted to simply have it execute an &#8220;echo foo&#8221; when a file changed so I could see it was working. This initially resulted in the following workflow during development:</p>
+<ol>
+<li>Make a change to the script</li>
+<li>Click into a console window and run reload.sh (ask it to monitor /tmp/ and &#8220;echo foo&#8221; when it detects a file change)</li>
+<li>Click into a second console window and &#8220;touch /tmp/myself&#8221;. Watch for the output on console 1.</li>
+<li>Click back into the original console window and hit control-c to exit the script so I&#8217;m ready for my next change</li>
+</ol>
+<p>This proved cumbersome but I quickly hit on a way to remove steps 3 &amp; 4. I wrote a separate shell script to touch myself and then kill myself so I wouldn&#8217;t have to do it by hand:</p>
+<pre>touch /tmp/myself ; sleep 2; pkill -f reload.sh</pre>
+
+<p>The only downside to this workflow was that because reload.sh ran in a loop, I had to invoke my second script from within my first script (which meant I had one line in my script that I&#8217;d have to remove or comment out prior to committing it back into version control).</p>
+<h3 id="In-Conclusion"><a href="#In-Conclusion" class="headerlink" title="In Conclusion"></a>In Conclusion</h3><p>Shortening the feedback path may not always save you time, but it <strong>will</strong> save your sanity. Being able to immediately see the results of your work creates a much more pleasant experience. Use automation and whatever hacks you need to keep yourself from needing to click on anything. You&#8217;ll be better off for it.</p>
+<p>&nbsp;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/12/27/2014-12-27-shortening-the-feedback-path4/" data-id="ckurjk96c000iuis1fqk08y8y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="dan24678/2015/07/15/food-food/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          food != food
+        
+      </div>
+    </a>
+  
+  
+    <a href="dan24678/2014/06/04/2014-06-04-conways-game-of-life/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Conways Game of Life</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="dan24678/categories/Uncategorized/">Uncategorized</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2011/05/">May 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2009/12/">December 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2009/10/">October 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/03/">March 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/02/">February 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="dan24678/2019/12/12/Useless-Stuff-I-Still-Know/">Useless Stuff I Still Know</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2017/07/13/2017-07-13-dont-let-your-buttons-overlap/">Dont Let Your Buttons Overlap</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2016/05/07/2016-05-07-campaign-error-logging-with-new-relic-insights/">Campaign Error Logging with New Relic Insights</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2016/04/17/2016-04-17-ms-7352-manual/">MS-7352 Manual</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2015/11/21/2015-11-21-connection-management/">Connection Management</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="dan24678/" class="mobile-nav-link">Home</a>
+  
+    <a href="dan24678/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="dan24678/fancybox/jquery.fancybox.css">
+  <script src="dan24678/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="dan24678/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

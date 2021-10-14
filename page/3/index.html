@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="dan24678/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="dan24678/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="dan24678/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="dan24678/">Home</a>
+        
+          <a class="main-nav-link" href="dan24678/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="dan24678/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2008-03-27-fun-with-mbr-and-bootini" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="dan24678/2008/03/27/2008-03-27-fun-with-mbr-and-bootini/" class="article-date">
+  <time datetime="2008-03-28T01:09:16.000Z" itemprop="datePublished">2008-03-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="dan24678/2008/03/27/2008-03-27-fun-with-mbr-and-bootini/">Fun with MBR and Boot.ini</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I had a bit of a scare these past 24 hours when I thought that I had fucked up my newly installed and configured Windows XP PC, which for the purposes of this blog I will refer to as Lester. Lester has a 500gig SATA harddrive, as well as an older 250 gig drive, which was a holdover from my prior computer. As a result, the smaller, secondary harddrive had 3 partitions on it: an XP system partition, an Ubuntu partition and an NTFS partition with a buttload of mp3s on it.</p>
+<p>Last night, I decided to delete the 3 separate partitions on my secondary drive and reformat the whole thing as a single NTFS partition for mp3s. I used Partition Magic and some other partition program I had snagged off BitTorrent. I was very cautious while formatting and succeeded in deleting the partitions and wiping the drive. However, when I rebooted, Lester would not start up and displayed an ominous message about no bootable media being found.</p>
+<p>This was pretty damn confusing, since I knew that I had formatted the correct drive and was pretty sure that all my windows files were still present on the main drive. What the fuck had happened? Was it a virus?</p>
+<p>Well, to make a long story short, I eventually was able to restore the MBR (Master Boot Record) and boot.ini on the main drive and get it to boot into Windows again (although I ended up installing Windows on the mp3 drive just so I&#8217;d have something to boot into so I could muck around with the main drive). After I had fixed Lester, I realized what had happened. When I had originally installed XP, for some bizarre reason, the boot.ini file for XP was installed, not on the hard drive containing my Windows system, but on the hard drive containing my mp3s and the other 2 unused partitions. Thus, when I wiped this drive, it blew out my boot.ini file and Lester was dead in the water.</p>
+<p>Even odder, when I installed the temporary version of XP on the newly wiped mp3 drive to give myself access to the files on the main drive, it put the new boot.ini file on the main drive! So, at that point, boot.ini was where I wanted it and I only had to go in and edit it to tell it to load the windows install on drive 0 instead of drive 1.</p>
+<p>In case anyone ever has a similar issue, here are the instructions I finally found on editing the MBR and boot.ini:</p>
+<ol>
+<li>You can try restoring the MBR in MSDOS with either the <strong>FIXMBR</strong> command or with <strong>fdisk \mbr</strong>. In my case, this didn&#8217;twork, since I was still missing boot.ini.</li>
+<li>I was able to edit the new boot.ini file with the following commands, run from the commandline (I don&#8217;t think boot.ini is visible within Windows Explorer, even with Show Hidden Files enabled): <ol>
+<li>attrib -H -S -A -R boot.ini &#8212; This sets the boot.ini file as editable</li>
+<li>notepad boot.ini &#8212; Pops it open in Notepad so you can edit it.</li>
+<li>attrib +H +S +A +R boot.ini &#8212; Restores boot.ini as a hidden, system file, after you have made your edits and saved.</li>
+</ol>
+</li>
+<li>Reboot and all is well. You can add multiple entries in boot.ini under the [operating systems] section. For me, the operative thing to change was the <strong>rdisk</strong> option. You&#8217;d think the <strong>disk</strong> option would control which harddrive is being described, but actually the physical drive is referenced by the rdisk option. Thus, I had to change:<br><strong>multi(0)disk(0)rdisk(1)partition(1)\Windows</strong><br>to<br><strong>multi(0)disk(0)rdisk(0)partition(1)\Windows</strong></li>
+</ol>
+<p>I must confess that despite the stress of thinking I had lost all my files, it was pretty damn gratifying to actually fix this myself by getting down and dirty with the MBR. Nevermind that I wouldn&#8217;t have ever had this problem if I hadn&#8217;t fucked up in the first place&#8230;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2008/03/27/2008-03-27-fun-with-mbr-and-bootini/" data-id="ckurjk9600005uis1w91x8v46" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2008-03-23-zombies" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="dan24678/2008/03/23/2008-03-23-zombies/" class="article-date">
+  <time datetime="2008-03-23T16:18:37.000Z" itemprop="datePublished">2008-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="dan24678/2008/03/23/2008-03-23-zombies/">Zombie Evacuation Plan **Updated**</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Nicole and I had a wonderful walk this afternoon that took us down our street to the CVS and then to the local Genuardi&#8217;s, via the cemetery behind our house. During the walk, it occurred to me that although we had replaced our smoke detector batteries the prior Daylight Savings Day, our Zombie Evacuation Plan had not been updated since we had moved into our new house, almost a year earlier.</p>
+<p>As those of you who live near cemeteries know, a good Zombie Evacuation Plan can mean the difference between life and death &#8212; saving one from an awful brain-eating fate. Unlike some of our wealthier neighbors, we are unable to afford the high premiums charged for zombie insurance in a residential zone within a half mile of a cemetery. Thus, in the event of an outbreak, our house will be a total loss and we will be entirely on our own to make it to the nearest Army evacuation point &#8212; Abington Hospital, or City Hall in Philly, in the event that the hospital is overrun.</p>
+<p>Since our evacuation plan is of paramount importance, I welcome your criticism and suggestions. It is very much a work in progress which I strive to continually improve.</p>
+<ol>
+<li><strong>Weaponry</strong>. Although Nicole has made it clear that the cats should be our primary concern, I feel that if we cannot defend ourselves, then we will be of no help to the cats. Also, prior attacks have shown that domestic pets are generally left unmolested by zombies, particularly when human prey is readily available. Thus, our first action will be to secure the knives from the kitchen. Time permitting, we will also retrieve the gasoline from the shed and the propane tank from the deck, which can be used as a makeshift bomb.</li>
+<li><strong>Blank and Nudge</strong>. Next, we will get the cats in their carriers.</li>
+<li><strong>Shelter</strong>. If we&#8217;re able, we will board up the windows and doors with the extra wood from the shed and seal up the basement door to limit the amount of space we will need to defend. If the house itself is breached, we will retreat to the upper floor. If the upper floor is then breached, we can always exit the window in the office, clamber down the roof and onto the deck, and from there jump down to the backyard.</li>
+<li><strong>Evacuation</strong>. As soon as there is an appreciable lull in the fighting, we will evacuate, preferably by car, down Susquehanna toward the hospital. Hopefully, we can make it to the hospital and be evacuated via helicopter. If the hospital is no longer safe, we will need to fight our way down 611 all the way to City Hall.</li>
+</ol>
+<p>I only hope that if we ever have cause to put our evacuation plan into effect that we are able to escape with our lives. A house and possessions can always be replaced, but a brain can never be un-eaten.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2008/03/23/2008-03-23-zombies/" data-id="ckurjk95w0001uis1pmoc16t4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2008-03-22-xena-marie-aka-the-walrus-1998-2008" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="dan24678/2008/03/22/2008-03-22-xena-marie-aka-the-walrus-1998-2008/" class="article-date">
+  <time datetime="2008-03-22T20:24:37.000Z" itemprop="datePublished">2008-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="dan24678/2008/03/22/2008-03-22-xena-marie-aka-the-walrus-1998-2008/">Xena-Marie, a.k.a. The Walrus, 1998 - 2008</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>It’s been a rough month for my cats. Blank broke a couple of his toes last month and then this month, we had to have my cat Xena put to sleep. Nicole had noticed that she had stopped eating and kept herself hidden away for most of the day. An X-Ray and blood tests showed only an increased white blood cell count, but a later ultrasound showed fairly extensive cancer in Xena&#8217;s kidneys, liver, intestines and lymph nodes.</p>
+<p>I received the diagnosis on a Friday and the following Thursday, we had to let her go. I am thankful that Xena was not in any pain and that we had the better part of a week to say our goodbyes.</p>
+<p>Xena was my first cat and will always be the best there ever was. When I think of all the things I will miss about her, it breaks my heart. She used to shed so much that I joked I could take all the hair which came off of her and in a matter of weeks, I&#8217;d have enough to make another cat. Xena was a sloppy eater and the kitchen floor was constantly covered in food, thanks to her. It was pretty funny to watch her eat &#8212; with half the food falling out of her mouth and onto the floor as she chewed.</p>
+<p>Xena was one of my best friends and she will not soon be forgotten. Rest in peace, Princess&#8230;</p>
+<p><a href="/dan24678/images/uploads/2008/03/dsc00159.JPG" title="Xena attacks!"><img src="/dan24678/images/uploads/2008/03/dsc00159.JPG" alt="Xena attacks!" width="300"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2008/03/22/2008-03-22-xena-marie-aka-the-walrus-1998-2008/" data-id="ckurjk95y0003uis1gnt6ugeo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2008-02-21-something-about-php" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="dan24678/2008/02/21/2008-02-21-something-about-php/" class="article-date">
+  <time datetime="2008-02-21T23:18:11.000Z" itemprop="datePublished">2008-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="dan24678/2008/02/21/2008-02-21-something-about-php/">Regex tester</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I added a Javascript regex tester to my homepage. It&#8217;s pretty bare bones right now, but I eventually want it to select the text it matches inside the textarea, instead of just printing the match below. I used scriptaculous tabs for the tabs at the bottom, which seemed to work out well.</p>
+<p>I have some ideas for additional form widgets I&#8217;d like to add to my homepage. I think a timestamp converter could be helpful.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2008/02/21/2008-02-21-something-about-php/" data-id="ckurjk95x0002uis1ookcwgaf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2008-02-17-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="dan24678/2008/02/17/2008-02-17-hello-world/" class="article-date">
+  <time datetime="2008-02-17T23:09:59.000Z" itemprop="datePublished">2008-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="dan24678/2008/02/17/2008-02-17-hello-world/">Blanks Paw</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Well, here&#8217;s my first blog post and it&#8217;s about my cat Blank&#8217;s paw. Dumb-ass that my cat is, he somehow managed to break 2 fingers on his paw while playing in the basement. I was outside doing some work in the shed and I hear a crash. I come inside and this picnic table/card table that Nicole and I have is overturned. No cats were around.</p>
+<p>Later, I noticed Blank was limping. Long story short, we took him to the vet and discovered he&#8217;d broken 2 toes on his paw. Check out the x-rays:</p>
+<p><a href="/dan24678/images/uploads/2008/02/blank_xray.gif" title="Blank’s X-ray"><img src="/dan24678/images/uploads/2008/02/blank_xray.gif" alt="Blank’s X-ray"></a></p>
+<p>That&#8217;s the full x-ray without any magnification. And here&#8217;s the close-up on his right paw:</p>
+<p><a href="/dan24678/images/uploads/2008/02/blank_paw.gif" title="Blank’s paw"><img src="/dan24678/images/uploads/2008/02/blank_paw.gif" alt="Blank’s paw"></a></p>
+<p>Blank cost us $300 on the initial visit to the vet, for xrays and a cast. *Sigh* If only he weren&#8217;t suck a klutze&#8230; I got some measure of satisfaction when we took him back later and the doctor gave him a pink cast. Here&#8217;s 2 photos of him &#8212; in the original green cast and in the new pink cast which he pulled off after 1 day. He&#8217;s so insecure&#8230;</p>
+<p>Anyway, Blank&#8217;s doing well and I think he should be back to jumping on picnic tables in another couple weeks.</p>
+<p><a href="/dan24678/images/uploads/2008/02/dsc00315.JPG" title="dsc00315.JPG"><img src="/dan24678/images/uploads/2008/02/dsc00315.JPG" alt="dsc00315.JPG" width="400"></a></p>
+<p><a href="/dan24678/images/uploads/2008/02/dsc00132.JPG" title="dsc00132.JPG"><img src="/dan24678/images/uploads/2008/02/dsc00132.JPG" alt="dsc00132.JPG" width="400"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2008/02/17/2008-02-17-hello-world/" data-id="ckurjk95t0000uis1fsbnfdcn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="dan24678/page/2/">&laquo; Prev</a><a class="page-number" href="dan24678/">1</a><a class="page-number" href="dan24678/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="dan24678/categories/Uncategorized/">Uncategorized</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2011/05/">May 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2009/12/">December 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2009/10/">October 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/03/">March 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/02/">February 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="dan24678/2019/12/12/Useless-Stuff-I-Still-Know/">Useless Stuff I Still Know</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2017/07/13/2017-07-13-dont-let-your-buttons-overlap/">Dont Let Your Buttons Overlap</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2016/05/07/2016-05-07-campaign-error-logging-with-new-relic-insights/">Campaign Error Logging with New Relic Insights</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2016/04/17/2016-04-17-ms-7352-manual/">MS-7352 Manual</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2015/11/21/2015-11-21-connection-management/">Connection Management</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="dan24678/" class="mobile-nav-link">Home</a>
+  
+    <a href="dan24678/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="dan24678/fancybox/jquery.fancybox.css">
+  <script src="dan24678/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="dan24678/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

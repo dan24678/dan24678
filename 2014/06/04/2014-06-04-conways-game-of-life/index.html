@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Conways Game of Life | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Several months ago I was interviewing with various companies, primarily for senior web developer roles. In total I probably spoke with just under a dozen companies. Some had phone screens and some had">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Conways Game of Life">
+<meta property="og:url" content="http://yoursite.com/2014/06/04/2014-06-04-conways-game-of-life/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Several months ago I was interviewing with various companies, primarily for senior web developer roles. In total I probably spoke with just under a dozen companies. Some had phone screens and some had">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/dan24678/images/uploads/2014/06/Conway_s_Life-300x199.png">
+<meta property="og:updated_time" content="2021-10-14T22:51:43.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Conways Game of Life">
+<meta name="twitter:description" content="Several months ago I was interviewing with various companies, primarily for senior web developer roles. In total I probably spoke with just under a dozen companies. Some had phone screens and some had">
+<meta name="twitter:image" content="http://yoursite.com/dan24678/images/uploads/2014/06/Conway_s_Life-300x199.png">
+  
+    <link rel="alternate" href="dan24678/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="dan24678/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="dan24678/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="dan24678/">Home</a>
+        
+          <a class="main-nav-link" href="dan24678/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="dan24678/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2014-06-04-conways-game-of-life" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="dan24678/2014/06/04/2014-06-04-conways-game-of-life/" class="article-date">
+  <time datetime="2014-06-05T00:45:28.000Z" itemprop="datePublished">2014-06-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Conways Game of Life
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Several months ago I was interviewing with various companies, primarily for senior web developer roles. In total I probably spoke with just under a dozen companies. Some had phone screens and some had in-person interviews. Some had written tests and some used white boards. My favorite of all the different interview approaches were the companies who asked me to build something. And of the companies who asked me to build something, my favorite was being asked to build Conway&#8217;s Game of Life (<a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life" target="_blank">wikipedia link</a>).</p>
+<p><a href="/dan24678/images/uploads/2014/06/Conway_s_Life.png"><img class="aligncenter size-medium wp-image-226" alt="Conway_s_Life" src="/dan24678/images/uploads/2014/06/Conway_s_Life-300x199.png" width="300" height="199" srcset="/images/uploads/2014/06/Conway_s_Life-300x199.png 300w, /images/uploads/2014/06/Conway_s_Life-1024x679.png 1024w, /images/uploads/2014/06/Conway_s_Life.png 1422w" sizes="(max-width: 300px) 100vw, 300px"></a></p>
+<p>Before I get into Conway&#8217;s Life (the main thrust of this blog post), let me briefly comment on why open-ended assignments are the way to go when it comes to job interviews:</p>
+<ul>
+<li>Do you want to see how well someone can bullshit? Or do you want to see how well they can code?</li>
+<li>Assigning a project measures not only technical prowess, but dedication and interest in the position</li>
+<li>Instead of assessing how well someone will do on tasks tangentially related to the position, why not see how well they&#8217;ll actually do with something more real-world?</li>
+<li>Best of all, it&#8217;s fun</li>
+</ul>
+<p>Of the three interviews in which I was given projects, two were open-ended. Of the two, my favorite one was this: &#8220;Build an implementation of Conway&#8217;s Game of Life&#8221;.</p>
+<p>In a nutshell, Conway&#8217;s Life is a programming exercise in which a grid of cells is implemented. Each cell can be either on or off. The number of adjacent cells which are &#8220;on&#8221; determines whether or not a given cell is toggled on during each &#8220;turn&#8221;. This simple logic can result in fairly complicated patterns emerging from an extremely simple starting point.</p>
+<p>My implementation was written in Javascript and HTML.</p>
+<h2 id="Check-it-out-by-visiting-this-page-and-clicking-Play"><a href="#Check-it-out-by-visiting-this-page-and-clicking-Play" class="headerlink" title="Check it out by visiting this page and clicking Play."></a><strong>Check it out by visiting <a href="http://www.dan24678/js/life-program/index.htm" target="_blank">this page</a> and clicking Play.</strong></h2><p>Here are a few interesting points about my design:</p>
+<ul>
+<li>I split the design into two modules. The <a href="https://github.com/DrLongGhost/life-program/blob/master/src/life.js" target="_blank"><strong>life</strong></a> class implements an internal state of the Life board and the <a href="https://github.com/DrLongGhost/life-program/blob/master/src/lifedom.js" target="_blank"><strong>lifedom</strong></a> class handles exposing this state via the DOM.</li>
+<li>The animation in <strong>lifedom</strong> works by toggling the background of the table cells on and off. Originally, the animation was so fast that I actually needed to slow it down (via setTimeout) to create a more aesthetically appealing effect. I added a slider that lets you slow down or speed up the animation by changing the value of the timeout.</li>
+<li>I added unit tests. They make sense for the <strong>life</strong> class, less so for <strong>lifedom</strong>, so I got lazy as I added various bells and whistles to the latter.</li>
+<li>Because I originally wanted tests for <strong>lifedom</strong>, it lead me to a regrettable design decision: there is HTML in the javascript. I wanted to avoid duplication and only define the HTML of the game board once. Generally speaking, there are 3 ways to do this: <ul>
+<li>Use PHP to define an HTML template to use in both the unit tests and the application. <strong>Pro:</strong> Easy. <strong>Con:</strong> Requires PHP.</li>
+<li>Use Javascript for the template. <strong>Pro:</strong> Easy. <strong>Con:</strong> Ugly. Clunky.</li>
+<li>Use Grunt to manage different builds for test versus production. <strong>Pro:</strong> Best pure javascript solution. <strong>Con:</strong> More complicated than the alternatives.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p>For me, the most interesting part of this project came shortly after I finished my first implementation. I decided to check it out on my 1st generation iPad Mini. The animation looked horrible. The &#8220;frame rate&#8221; was way too low and it looked visibly underpowered and stuttered. I tried reducing the timeout to try and speed things up, but this didn&#8217;t help: entire frames would be dropped and it still looked like shit.</p>
+<p>It&#8217;s funny because I knew immediately how this would go down:</p>
+<ul>
+<li>I&#8217;d first trust my gut and try a quick fix</li>
+<li>This wouldn&#8217;t work so I&#8217;d get more analytical and go through looking for additional optimizations</li>
+<li>I would once again fail and resort to replacing the animation with canvas as a last ditch effort to get something that looked decent. I had no idea if this would work.</li>
+</ul>
+<p>My first attempt at better performance was to replace <strong>.toggleClass(&#8216;on off&#8217;)</strong> with direct manipulation of the backgroundColor property. My rationale was that this would avoid CSS repaints and perform better. I also added some caching of which cells were &#8220;on&#8221;, which avoided a jQuery <strong>find()</strong> operation. You can see the github changeset <a href="https://github.com/DrLongGhost/life-program/commit/aa1fedf3892dfe4d9526d789b02162a0015c4aaf" target="_blank">here</a>.</p>
+<p>I added some basic benchmarking to measure the impact (or lack thereof) of this change. I created a running counter of &#8220;turns per second&#8221; which turned out to be a great benchmark. The less the animation slowed down the program, the higher the turns per second would be.</p>
+<p>To measure each change, I used the R-Pentomino pattern and grabbed my benchmark at turn 150, which represents a peak for the pattern in terms of the number of enabled cells in the pattern (and consequent steep drop in animation performance on the iPad Mini). By comparing the Baseline/Control stats against a Test Run that has all the animation suppressed (such that each turn is calculated in the <strong>life</strong> class but never displayed on-screen) you can see how much the animation itself actually slows things down.</p>
+<h2 id="Baseline-Control-Stats"><a href="#Baseline-Control-Stats" class="headerlink" title="Baseline/Control Stats"></a>Baseline/Control Stats</h2><ul>
+<li>Chrome on Macbook: 16tps</li>
+<li>iOS Simulator on Macbook: 16tps</li>
+<li>iPad Mini (1st generation): 5tps</li>
+<li>iPhone 5S: 14tps</li>
+</ul>
+<h2 id="Animation-Disabled"><a href="#Animation-Disabled" class="headerlink" title="Animation Disabled"></a>Animation Disabled</h2><ul>
+<li>Chrome on Macbook: 19tps</li>
+<li>iOS Simulator on Macbook: 19tps</li>
+<li>iPad Mini (1st generation): 17tps</li>
+<li>iPhone 5S: 18tps</li>
+</ul>
+<p>Next, we see the impact of my first attempt at improving the animation performance by replacing <strong>toggleClass(&#8216;on off&#8217;)</strong> with <strong>backgroundColor</strong>. It helped, but not enough.</p>
+<h2 id="Classes-Removed"><a href="#Classes-Removed" class="headerlink" title="Classes Removed"></a>Classes Removed</h2><ul>
+<li>Chrome on Macbook: 18tps</li>
+<li>iOS Simulator on Macbook: 19tps</li>
+<li>iPad Mini (1st generation): 7tps</li>
+<li>iPhone 5S: 16tps</li>
+</ul>
+<p>I tried some additional optimizations which didn&#8217;t really do much:</p>
+<ul>
+<li>Instead of turning the entire board off and then turning cells on, figure out which ones should remain on and don&#8217;t turn them off in the first place: <a href="https://github.com/DrLongGhost/life-program/commit/b3b7c51c0bf1b4bdc4fc5154c915769ff85fe1f1" target="_blank">commit</a>.</li>
+<li>Keep the internal array state of <strong>life</strong> sorted so we iterate less: <a href="https://github.com/DrLongGhost/life-program/commit/173017b777608c0be70b657e865c9e35c8e51c4b#diff-75e67dc61ab59dcd658eda3bf02a2023L154" target="_blank">commit</a>.</li>
+<li>Replace <strong>document.getElementById</strong> with a cache so it only gets called the first time: <a href="https://github.com/DrLongGhost/life-program/commit/3cbb4626ef6382fe796b72df424feda311ffd5bc" target="_blank">commit</a>. This last change made a tiny difference, at least on the iPhone.</li>
+</ul>
+<h2 id="Cached-DOM-Lookups"><a href="#Cached-DOM-Lookups" class="headerlink" title="Cached DOM Lookups"></a>Cached DOM Lookups</h2><ul>
+<li>Chrome on Macbook: 18tps</li>
+<li>iOS Simulator on Macbook: 19tps</li>
+<li>iPad Mini (1st generation): 7tps</li>
+<li>iPhone 5S: 17tps</li>
+</ul>
+<p>At this point, I knew my only hope of getting acceptable performance would be to drop the idea of using a <table> altogether and swap out the table with a <canvas> when the user clicks Play and use that for the animation (<a href="https://github.com/DrLongGhost/life-program/commit/f24eb6da258e9dfba76af9155821636891704661" target="_blank">changeset here</a>). The results were pretty interesting and gratifying. Most importantly, it gets performance to an acceptable level on the iPad Mini.</canvas></table></p>
+<h2 id="Canvas-Animation"><a href="#Canvas-Animation" class="headerlink" title="Canvas Animation"></a>Canvas Animation</h2><ul>
+<li>Chrome on Macbook: 18tps</li>
+<li>iOS Simulator on Macbook: 19tps</li>
+<li>iPad Mini (1st generation): 11tps</li>
+<li>iPhone 5S: 16tps</li>
+</ul>
+<p>By reducing the timeout value, I&#8217;m able to get the turns per second higher on an iPad without dropping frames. Note how it actually performs slightly worse on an iPhone 5S. Even on my iPad Mini, canvas actually starts out worse than the <table> solution (peaking at 17tps versus 18tps) before eventually overtaking it by turn 150.</table></p>
+<p>If I were motivated to work on performance more, I might consider coding something that turns the timeout value down dynamically to respond to a low tps value. This would allow a consistent animation speed on both overpowered and underpowered devices &#8212; you would set the desired tps, rather than setting the timeout interval.</p>
+<h2 id="What-8217-s-Next"><a href="#What-8217-s-Next" class="headerlink" title="What&#8217;s Next"></a>What&#8217;s Next</h2><p>I&#8217;m happy with the performance aspect of my program at this point. I might eventually add some drag and drop functionality so you can drag gliders, lines, pentominos, etc. onto the game board to more easily build complex patterns. I also toyed with the idea of adding different colors to the animation such that areas of the game board which are more busy would be colored darker than the parts which are burned out.</p>
+<p>If you&#8217;re bored, feel free to fork my implementation, add something cool and send me a pull request.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/06/04/2014-06-04-conways-game-of-life/" data-id="ckurjk96c000huis1jvu6tr6g" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="dan24678/2014/12/27/2014-12-27-shortening-the-feedback-path4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Shortening the Feedback Path
+        
+      </div>
+    </a>
+  
+  
+    <a href="dan24678/2014/02/28/2014-02-28-runaway-intervals-stuck-shut-off-valves-and-nacho-cheese/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Runaway Intervals, Stuck Shut-Off Valves and Nacho Cheese</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="dan24678/categories/Uncategorized/">Uncategorized</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2011/05/">May 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2009/12/">December 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2009/10/">October 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/03/">March 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="dan24678/archives/2008/02/">February 2008</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="dan24678/2019/12/12/Useless-Stuff-I-Still-Know/">Useless Stuff I Still Know</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2017/07/13/2017-07-13-dont-let-your-buttons-overlap/">Dont Let Your Buttons Overlap</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2016/05/07/2016-05-07-campaign-error-logging-with-new-relic-insights/">Campaign Error Logging with New Relic Insights</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2016/04/17/2016-04-17-ms-7352-manual/">MS-7352 Manual</a>
+          </li>
+        
+          <li>
+            <a href="dan24678/2015/11/21/2015-11-21-connection-management/">Connection Management</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="dan24678/" class="mobile-nav-link">Home</a>
+  
+    <a href="dan24678/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="dan24678/fancybox/jquery.fancybox.css">
+  <script src="dan24678/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="dan24678/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
