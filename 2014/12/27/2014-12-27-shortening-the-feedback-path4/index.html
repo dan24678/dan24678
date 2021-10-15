@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Dan&#39;s Blog">
 <meta property="og:description" content="A subconscious best practice I&amp;#8217;ve noticed in the world of web development is the drive to shorten the feedback path. This is best illustrated by an example. Let&amp;#8217;s pretend that a web form h">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-25T01:20:18.068Z">
+<meta property="og:updated_time" content="2021-10-15T15:02:41.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shortening the Feedback Path">
 <meta name="twitter:description" content="A subconscious best practice I&amp;#8217;ve noticed in the world of web development is the drive to shorten the feedback path. This is best illustrated by an example. Let&amp;#8217;s pretend that a web form h">
@@ -129,11 +129,11 @@
 <li><a href="https://www.npmjs.com/package/grunt-contrib-watch" target="_blank" rel="noopener">grunt-contrib-watch</a>: A Grunt plugin for directory watching. A great option even for non-javascript projects</li>
 <li><a href="http://tin.cr/" target="_blank" rel="noopener">Tincr</a>: A chrome extension for auto-updating JS/CSS that&#8217;s been changed without needing a full-page reload</li>
 <li><a href="https://github.com/emcrisostomo/fswatch" target="_blank" rel="noopener">fswatch</a>: A general purpose solution that lets you trigger directory monitoring on-the-fly.</li>
-<li><a href="https://github.com/DrLongGhost/reload" target="_blank" rel="noopener">reload.sh</a>: A shell script written by yours truly. It is basically a wrapper around fswatch that lets you specify defaults and has added support for triggering browser reloads on OS-X.</li>
+<li><a href="https://github.com/dan24678/reload" target="_blank" rel="noopener">reload.sh</a>: A shell script written by yours truly. It is basically a wrapper around fswatch that lets you specify defaults and has added support for triggering browser reloads on OS-X.</li>
 </ul>
 <p>One interesting aside is I&#8217;ve noticed that none of these solutions (even mine) really give me exactly what I want. Sometimes the detection of when a file has changed is slow and I&#8217;m left staring at the browser waiting on it to pick up the change, until I get frustrated and click it myself (thus defeating the purpose of the directory monitoring)*. Other times I will save a file and I <em>won&#8217;t</em> want it to refresh the browser. Or I&#8217;ll save 5 files and only want a refresh on the last save. Still, it&#8217;s worth it for those times when I make a big change then switch over to my browser and the refreshed code is there waiting for me.</p>
 <p>*One notable instance of when tests take a long time to run in response to a change occurs when VMs are in the mix. I&#8217;ve noticed that if you are monitoring a very large directory on a VM which is using a shared file-system such as NFS, changes can take tens of seconds to be detected. A great workaround is to monitor the large directory natively (outside of the VM) where directory monitoring performs well. When the change is detected, jiggle a file in a small, otherwise empty directory and then have the VM monitor <strong>that</strong>. This generally performs much better.</p>
-<h2 id="Case-Study-Writing-reload-sh"><a href="#Case-Study-Writing-reload-sh" class="headerlink" title="Case Study: Writing reload.sh"></a>Case Study: Writing reload.sh</h2><p>I wrote <a href="https://github.com/DrLongGhost/reload" target="_blank" rel="noopener">reload.sh</a> because I wanted to be able to set up browser reloading on-the-fly without needing to configure a Gruntfile. Also, it was a great excuse to write something in bash. My process for writing the script is itself illustrative of several steps I took to shorten the path to feedback.</p>
+<h2 id="Case-Study-Writing-reload-sh"><a href="#Case-Study-Writing-reload-sh" class="headerlink" title="Case Study: Writing reload.sh"></a>Case Study: Writing reload.sh</h2><p>I wrote <a href="https://github.com/dan24678/reload" target="_blank" rel="noopener">reload.sh</a> because I wanted to be able to set up browser reloading on-the-fly without needing to configure a Gruntfile. Also, it was a great excuse to write something in bash. My process for writing the script is itself illustrative of several steps I took to shorten the path to feedback.</p>
 <p>While it would have been ideal to write tests for reload.sh then use it to trigger tests against a separate instance of itself, this wasn&#8217;t to be. This is unfortunate as it would&#8217;ve been super-meta to be able to use this script on itself. Instead, I opted to simply have it execute an &#8220;echo foo&#8221; when a file changed so I could see it was working. This initially resulted in the following workflow during development:</p>
 <ol>
 <li>Make a change to the script</li>
@@ -151,7 +151,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/12/27/2014-12-27-shortening-the-feedback-path4/" data-id="ckurknzq2000iv0s1unzlwl3p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/12/27/2014-12-27-shortening-the-feedback-path4/" data-id="ckusi4djk000g00s1is8jts83" class="article-share-link">Share</a>
       
       
     </footer>

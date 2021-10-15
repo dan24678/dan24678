@@ -152,7 +152,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/12/Useless-Stuff-I-Still-Know/" data-id="ckurknzqv000qv0s1qcjqxc38" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/12/Useless-Stuff-I-Still-Know/" data-id="ckusi4djy000p00s1bw3swtfk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -204,7 +204,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/13/2017-07-13-dont-let-your-buttons-overlap/" data-id="ckurknzqa000nv0s1b5bvviry" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/13/2017-07-13-dont-let-your-buttons-overlap/" data-id="ckusi4djx000o00s1ot8spq6p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -259,7 +259,7 @@ Error: Unknown Runtime Error</code></p>
 <p>One of the interesting realizations we had when comparing the chart above with our &#8220;technical requirements&#8221; was that error data and logging data are fundamentally two different things. Three of the four alternatives are more directly geared toward error data than storing normal application logging data, but New Relic Insights (which is essentially a NoSQL database masquerading as a relational one) proved itself able to be molded to fit both error messages <strong>and</strong> logging data. A few of the negatives to New Relic noted in the table ended up not mattering after all:</p>
 <ul>
 <li>The 256-character limit on tag length is mitigated by simply spreading your data across multiple fields</li>
-<li>While we relinquish some control by having our error and logging data stored in New Relic&#8217;s system, the <a href="https://docs.newrelic.com/docs/insights/new-relic-insights/adding-querying-data/querying-your-data-remotely" target="_blank" rel="noopener">Insights API</a> allows integrations with this data. (I even wrote a script called <a href="https://github.com/DrLongGhost/insights2csv" target="_blank" rel="noopener">insights2csv</a> to easily pull down our data so we can import it into PostgreSQL and elsewhere)</li>
+<li>While we relinquish some control by having our error and logging data stored in New Relic&#8217;s system, the <a href="https://docs.newrelic.com/docs/insights/new-relic-insights/adding-querying-data/querying-your-data-remotely" target="_blank" rel="noopener">Insights API</a> allows integrations with this data. (I even wrote a script called <a href="https://github.com/dan24678/insights2csv" target="_blank" rel="noopener">insights2csv</a> to easily pull down our data so we can import it into PostgreSQL and elsewhere)</li>
 </ul>
 <h2 id="The-Results"><a href="#The-Results" class="headerlink" title="The Results"></a>The Results</h2><p>LeadiD now has a system that allows us to monitor in real-time the impact of our client-side releases. This enables us to monitor new versions of our javascript as it goes live across all our customer sites and compare the volume of errors thrown by the new version against the historical norm from prior versions. If we begin seeing more errors than expected for the new version, we can immediately roll back the deployment and begin digging into the logging data itself to figure out what went wrong.</p>
 <p>To this end, we can easily pull the data down from New Relic Insights to feed it into other databases to enable more advanced queries. This also facilitates resource sharing with our Data Science department, who are now able to use the data on which consumers encountered errors to exclude that problematic data from the datasets they use to train machine learning and develop scoring models.</p>
@@ -270,7 +270,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/07/2016-05-07-campaign-error-logging-with-new-relic-insights/" data-id="ckurknzq3000kv0s1j2ewfhbl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/07/2016-05-07-campaign-error-logging-with-new-relic-insights/" data-id="ckusi4djp000k00s1834taarw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -329,7 +329,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/17/2016-04-17-ms-7352-manual/" data-id="ckurknzq9000mv0s1qp9wdn4f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/17/2016-04-17-ms-7352-manual/" data-id="ckusi4djw000n00s1unhggdsd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -379,7 +379,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/21/2015-11-21-connection-management/" data-id="ckurknzqb000ov0s19qw72242" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/21/2015-11-21-connection-management/" data-id="ckusi4djv000m00s1niyi9q84" class="article-share-link">Share</a>
       
       
     </footer>
@@ -435,7 +435,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/15/food-food/" data-id="ckurknzq2000jv0s18b88pkiy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/15/food-food/" data-id="ckusi4djo000j00s147g5r5x3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -510,11 +510,11 @@ Error: Unknown Runtime Error</code></p>
 <li><a href="https://www.npmjs.com/package/grunt-contrib-watch" target="_blank" rel="noopener">grunt-contrib-watch</a>: A Grunt plugin for directory watching. A great option even for non-javascript projects</li>
 <li><a href="http://tin.cr/" target="_blank" rel="noopener">Tincr</a>: A chrome extension for auto-updating JS/CSS that&#8217;s been changed without needing a full-page reload</li>
 <li><a href="https://github.com/emcrisostomo/fswatch" target="_blank" rel="noopener">fswatch</a>: A general purpose solution that lets you trigger directory monitoring on-the-fly.</li>
-<li><a href="https://github.com/DrLongGhost/reload" target="_blank" rel="noopener">reload.sh</a>: A shell script written by yours truly. It is basically a wrapper around fswatch that lets you specify defaults and has added support for triggering browser reloads on OS-X.</li>
+<li><a href="https://github.com/dan24678/reload" target="_blank" rel="noopener">reload.sh</a>: A shell script written by yours truly. It is basically a wrapper around fswatch that lets you specify defaults and has added support for triggering browser reloads on OS-X.</li>
 </ul>
 <p>One interesting aside is I&#8217;ve noticed that none of these solutions (even mine) really give me exactly what I want. Sometimes the detection of when a file has changed is slow and I&#8217;m left staring at the browser waiting on it to pick up the change, until I get frustrated and click it myself (thus defeating the purpose of the directory monitoring)*. Other times I will save a file and I <em>won&#8217;t</em> want it to refresh the browser. Or I&#8217;ll save 5 files and only want a refresh on the last save. Still, it&#8217;s worth it for those times when I make a big change then switch over to my browser and the refreshed code is there waiting for me.</p>
 <p>*One notable instance of when tests take a long time to run in response to a change occurs when VMs are in the mix. I&#8217;ve noticed that if you are monitoring a very large directory on a VM which is using a shared file-system such as NFS, changes can take tens of seconds to be detected. A great workaround is to monitor the large directory natively (outside of the VM) where directory monitoring performs well. When the change is detected, jiggle a file in a small, otherwise empty directory and then have the VM monitor <strong>that</strong>. This generally performs much better.</p>
-<h2 id="Case-Study-Writing-reload-sh"><a href="#Case-Study-Writing-reload-sh" class="headerlink" title="Case Study: Writing reload.sh"></a>Case Study: Writing reload.sh</h2><p>I wrote <a href="https://github.com/DrLongGhost/reload" target="_blank" rel="noopener">reload.sh</a> because I wanted to be able to set up browser reloading on-the-fly without needing to configure a Gruntfile. Also, it was a great excuse to write something in bash. My process for writing the script is itself illustrative of several steps I took to shorten the path to feedback.</p>
+<h2 id="Case-Study-Writing-reload-sh"><a href="#Case-Study-Writing-reload-sh" class="headerlink" title="Case Study: Writing reload.sh"></a>Case Study: Writing reload.sh</h2><p>I wrote <a href="https://github.com/dan24678/reload" target="_blank" rel="noopener">reload.sh</a> because I wanted to be able to set up browser reloading on-the-fly without needing to configure a Gruntfile. Also, it was a great excuse to write something in bash. My process for writing the script is itself illustrative of several steps I took to shorten the path to feedback.</p>
 <p>While it would have been ideal to write tests for reload.sh then use it to trigger tests against a separate instance of itself, this wasn&#8217;t to be. This is unfortunate as it would&#8217;ve been super-meta to be able to use this script on itself. Instead, I opted to simply have it execute an &#8220;echo foo&#8221; when a file changed so I could see it was working. This initially resulted in the following workflow during development:</p>
 <ol>
 <li>Make a change to the script</li>
@@ -532,7 +532,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/12/27/2014-12-27-shortening-the-feedback-path4/" data-id="ckurknzq2000iv0s1unzlwl3p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/12/27/2014-12-27-shortening-the-feedback-path4/" data-id="ckusi4djk000g00s1is8jts83" class="article-share-link">Share</a>
       
       
     </footer>
@@ -578,7 +578,7 @@ Error: Unknown Runtime Error</code></p>
 <p>My implementation was written in Javascript and HTML.</p>
 <h2 id="Check-it-out-by-visiting-this-page-and-clicking-Play"><a href="#Check-it-out-by-visiting-this-page-and-clicking-Play" class="headerlink" title="Check it out by visiting this page and clicking Play."></a><strong>Check it out by visiting <a href="http://www.dan24678/js/life-program/index.htm" target="_blank">this page</a> and clicking Play.</strong></h2><p>Here are a few interesting points about my design:</p>
 <ul>
-<li>I split the design into two modules. The <a href="https://github.com/DrLongGhost/life-program/blob/master/src/life.js" target="_blank"><strong>life</strong></a> class implements an internal state of the Life board and the <a href="https://github.com/DrLongGhost/life-program/blob/master/src/lifedom.js" target="_blank"><strong>lifedom</strong></a> class handles exposing this state via the DOM.</li>
+<li>I split the design into two modules. The <a href="https://github.com/dan24678/life-program/blob/master/src/life.js" target="_blank"><strong>life</strong></a> class implements an internal state of the Life board and the <a href="https://github.com/dan24678/life-program/blob/master/src/lifedom.js" target="_blank"><strong>lifedom</strong></a> class handles exposing this state via the DOM.</li>
 <li>The animation in <strong>lifedom</strong> works by toggling the background of the table cells on and off. Originally, the animation was so fast that I actually needed to slow it down (via setTimeout) to create a more aesthetically appealing effect. I added a slider that lets you slow down or speed up the animation by changing the value of the timeout.</li>
 <li>I added unit tests. They make sense for the <strong>life</strong> class, less so for <strong>lifedom</strong>, so I got lazy as I added various bells and whistles to the latter.</li>
 <li>Because I originally wanted tests for <strong>lifedom</strong>, it lead me to a regrettable design decision: there is HTML in the javascript. I wanted to avoid duplication and only define the HTML of the game board once. Generally speaking, there are 3 ways to do this: <ul>
@@ -595,7 +595,7 @@ Error: Unknown Runtime Error</code></p>
 <li>This wouldn&#8217;t work so I&#8217;d get more analytical and go through looking for additional optimizations</li>
 <li>I would once again fail and resort to replacing the animation with canvas as a last ditch effort to get something that looked decent. I had no idea if this would work.</li>
 </ul>
-<p>My first attempt at better performance was to replace <strong>.toggleClass(&#8216;on off&#8217;)</strong> with direct manipulation of the backgroundColor property. My rationale was that this would avoid CSS repaints and perform better. I also added some caching of which cells were &#8220;on&#8221;, which avoided a jQuery <strong>find()</strong> operation. You can see the github changeset <a href="https://github.com/DrLongGhost/life-program/commit/aa1fedf3892dfe4d9526d789b02162a0015c4aaf" target="_blank">here</a>.</p>
+<p>My first attempt at better performance was to replace <strong>.toggleClass(&#8216;on off&#8217;)</strong> with direct manipulation of the backgroundColor property. My rationale was that this would avoid CSS repaints and perform better. I also added some caching of which cells were &#8220;on&#8221;, which avoided a jQuery <strong>find()</strong> operation. You can see the github changeset <a href="https://github.com/dan24678/life-program/commit/aa1fedf3892dfe4d9526d789b02162a0015c4aaf" target="_blank">here</a>.</p>
 <p>I added some basic benchmarking to measure the impact (or lack thereof) of this change. I created a running counter of &#8220;turns per second&#8221; which turned out to be a great benchmark. The less the animation slowed down the program, the higher the turns per second would be.</p>
 <p>To measure each change, I used the R-Pentomino pattern and grabbed my benchmark at turn 150, which represents a peak for the pattern in terms of the number of enabled cells in the pattern (and consequent steep drop in animation performance on the iPad Mini). By comparing the Baseline/Control stats against a Test Run that has all the animation suppressed (such that each turn is calculated in the <strong>life</strong> class but never displayed on-screen) you can see how much the animation itself actually slows things down.</p>
 <h2 id="Baseline-Control-Stats"><a href="#Baseline-Control-Stats" class="headerlink" title="Baseline/Control Stats"></a>Baseline/Control Stats</h2><ul>
@@ -619,9 +619,9 @@ Error: Unknown Runtime Error</code></p>
 </ul>
 <p>I tried some additional optimizations which didn&#8217;t really do much:</p>
 <ul>
-<li>Instead of turning the entire board off and then turning cells on, figure out which ones should remain on and don&#8217;t turn them off in the first place: <a href="https://github.com/DrLongGhost/life-program/commit/b3b7c51c0bf1b4bdc4fc5154c915769ff85fe1f1" target="_blank">commit</a>.</li>
-<li>Keep the internal array state of <strong>life</strong> sorted so we iterate less: <a href="https://github.com/DrLongGhost/life-program/commit/173017b777608c0be70b657e865c9e35c8e51c4b#diff-75e67dc61ab59dcd658eda3bf02a2023L154" target="_blank">commit</a>.</li>
-<li>Replace <strong>document.getElementById</strong> with a cache so it only gets called the first time: <a href="https://github.com/DrLongGhost/life-program/commit/3cbb4626ef6382fe796b72df424feda311ffd5bc" target="_blank">commit</a>. This last change made a tiny difference, at least on the iPhone.</li>
+<li>Instead of turning the entire board off and then turning cells on, figure out which ones should remain on and don&#8217;t turn them off in the first place: <a href="https://github.com/dan24678/life-program/commit/b3b7c51c0bf1b4bdc4fc5154c915769ff85fe1f1" target="_blank">commit</a>.</li>
+<li>Keep the internal array state of <strong>life</strong> sorted so we iterate less: <a href="https://github.com/dan24678/life-program/commit/173017b777608c0be70b657e865c9e35c8e51c4b#diff-75e67dc61ab59dcd658eda3bf02a2023L154" target="_blank">commit</a>.</li>
+<li>Replace <strong>document.getElementById</strong> with a cache so it only gets called the first time: <a href="https://github.com/dan24678/life-program/commit/3cbb4626ef6382fe796b72df424feda311ffd5bc" target="_blank">commit</a>. This last change made a tiny difference, at least on the iPhone.</li>
 </ul>
 <h2 id="Cached-DOM-Lookups"><a href="#Cached-DOM-Lookups" class="headerlink" title="Cached DOM Lookups"></a>Cached DOM Lookups</h2><ul>
 <li>Chrome on Macbook: 18tps</li>
@@ -629,7 +629,7 @@ Error: Unknown Runtime Error</code></p>
 <li>iPad Mini (1st generation): 7tps</li>
 <li>iPhone 5S: 17tps</li>
 </ul>
-<p>At this point, I knew my only hope of getting acceptable performance would be to drop the idea of using a <table> altogether and swap out the table with a <canvas> when the user clicks Play and use that for the animation (<a href="https://github.com/DrLongGhost/life-program/commit/f24eb6da258e9dfba76af9155821636891704661" target="_blank">changeset here</a>). The results were pretty interesting and gratifying. Most importantly, it gets performance to an acceptable level on the iPad Mini.</canvas></table></p>
+<p>At this point, I knew my only hope of getting acceptable performance would be to drop the idea of using a <table> altogether and swap out the table with a <canvas> when the user clicks Play and use that for the animation (<a href="https://github.com/dan24678/life-program/commit/f24eb6da258e9dfba76af9155821636891704661" target="_blank">changeset here</a>). The results were pretty interesting and gratifying. Most importantly, it gets performance to an acceptable level on the iPad Mini.</canvas></table></p>
 <h2 id="Canvas-Animation"><a href="#Canvas-Animation" class="headerlink" title="Canvas Animation"></a>Canvas Animation</h2><ul>
 <li>Chrome on Macbook: 18tps</li>
 <li>iOS Simulator on Macbook: 19tps</li>
@@ -644,7 +644,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/06/04/2014-06-04-conways-game-of-life/" data-id="ckurknzpz000fv0s1a6l1o1sh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/06/04/2014-06-04-conways-game-of-life/" data-id="ckusi4djk000f00s1tf7vwipg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -711,7 +711,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/02/28/2014-02-28-runaway-intervals-stuck-shut-off-valves-and-nacho-cheese/" data-id="ckurknzpx000dv0s1g1d9jxwv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/02/28/2014-02-28-runaway-intervals-stuck-shut-off-valves-and-nacho-cheese/" data-id="ckusi4djl000h00s1im0sphs4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -753,14 +753,14 @@ Error: Unknown Runtime Error</code></p>
 <li>Similarly, Validanguage is bound to a form control via DOM ID. I&#8217;d like it to support using arbitrary selectors as well.</li>
 <li>Validanguage should be compatible with asynchronous loading and implemented as an AMD module.</li>
 </ul>
-<p>I&#8217;m starting with the first two bullet points. You can view my progress on <a href="https://github.com/DrLongGhost/Validanguage" target="_blank" rel="noopener">Validanguage&#8217;s github page</a>, which is finally seeing some action. I was very fortunate in my choice of JSON and HTML comments as the two methods for defining validation rules in Validanguage. Using Validanguage&#8217;s JSON API within a model on the backend (in Node.js) will work out perfectly. Validanguage middleware (installable via npm) can interpret and execute the rules to validate content posted to the server. To implement the rules client-side, custom helpers for Handlebars, Jade and other template languages can export the rules from the model into either script tags or the HTML markup in comment tags, which will play nicely with asynchronous loading. This approach works well in the CakePHP Validanguage helper I&#8217;d written years ago.</p>
+<p>I&#8217;m starting with the first two bullet points. You can view my progress on <a href="https://github.com/dan24678/Validanguage" target="_blank" rel="noopener">Validanguage&#8217;s github page</a>, which is finally seeing some action. I was very fortunate in my choice of JSON and HTML comments as the two methods for defining validation rules in Validanguage. Using Validanguage&#8217;s JSON API within a model on the backend (in Node.js) will work out perfectly. Validanguage middleware (installable via npm) can interpret and execute the rules to validate content posted to the server. To implement the rules client-side, custom helpers for Handlebars, Jade and other template languages can export the rules from the model into either script tags or the HTML markup in comment tags, which will play nicely with asynchronous loading. This approach works well in the CakePHP Validanguage helper I&#8217;d written years ago.</p>
 <p>I&#8217;m really excited to see where this takes me. If you have any interest in collaborating with me, please make sure to <a href="http://www.dan24678/contact.php" target="_blank" rel="noopener">get in touch</a>. Now that I&#8217;m doing all new development against the github project, it should be pretty easy to team up with other interested developers to start moving this forward. As of last night, I have Jasmine installed in the Node project and I&#8217;m ready to start grinding out unit tests before getting started on the fun stuff.</p>
 <p><a href="/dan24678/images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager.png"><img class="aligncenter size-large wp-image-197" alt="Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager" src="/dan24678/images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager-1024x664.png" width="640" height="415"></a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/02/11/2014-02-11-validanguage-and-node-js/" data-id="ckurknzpv000cv0s1k7z93ahv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/02/11/2014-02-11-validanguage-and-node-js/" data-id="ckusi4dji000d00s1pyf4h5sa" class="article-share-link">Share</a>
       
       
     </footer>

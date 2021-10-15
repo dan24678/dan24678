@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://yoursite.com/dan24678/images/uploads/2016/05/Insights__Campaign_JS-1024x537.png">
 <meta property="og:image" content="http://yoursite.com/dan24678/images/uploads/2016/05/campaign_js_blog-300x274.png">
 <meta property="og:image" content="http://yoursite.com/dan24678/images/uploads/2016/05/Campaign_JS_Logging_Backend_-_Engineering_-_LeadiD_Confluence-300x232.png">
-<meta property="og:updated_time" content="2021-10-14T23:27:25.417Z">
+<meta property="og:updated_time" content="2021-10-15T15:02:40.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Campaign Error Logging with New Relic Insights">
 <meta name="twitter:description" content="Several weeks ago, a project which I&amp;#8217;d worked on for the better part of two months finally went live across all LeadiD customer campaigns. In many ways, I am prouder of this project than I am of">
@@ -113,7 +113,7 @@
 <p>One of the interesting realizations we had when comparing the chart above with our &#8220;technical requirements&#8221; was that error data and logging data are fundamentally two different things. Three of the four alternatives are more directly geared toward error data than storing normal application logging data, but New Relic Insights (which is essentially a NoSQL database masquerading as a relational one) proved itself able to be molded to fit both error messages <strong>and</strong> logging data. A few of the negatives to New Relic noted in the table ended up not mattering after all:</p>
 <ul>
 <li>The 256-character limit on tag length is mitigated by simply spreading your data across multiple fields</li>
-<li>While we relinquish some control by having our error and logging data stored in New Relic&#8217;s system, the <a href="https://docs.newrelic.com/docs/insights/new-relic-insights/adding-querying-data/querying-your-data-remotely" target="_blank" rel="noopener">Insights API</a> allows integrations with this data. (I even wrote a script called <a href="https://github.com/DrLongGhost/insights2csv" target="_blank" rel="noopener">insights2csv</a> to easily pull down our data so we can import it into PostgreSQL and elsewhere)</li>
+<li>While we relinquish some control by having our error and logging data stored in New Relic&#8217;s system, the <a href="https://docs.newrelic.com/docs/insights/new-relic-insights/adding-querying-data/querying-your-data-remotely" target="_blank" rel="noopener">Insights API</a> allows integrations with this data. (I even wrote a script called <a href="https://github.com/dan24678/insights2csv" target="_blank" rel="noopener">insights2csv</a> to easily pull down our data so we can import it into PostgreSQL and elsewhere)</li>
 </ul>
 <h2 id="The-Results"><a href="#The-Results" class="headerlink" title="The Results"></a>The Results</h2><p>LeadiD now has a system that allows us to monitor in real-time the impact of our client-side releases. This enables us to monitor new versions of our javascript as it goes live across all our customer sites and compare the volume of errors thrown by the new version against the historical norm from prior versions. If we begin seeing more errors than expected for the new version, we can immediately roll back the deployment and begin digging into the logging data itself to figure out what went wrong.</p>
 <p>To this end, we can easily pull the data down from New Relic Insights to feed it into other databases to enable more advanced queries. This also facilitates resource sharing with our Data Science department, who are now able to use the data on which consumers encountered errors to exclude that problematic data from the datasets they use to train machine learning and develop scoring models.</p>
@@ -124,7 +124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/07/2016-05-07-campaign-error-logging-with-new-relic-insights/" data-id="ckurknzq3000kv0s1j2ewfhbl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/07/2016-05-07-campaign-error-logging-with-new-relic-insights/" data-id="ckusi4djp000k00s1834taarw" class="article-share-link">Share</a>
       
       
     </footer>

@@ -15,7 +15,7 @@
 <meta property="og:description" content="Several months ago I was interviewing with various companies, primarily for senior web developer roles. In total I probably spoke with just under a dozen companies. Some had phone screens and some had">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/dan24678/images/uploads/2014/06/Conway_s_Life-300x199.png">
-<meta property="og:updated_time" content="2021-10-14T23:27:25.410Z">
+<meta property="og:updated_time" content="2021-10-15T15:02:40.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Conways Game of Life">
 <meta name="twitter:description" content="Several months ago I was interviewing with various companies, primarily for senior web developer roles. In total I probably spoke with just under a dozen companies. Some had phone screens and some had">
@@ -102,7 +102,7 @@
 <p>My implementation was written in Javascript and HTML.</p>
 <h2 id="Check-it-out-by-visiting-this-page-and-clicking-Play"><a href="#Check-it-out-by-visiting-this-page-and-clicking-Play" class="headerlink" title="Check it out by visiting this page and clicking Play."></a><strong>Check it out by visiting <a href="http://www.dan24678/js/life-program/index.htm" target="_blank">this page</a> and clicking Play.</strong></h2><p>Here are a few interesting points about my design:</p>
 <ul>
-<li>I split the design into two modules. The <a href="https://github.com/DrLongGhost/life-program/blob/master/src/life.js" target="_blank"><strong>life</strong></a> class implements an internal state of the Life board and the <a href="https://github.com/DrLongGhost/life-program/blob/master/src/lifedom.js" target="_blank"><strong>lifedom</strong></a> class handles exposing this state via the DOM.</li>
+<li>I split the design into two modules. The <a href="https://github.com/dan24678/life-program/blob/master/src/life.js" target="_blank"><strong>life</strong></a> class implements an internal state of the Life board and the <a href="https://github.com/dan24678/life-program/blob/master/src/lifedom.js" target="_blank"><strong>lifedom</strong></a> class handles exposing this state via the DOM.</li>
 <li>The animation in <strong>lifedom</strong> works by toggling the background of the table cells on and off. Originally, the animation was so fast that I actually needed to slow it down (via setTimeout) to create a more aesthetically appealing effect. I added a slider that lets you slow down or speed up the animation by changing the value of the timeout.</li>
 <li>I added unit tests. They make sense for the <strong>life</strong> class, less so for <strong>lifedom</strong>, so I got lazy as I added various bells and whistles to the latter.</li>
 <li>Because I originally wanted tests for <strong>lifedom</strong>, it lead me to a regrettable design decision: there is HTML in the javascript. I wanted to avoid duplication and only define the HTML of the game board once. Generally speaking, there are 3 ways to do this: <ul>
@@ -119,7 +119,7 @@
 <li>This wouldn&#8217;t work so I&#8217;d get more analytical and go through looking for additional optimizations</li>
 <li>I would once again fail and resort to replacing the animation with canvas as a last ditch effort to get something that looked decent. I had no idea if this would work.</li>
 </ul>
-<p>My first attempt at better performance was to replace <strong>.toggleClass(&#8216;on off&#8217;)</strong> with direct manipulation of the backgroundColor property. My rationale was that this would avoid CSS repaints and perform better. I also added some caching of which cells were &#8220;on&#8221;, which avoided a jQuery <strong>find()</strong> operation. You can see the github changeset <a href="https://github.com/DrLongGhost/life-program/commit/aa1fedf3892dfe4d9526d789b02162a0015c4aaf" target="_blank">here</a>.</p>
+<p>My first attempt at better performance was to replace <strong>.toggleClass(&#8216;on off&#8217;)</strong> with direct manipulation of the backgroundColor property. My rationale was that this would avoid CSS repaints and perform better. I also added some caching of which cells were &#8220;on&#8221;, which avoided a jQuery <strong>find()</strong> operation. You can see the github changeset <a href="https://github.com/dan24678/life-program/commit/aa1fedf3892dfe4d9526d789b02162a0015c4aaf" target="_blank">here</a>.</p>
 <p>I added some basic benchmarking to measure the impact (or lack thereof) of this change. I created a running counter of &#8220;turns per second&#8221; which turned out to be a great benchmark. The less the animation slowed down the program, the higher the turns per second would be.</p>
 <p>To measure each change, I used the R-Pentomino pattern and grabbed my benchmark at turn 150, which represents a peak for the pattern in terms of the number of enabled cells in the pattern (and consequent steep drop in animation performance on the iPad Mini). By comparing the Baseline/Control stats against a Test Run that has all the animation suppressed (such that each turn is calculated in the <strong>life</strong> class but never displayed on-screen) you can see how much the animation itself actually slows things down.</p>
 <h2 id="Baseline-Control-Stats"><a href="#Baseline-Control-Stats" class="headerlink" title="Baseline/Control Stats"></a>Baseline/Control Stats</h2><ul>
@@ -143,9 +143,9 @@
 </ul>
 <p>I tried some additional optimizations which didn&#8217;t really do much:</p>
 <ul>
-<li>Instead of turning the entire board off and then turning cells on, figure out which ones should remain on and don&#8217;t turn them off in the first place: <a href="https://github.com/DrLongGhost/life-program/commit/b3b7c51c0bf1b4bdc4fc5154c915769ff85fe1f1" target="_blank">commit</a>.</li>
-<li>Keep the internal array state of <strong>life</strong> sorted so we iterate less: <a href="https://github.com/DrLongGhost/life-program/commit/173017b777608c0be70b657e865c9e35c8e51c4b#diff-75e67dc61ab59dcd658eda3bf02a2023L154" target="_blank">commit</a>.</li>
-<li>Replace <strong>document.getElementById</strong> with a cache so it only gets called the first time: <a href="https://github.com/DrLongGhost/life-program/commit/3cbb4626ef6382fe796b72df424feda311ffd5bc" target="_blank">commit</a>. This last change made a tiny difference, at least on the iPhone.</li>
+<li>Instead of turning the entire board off and then turning cells on, figure out which ones should remain on and don&#8217;t turn them off in the first place: <a href="https://github.com/dan24678/life-program/commit/b3b7c51c0bf1b4bdc4fc5154c915769ff85fe1f1" target="_blank">commit</a>.</li>
+<li>Keep the internal array state of <strong>life</strong> sorted so we iterate less: <a href="https://github.com/dan24678/life-program/commit/173017b777608c0be70b657e865c9e35c8e51c4b#diff-75e67dc61ab59dcd658eda3bf02a2023L154" target="_blank">commit</a>.</li>
+<li>Replace <strong>document.getElementById</strong> with a cache so it only gets called the first time: <a href="https://github.com/dan24678/life-program/commit/3cbb4626ef6382fe796b72df424feda311ffd5bc" target="_blank">commit</a>. This last change made a tiny difference, at least on the iPhone.</li>
 </ul>
 <h2 id="Cached-DOM-Lookups"><a href="#Cached-DOM-Lookups" class="headerlink" title="Cached DOM Lookups"></a>Cached DOM Lookups</h2><ul>
 <li>Chrome on Macbook: 18tps</li>
@@ -153,7 +153,7 @@
 <li>iPad Mini (1st generation): 7tps</li>
 <li>iPhone 5S: 17tps</li>
 </ul>
-<p>At this point, I knew my only hope of getting acceptable performance would be to drop the idea of using a <table> altogether and swap out the table with a <canvas> when the user clicks Play and use that for the animation (<a href="https://github.com/DrLongGhost/life-program/commit/f24eb6da258e9dfba76af9155821636891704661" target="_blank">changeset here</a>). The results were pretty interesting and gratifying. Most importantly, it gets performance to an acceptable level on the iPad Mini.</canvas></table></p>
+<p>At this point, I knew my only hope of getting acceptable performance would be to drop the idea of using a <table> altogether and swap out the table with a <canvas> when the user clicks Play and use that for the animation (<a href="https://github.com/dan24678/life-program/commit/f24eb6da258e9dfba76af9155821636891704661" target="_blank">changeset here</a>). The results were pretty interesting and gratifying. Most importantly, it gets performance to an acceptable level on the iPad Mini.</canvas></table></p>
 <h2 id="Canvas-Animation"><a href="#Canvas-Animation" class="headerlink" title="Canvas Animation"></a>Canvas Animation</h2><ul>
 <li>Chrome on Macbook: 18tps</li>
 <li>iOS Simulator on Macbook: 19tps</li>
@@ -168,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/06/04/2014-06-04-conways-game-of-life/" data-id="ckurknzpz000fv0s1a6l1o1sh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/06/04/2014-06-04-conways-game-of-life/" data-id="ckusi4djk000f00s1tf7vwipg" class="article-share-link">Share</a>
       
       
     </footer>
