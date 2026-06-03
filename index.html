@@ -90,11 +90,22 @@
 <p>Anyway, this is going to be a post about my new project at <a href="https://github.com/dan24678/clock-problem" target="_blank" rel="noopener">https://github.com/dan24678/clock-problem</a></p>
 <p>This project started when I noticed that one of the LEDs on my oven’s clock had broken:</p>
 <p><img src="./clock.jpg" alt="clock"></p>
+<p>I found myself wondering if the LED which broke was the one which was illuminated most frequently. After asking myself that question, I realized what a great coding challenge that would be. Unfortunately, I wasn’t interviewing any candidates as part of my job at the time, so I just kind of sat on the idea for almost a year.</p>
+<p>Then the other day, I decided to give it a try myself and coded it out. You can see my implementation on Github at the URL above. Anyway, it turns out that the LED which burned out was tied for second place in terms of most frequently used.</p>
+<p>After coding the challenge myself, I decided to have Copilot/Claude attempt it.</p>
+<p>My first prompt I didn’t ask it to generate any code, but I instead asked it for the direct outputs that I ask for as part of the challenge – namely a list of all 28 LEDs used to show the time, sorted by the number of minutes each LED is turned on in a 12-hour period. The list it output was exactly correct but was inexplicably missing one of the LEDs. Once I pointed that out, it gave me the correct, full list.</p>
+<p>There’s a valuable lesson right there:  When using AI to generate some data for you (or any task really) make sure that you have the tools to validate the response that it gives you. By receiving just the data in isolation, there was no code for me to review to double check its logic. Instead I would have been forced to take the data it presented at face value. Of course, you can always use AI to check its own work, either directly by asking it to do so, or indirectly by asking it for the same data but making it use a different approach.</p>
+<p>The next thing I tried was having Claude generate the actual code to satisfy the coding challenge. You can see the results of that here: <a href="https://github.com/dan24678/clock-problem-ai" target="_blank" rel="noopener">https://github.com/dan24678/clock-problem-ai</a></p>
+<p>It is interesting to compare the results of my manual implementation with Claude’s. The first, most glaring difference is the effort involved: my implementation took about an hour versus 2 minutes for Claude.</p>
+<p>Was my implementation any better? I actually do prefer mine. I like the abstractions that I introduced and prefer the way in which I split the display logic from the calculation logic. I was curious about which Claude preferred so I ask him to compare the two code bases. I’m not sure if this is a surprising answer or not, but he preferred his own. He noted that “clock-problem mixes display logic into the calculation path, while clock-problem-ai keeps the simulation and output more separate” – which is a statement I don’t entirely agree with.</p>
+<p>But I suppose that’s how Code Reviews often work. Two coders bringing their personal perspectives to bear against an often subjective and intangiable judgement about which of two alternatives is preferable.</p>
+<p>Anyway, see the full comparison here: <a href="https://github.com/dan24678/clock-problem-ai/blob/main/comparison.md" target="_blank" rel="noopener">https://github.com/dan24678/clock-problem-ai/blob/main/comparison.md</a></p>
+<p>The next step I intend to take with this project is leveraging Claude to add a React-based view layer to my code to simulate the look of an old wood-paneled vintage clock. I’m curious to see how easy this will be to implement and how well Claude will follow React best practices.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2026/06/03/The-Clock-Problem/" data-id="cmpyhle0g000o6ixa0agdgafs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2026/06/03/The-Clock-Problem/" data-id="cmpyj70iv000qiexagunk13wj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -194,7 +205,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/12/12/Useless-Stuff-I-Still-Know/" data-id="cmpyhle0g000q6ixa88nxd8uv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/12/12/Useless-Stuff-I-Still-Know/" data-id="cmpyj70iv000riexa1qjg8atl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -246,7 +257,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/13/2017-07-13-dont-let-your-buttons-overlap/" data-id="cmpyhle0g000n6ixa4aaih2pu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/07/13/2017-07-13-dont-let-your-buttons-overlap/" data-id="cmpyj70iu000jiexa9anw5azy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -312,7 +323,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/07/2016-05-07-campaign-error-logging-with-new-relic-insights/" data-id="cmpyhle0f000m6ixa3hntblcg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/07/2016-05-07-campaign-error-logging-with-new-relic-insights/" data-id="cmpyj70iv000piexa7webeh78" class="article-share-link">Share</a>
       
       
     </footer>
@@ -371,7 +382,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/17/2016-04-17-ms-7352-manual/" data-id="cmpyhle0g000p6ixa6wkrei80" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/17/2016-04-17-ms-7352-manual/" data-id="cmpyj70iu000liexa9v8j15ph" class="article-share-link">Share</a>
       
       
     </footer>
@@ -421,7 +432,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/21/2015-11-21-connection-management/" data-id="cmpyhle0e000k6ixa2k5pb85e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/21/2015-11-21-connection-management/" data-id="cmpyj70iu000kiexac3if6mgk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -477,7 +488,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/15/food-food/" data-id="cmpyhle0e000j6ixab3urdmw9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/15/food-food/" data-id="cmpyj70is000giexa6kw1fa5p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -574,7 +585,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/12/27/2014-12-27-shortening-the-feedback-path4/" data-id="cmpyhle0d000g6ixae1e9ar5m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/12/27/2014-12-27-shortening-the-feedback-path4/" data-id="cmpyj70iv000miexah7wzdpo3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -686,7 +697,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/06/04/2014-06-04-conways-game-of-life/" data-id="cmpyhle0d000i6ixa7amm2nsl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/06/04/2014-06-04-conways-game-of-life/" data-id="cmpyj70is000hiexa9s9y8hid" class="article-share-link">Share</a>
       
       
     </footer>
@@ -753,7 +764,7 @@ Error: Unknown Runtime Error</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/02/28/2014-02-28-runaway-intervals-stuck-shut-off-valves-and-nacho-cheese/" data-id="cmpyhle0d000f6ixa8c1o55t6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/02/28/2014-02-28-runaway-intervals-stuck-shut-off-valves-and-nacho-cheese/" data-id="cmpyj70iv000niexa9l84aw06" class="article-share-link">Share</a>
       
       
     </footer>
