@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
   <meta charset="utf-8">
   
 
@@ -11,9 +11,9 @@
 <meta property="og:title" content="Dan&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Dan&#39;s Blog">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Dan Deming">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dan&#39;s Blog">
   
     <link rel="alternate" href="/dan24678/atom.xml" title="Dan&#39;s Blog" type="application/atom+xml">
   
@@ -23,9 +23,11 @@
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-  <link rel="stylesheet" href="/dan24678/css/style.css">
-</head>
-</html>
+  
+<link rel="stylesheet" href="/dan24678/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
 <body>
   <div id="container">
     <div id="wrap">
@@ -62,6 +64,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2014-02-11-validanguage-and-node-js" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/dan24678/2014/02/11/2014-02-11-validanguage-and-node-js/" class="article-date">
+  <time datetime="2014-02-11T13:57:11.000Z" itemprop="datePublished">2014-02-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/dan24678/2014/02/11/2014-02-11-validanguage-and-node-js/">Validanguage and Node.js</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>It&#8217;s been over 2 years since I last updated my <a href="http://www.dan24678/validanguage.php" target="_blank" rel="noopener">Validanguage</a> javascript library. In that time, several interesting trends emerged in the world of Javascript. One of them is the introduction of HTML 5&#8217;s <a href="http://diveintohtml5.info/forms.html" target="_blank" rel="noopener">form validation support</a>. Without getting into too much detail, I feel that HTML 5&#8217;s built-in validation is a good fit for many applications, but other sites will likely still benefit from a more full-featured form validation library. The second and third major trends in the past couple years has been the rise of Node.js and single-page web apps.</p>
+<p>Validanguage was designed for the Web 2.0 world: websites that still use standard forms but augment them with occasional ajax requests to fetch supplemental data. In 2014, however, the bleeding edge has shifted to implementing entire sites as a single app within a framework such as <a href="http://backbonejs.org/" target="_blank" rel="noopener">Backbone.js</a>, <a href="http://emberjs.com/" target="_blank" rel="noopener">Ember</a> or <a href="http://angularjs.org/" target="_blank" rel="noopener">AngularJS</a>; and, often, doing away with forms entirely.</p>
+<h3 id="Tentative-Roadmap"><a href="#Tentative-Roadmap" class="headerlink" title="Tentative Roadmap"></a>Tentative Roadmap</h3><ul>
+<li>Add a shitload of unit tests via Node.js/Grunt/Jasmine/PhantomJS. Manual testing of new versions of Validanguage is excruciating and I need to automate this if I&#8217;m ever going to make progress on any eventual refactoring.</li>
+<li>To fit within the context of a Node.js-based single-page web app, validation rules should be defined once (in a model). This model will then expose the validation rules for use on both the server and client. If the validation needs to change, you change it once in the model and both server and client are updated.</li>
+<li>My vision for future versions of Validanguage is for it to retain its non-reliance on a particular framework. To the extent that it can be easily integrated into existing libraries or frameworks, I&#8217;ll see what I can do, but I&#8217;m not intending it to ever <strong>require</strong> Node.js, jQuery, Angular, etc.</li>
+<li>Currently, Validanguage relies on form tags. I&#8217;d like to do away with this reliance and allow validation behavior to be defined on arbitrary &#8220;groups&#8221; of DOM elements/form controls.</li>
+<li>Similarly, Validanguage is bound to a form control via DOM ID. I&#8217;d like it to support using arbitrary selectors as well.</li>
+<li>Validanguage should be compatible with asynchronous loading and implemented as an AMD module.</li>
+</ul>
+<p>I&#8217;m starting with the first two bullet points. You can view my progress on <a href="https://github.com/dan24678/Validanguage" target="_blank" rel="noopener">Validanguage&#8217;s github page</a>, which is finally seeing some action. I was very fortunate in my choice of JSON and HTML comments as the two methods for defining validation rules in Validanguage. Using Validanguage&#8217;s JSON API within a model on the backend (in Node.js) will work out perfectly. Validanguage middleware (installable via npm) can interpret and execute the rules to validate content posted to the server. To implement the rules client-side, custom helpers for Handlebars, Jade and other template languages can export the rules from the model into either script tags or the HTML markup in comment tags, which will play nicely with asynchronous loading. This approach works well in the CakePHP Validanguage helper I&#8217;d written years ago.</p>
+<p>I&#8217;m really excited to see where this takes me. If you have any interest in collaborating with me, please make sure to <a href="http://www.dan24678/contact.php" target="_blank" rel="noopener">get in touch</a>. Now that I&#8217;m doing all new development against the github project, it should be pretty easy to team up with other interested developers to start moving this forward. As of last night, I have Jasmine installed in the Node project and I&#8217;m ready to start grinding out unit tests before getting started on the fun stuff.</p>
+<p><a href="/dan24678/images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager.png"><img class="aligncenter size-large wp-image-197" alt="Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager" src="/dan24678/images/uploads/2014/02/Validanguage_—_bash_—_78×22_and_Oracle_VM_VirtualBox_Manager-1024x664.png" width="640" height="415"   /></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/02/11/2014-02-11-validanguage-and-node-js/" data-id="cmpycn7fe000erbxa91bnfvb0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2014-02-09-ubuntu-ink-levels" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/dan24678/2014/02/09/2014-02-09-ubuntu-ink-levels/" class="article-date">
@@ -94,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/02/09/2014-02-09-ubuntu-ink-levels/" data-id="ckusi4djn000i00s1ryw1pjfs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/02/09/2014-02-09-ubuntu-ink-levels/" data-id="cmpycn7fd000crbxa5ofp0m7z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -141,11 +192,11 @@
 <p>It does have its failings, however. For awhile, its stability was so poor that I affectionately referred to it as Craptana. With the release of version 3.0, however, stability is generally rock solid (apart from the occasional, interminable &#8220;Building Workspace&#8221; loading message).</p>
 <p>My main beef with Aptana at this point is the bizarre window management scheme. Aptana lets you detach windows, move them around and switch between some sort of &#8220;tiled mode&#8221; and &#8220;overlay mode&#8221;. The problem is that I don&#8217;t want any of this functionality and when I accidentally detach something, I can&#8217;t always figure out how to put it back. This is best illustrated with some screenshots.</p>
 <p>Here is how Aptana looks when it&#8217;s behaving itself:</p>
-<p style="text-align: center;"><br>  <a href="/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git.png"><a href="/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git.png"><img class="wp-image-150 aligncenter" alt="Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git" src="/dan24678/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-1024x794.png" width="614" height="476"></a></a><br></p>
+<p style="text-align: center;"><br>  <a href="/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git.png"><a href="/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git.png"><img class="wp-image-150 aligncenter" alt="Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git" src="/dan24678/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-1024x794.png" width="614" height="476"  /></a></a><br></p>
 
 <p>&nbsp;</p>
 <p>But if I start playing with the windows and moving shit around, I eventually end up with this:</p>
-<p style="text-align: center;"><br>  <a href="/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-15.png"><img class="aligncenter  wp-image-151" alt="Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-15" src="/dan24678/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-15-1024x796.png" width="614" height="478"></a><br></p>
+<p style="text-align: center;"><br>  <a href="/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-15.png"><img class="aligncenter  wp-image-151" alt="Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-15" src="/dan24678/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-15-1024x796.png" width="614" height="478"  /></a><br></p>
 
 <p>&nbsp;</p>
 <p>Every time I get fed up with Aptana and am tempted to make the switch to Sublime Text, it seems to sense my frustration and begins behaving itself. It must have learned that trick from my daughter.</p>
@@ -154,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/02/02/2014-02-02-why-i-use-aptana/" data-id="ckusi4djd000a00s1pi9eocqs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/02/02/2014-02-02-why-i-use-aptana/" data-id="cmpycn7fe000grbxahrso83en" class="article-share-link">Share</a>
       
       
     </footer>
@@ -194,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/01/28/2014-01-28-updates-coming-soon/" data-id="ckusi4djg000c00s1cgop9ohi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2014/01/28/2014-01-28-updates-coming-soon/" data-id="cmpycn7fd0008rbxabxe70fkm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -270,24 +321,24 @@
 </ul>
 <h3 id="Chili-Recipe"><a href="#Chili-Recipe" class="headerlink" title="Chili Recipe"></a>Chili Recipe</h3><p>First, you want to prepare the dried chilis.  One thing to note when handling dried chilis:  Your hands can and will be coated in capsaicin (the active ingredient in chilis that give them their heat).  If you then touch your eyes without thinking, you are in for a bad time.  For this reason, I always opt to wear disposable latex or neoprene gloves for the first part of the recipe.  That way, I can remove the gloves and wash my hands once and I&#8217;m good.  If you aren&#8217;t wearing gloves, you&#8217;ll want wash your hands very, very thoroughly.  These chilis <strong>will</strong> hurt you.</p>
 <p>Anyway, rinse the chilis in water then arrange them on a couple cookie sheets and toast them in the oven at 300 degrees for about 5 to 10 minutes to help bring out the flavor.  You should be able to smell them in the oven when they&#8217;re ready to come out.</p>
-<p><a href="/dan24678/images/uploads/2011/05/DSC00896.jpg"><img class="alignnone size-medium wp-image-62" title="DSC00896" src="/dan24678/images/uploads/2011/05/DSC00896-300x225.jpg" alt="Dried chilis" width="300" height="225"></a></p>
+<p><a href="/dan24678/images/uploads/2011/05/DSC00896.jpg"><img class="alignnone size-medium wp-image-62" title="DSC00896" src="/dan24678/images/uploads/2011/05/DSC00896-300x225.jpg" alt="Dried chilis" width="300" height="225"  /></a></p>
 <p>Next, you will break apart the chili peppers by hand, <strong>while wearing gloves</strong>.  Place the skin of the chilis in a bowl and discard the seeds and the veins from the inside guts of the chilis.  This lets you get a lot of the flavor from the chilis (the skin) while limiting the amount of heat (seeds and veins).  When you&#8217;re done, you will have a nice bowl of dried chili skins:</p>
-<p><a href="/dan24678/images/uploads/2011/05/DSC00897.jpg"><img class="alignnone size-medium wp-image-63" title="DSC00897" src="/dan24678/images/uploads/2011/05/DSC00897-300x225.jpg" alt="chili skins" width="300" height="225"></a></p>
+<p><a href="/dan24678/images/uploads/2011/05/DSC00897.jpg"><img class="alignnone size-medium wp-image-63" title="DSC00897" src="/dan24678/images/uploads/2011/05/DSC00897-300x225.jpg" alt="chili skins" width="300" height="225"  /></a></p>
 <p>You can discard your gloves now.  The next step is to reconstitute the chilis.  Prepare a sauce pan with the dried chilis, 2 cups of stock or beef broth/beer mixture and the crushed tomatoes.  Bring the mixture to a boil then immediately turn it down to a bare simmer and simmer for 15 minutes.  Then remove this mixture from the stove top and let sit, covered, for 15 minutes.</p>
 <p>Next, you will transfer this mixture to a blender and puree it.  Most likely, you will want to fill up the blender 2/3 to the top to leave plenty of room at the top and blend it in two batches.  Don&#8217;t try to fit it all in 1 batch or it will overflow.  When you&#8217;re done, give it a taste; the flavor of the chilis is amazing:</p>
-<p><a href="/dan24678/images/uploads/2011/05/DSC00901.jpg"><img class="alignnone size-medium wp-image-64" title="DSC00901" src="/dan24678/images/uploads/2011/05/DSC00901-300x225.jpg" alt width="300" height="225"></a></p>
+<p><a href="/dan24678/images/uploads/2011/05/DSC00901.jpg"><img class="alignnone size-medium wp-image-64" title="DSC00901" src="/dan24678/images/uploads/2011/05/DSC00901-300x225.jpg" alt="" width="300" height="225"  /></a></p>
 <p>On to the meat.  The last time I made this recipe, I used stew beef and ground beef from a local farmer&#8217;s market:</p>
-<p><a href="/dan24678/images/uploads/2011/05/DSC00859.jpg"><img class="alignnone size-medium wp-image-70" title="DSC00859" src="/dan24678/images/uploads/2011/05/DSC00859-300x225.jpg" alt width="300" height="225"></a></p>
+<p><a href="/dan24678/images/uploads/2011/05/DSC00859.jpg"><img class="alignnone size-medium wp-image-70" title="DSC00859" src="/dan24678/images/uploads/2011/05/DSC00859-300x225.jpg" alt="" width="300" height="225"  /></a></p>
 <p>The trick with the stew beef is that you want to cut it into very, very small pieces &#8212; as small as your patience allows.  I guess there is an element of personal preference here as some folks may like bigger chunks of meat in their chili.  Personally, I like the texture of the combo of the ground beef with the tiny beef chunks:</p>
-<p><a href="/dan24678/images/uploads/2011/05/DSC00860.jpg"><img class="alignnone size-medium wp-image-73" title="DSC00860" src="/dan24678/images/uploads/2011/05/DSC00860-300x225.jpg" alt width="300" height="225"></a></p>
+<p><a href="/dan24678/images/uploads/2011/05/DSC00860.jpg"><img class="alignnone size-medium wp-image-73" title="DSC00860" src="/dan24678/images/uploads/2011/05/DSC00860-300x225.jpg" alt="" width="300" height="225"  /></a></p>
 <p>Next, brown the meat in a skillet with 2T of olive oil. It doesn&#8217;t need to be well-done, medium is fine:</p>
-<p><a href="/dan24678/images/uploads/2011/05/DSC00900.jpg"><img class="alignnone size-medium wp-image-74" title="DSC00900" src="/dan24678/images/uploads/2011/05/DSC00900-300x225.jpg" alt width="300" height="225"></a></p>
+<p><a href="/dan24678/images/uploads/2011/05/DSC00900.jpg"><img class="alignnone size-medium wp-image-74" title="DSC00900" src="/dan24678/images/uploads/2011/05/DSC00900-300x225.jpg" alt="" width="300" height="225"  /></a></p>
 <p>You&#8217;ll want to use a large stock pot for cooking the chili in.  Set the meat aside and cook the onions, jalapenos and garlic with 4T of olive oil in the stock pot:</p>
-<p><a href="/dan24678/images/uploads/2011/05/DSC00905.jpg"><img class="alignnone size-medium wp-image-76" title="DSC00905" src="/dan24678/images/uploads/2011/05/DSC00905-300x225.jpg" alt width="300" height="225"></a></p>
+<p><a href="/dan24678/images/uploads/2011/05/DSC00905.jpg"><img class="alignnone size-medium wp-image-76" title="DSC00905" src="/dan24678/images/uploads/2011/05/DSC00905-300x225.jpg" alt="" width="300" height="225"  /></a></p>
 <p>Once the vegetables are translucent, add the cooked meat, the chili/tomato mixture and the 4 cups of stock (or 2 cups broth/2 cups beer mix).  Cook this for 2 hours or so on low heat. Then add the spices and cook another 2 -3 hours.  If you are adding the unsweetend chocolate, add it an hour before you expect the chili to be done.</p>
 <p>As you cook the chili over the course of the 4 &#8211; 5 hours, it will thicken and become less soup-like and get a much thicker consistency.  If you find it has thickened too much and you want to cook it a little more, you can add more liquid in the form of water, beer or beef stock.  Conversely, if you find when you are done that it isn&#8217;t thick enough for your liking, you can add some corn starch or masa harina dissolved in water to thicken it up.</p>
 <p>Serve the chili with the following accompaniments:  black beans (see below for the recipe), cheddar cheese, crackers and diced onions or jalapenos.  Bon appetit:</p>
-<p><a href="/dan24678/images/uploads/2011/05/DSC009071.jpg"><img class="alignnone size-medium wp-image-78" title="DSC00907" src="/dan24678/images/uploads/2011/05/DSC009071-300x225.jpg" alt width="300" height="225"></a></p>
+<p><a href="/dan24678/images/uploads/2011/05/DSC009071.jpg"><img class="alignnone size-medium wp-image-78" title="DSC00907" src="/dan24678/images/uploads/2011/05/DSC009071-300x225.jpg" alt="" width="300" height="225"  /></a></p>
 <h3 id="Colonel-T-8217-s-Black-Beans-Recipe"><a href="#Colonel-T-8217-s-Black-Beans-Recipe" class="headerlink" title="Colonel T&#8217;s Black Beans Recipe"></a>Colonel T&#8217;s Black Beans Recipe</h3><ol>
 <li>Soaking water will be used for cooking.  Beans should be cooked in a 5-qt pot.  When ready to cook the beans, put the bay leaf, onion and pepper halves in pot, cover, bring to a boil, reduce immediately to a slow simmer and cook till tender but not mushy &#8212; 2.5 to 3.5 hours.</li>
 <li>When beans are cooked, remove and discard pepper and onion.  Drain beans and reserve 2 1/4 cups of bean liquid.  Put drained beans back in stew pot.  Meanwhile, in a 2qt saucepan, heat 5T of olive oil, add chopped onions, peppers and garlic and cook until onions are translucent. When vegetables are soft, add the spices (except the salt).  Stir and cook for 5 minutes then add the tomato paste and 1/4 cup of the reserved bean liquid.  Mix well, bring back to a simmer and cook for 5 minutes.</li>
@@ -299,7 +350,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2011/05/01/2011-05-01-colonel-tituss-texas-longhorn-chili/" data-id="ckusi4djj000e00s1fjflva29" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2011/05/01/2011-05-01-colonel-tituss-texas-longhorn-chili/" data-id="cmpycn7fd000brbxa12wv92fn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -467,11 +518,11 @@ dpdaction=clear</pre>
 <p><br>  That&#8217;s about it.  Here&#8217;s some other links that proved useful while I was hashing my way through this:<br></p>
 
 
-<ul><br>  <li><br>    <a href="http://nielspeen.com/blog/2009/04/linux-l2tpipsec-with-iphone-and-mac-osx-clients/" target="_blank" rel="noopener">http://nielspeen.com/blog/2009/04/linux-l2tpipsec-with-iphone-and-mac-osx-clients/</a><br>  </li><br><br><br>  <li><br>    <a href="https://lists.openswan.org/pipermail/users/" target="_blank" rel="noopener">OpenSwan Users Forum</a> for posting questions/help requests<br>  </li><br><br></ul></pre>
+<ul><br>  <li><br>    <a href="http://nielspeen.com/blog/2009/04/linux-l2tpipsec-with-iphone-and-mac-osx-clients/" target="_blank" rel="noopener">http://nielspeen.com/blog/2009/04/linux-l2tpipsec-with-iphone-and-mac-osx-clients/</a><br>  </li><br><br><br>  <li><br>    <a href="https://lists.openswan.org/pipermail/users/" target="_blank" rel="noopener">OpenSwan Users Forum</a> for posting questions/help requests<br>  </li><br><br></ul>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2011/04/22/2011-04-22-trying-to-get-iphone-to-ubuntu-vpn-working-with-openswan/" data-id="ckusi4djc000900s1w3iv6qr0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2011/04/22/2011-04-22-trying-to-get-iphone-to-ubuntu-vpn-working-with-openswan/" data-id="cmpycn7fc0006rbxaabcr7570" class="article-share-link">Share</a>
       
       
     </footer>
@@ -527,7 +578,7 @@ dpdaction=clear</pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2009/12/12/2009-12-12-now-in-hd/" data-id="ckusi4djf000b00s16d4s2sf1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2009/12/12/2009-12-12-now-in-hd/" data-id="cmpycn7fd0009rbxa678c1x7r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -567,7 +618,7 @@ dpdaction=clear</pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2009/10/11/2009-10-11-new-validanguage-website/" data-id="ckusi4djb000800s14z0yqhc9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2009/10/11/2009-10-11-new-validanguage-website/" data-id="cmpycn7fc0005rbxaetzrebaf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -609,7 +660,7 @@ dpdaction=clear</pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2008/06/29/2008-06-29-kruger-lives/" data-id="ckusi4djb000700s1ia38sywf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2008/06/29/2008-06-29-kruger-lives/" data-id="cmpycn7fd000drbxa6yo14e67" class="article-share-link">Share</a>
       
       
     </footer>
@@ -643,7 +694,7 @@ dpdaction=clear</pre>
       
         <p>I cannot live without copy and paste buttons on my mouse.</p>
 <p>When I&#8217;m working on Web Development, I find myself constantly copying and pasting text and being able to do it from my mouse is a convenience I have grown to depend on. Copy and Paste are also useful in general computing terms, when moving files around in a window manager. The mouse I use at home and at work is the Intellimouse Optical.</p>
-<p><img src="http://www.activewin.com/reviews/hardware/mice/optical/images/mouse1.jpg" alt="Intellimouse Optical" align="left" height="192" width="198"> </p>
+<p><img src="http://www.activewin.com/reviews/hardware/mice/optical/images/mouse1.jpg" alt="Intellimouse Optical" align="left" height="192" width="198" /> </p>
 <p><strong>Intellimouse Optical</strong>:<br>Featuring five buttons,<br>including a mouse wheel button</p>
 <p>I have had this mouse for about 5 years now and it is very solid and dependable. Microsoft may not even make it anymore, but I have one for home and one for work, and judging by the past 5 years, they aren&#8217;t going to break anytime soon.</p>
 <p>I have the left-side button mapped to paste (which I can trigger with my thumb) and the mouse wheel button mapped to paste. Since it is all too easy to accidentally trigger the mouse wheel button, I opted to map it to paste, which is non-destructive. I keep the right-side button mapped to delete, which is also extremely useful.</p>
@@ -683,49 +734,7 @@ b:7</tt></tt></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2008/04/28/2008-04-28-copy-and-paste-buttons-in-linux-with-my-intellimouse-optical/" data-id="ckusi4dja000600s12blnj5r9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2008-04-12-xbmc-rocks-the-hizzy" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/dan24678/2008/04/12/2008-04-12-xbmc-rocks-the-hizzy/" class="article-date">
-  <time datetime="2008-04-12T14:00:18.000Z" itemprop="datePublished">2008-04-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/dan24678/2008/04/12/2008-04-12-xbmc-rocks-the-hizzy/">XBMC Rocks the Hizzy</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>I spent last weekend tagging my mp3s so I could set up some custom playlists in <a href="http://xbmc.org" target="_blank">Xbox Media Center</a>. We have 2 Xboxes in the house (one in the living room and one in the exercise room in the basement), both of which are connected wirelessly to my Windows PC in the office where I have about 80 gigs of mp3s on a shared harddrive.</p>
-<p>XBMC has quite a number of kick-ass features, one of which is the ability to set up smart playlists using the id3 tags on your mp3s. My plan was to tag my mp3s by genre and include a &#8220;party&#8221; genre so I could setup a playlist of all party-friendly, danceable stuff.</p>
-<p>I ran into some issues when I was trying to get all my party songs to show up in the playlist, so I posted to the XBMC Forum asking for help. Within an hour, one of the XBMC developers had replied to my post. After a little digging, he verified that I had located a bug with XBMC&#8217;s support for multiple genres in smart playlists and he was able to commit a patch to the SVN trunk and offer me a couple suggestions for a temporary workaround.</p>
-<p>Needless to say, I was pretty damn impressed with the response I&#8217;d gotten to my forum post. Xbox Media Center is the reason why I&#8217;d never trade my Xbox for an Xbox 360 and with the project still under active development, it&#8217;s only gonna keep getting better. I&#8217;m seriously considering buying a third Xbox for the bedroom, so I can watch my downloaded Alf xvids while laying in bed.</p>
-<p>I&#8217;m just kidding about Alf.</p>
-<p>Or am I?</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2008/04/12/2008-04-12-xbmc-rocks-the-hizzy/" data-id="ckusi4dj6000200s1i9a95tqa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2008/04/28/2008-04-28-copy-and-paste-buttons-in-linux-with-my-intellimouse-optical/" data-id="cmpycn7fb0004rbxaf3z1b7on" class="article-share-link">Share</a>
       
       
     </footer>
@@ -739,7 +748,7 @@ b:7</tt></tt></pre>
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/dan24678/">&laquo; Prev</a><a class="page-number" href="/dan24678/">1</a><span class="page-number current">2</span><a class="page-number" href="/dan24678/page/3/">3</a><a class="extend next" rel="next" href="/dan24678/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/dan24678/">&amp;laquo; Prev</a><a class="page-number" href="/dan24678/">1</a><span class="page-number current">2</span><a class="page-number" href="/dan24678/page/3/">3</a><a class="extend next" rel="next" href="/dan24678/page/3/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -765,7 +774,7 @@ b:7</tt></tt></pre>
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2011/05/">May 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2009/12/">December 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2009/10/">October 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2008/03/">March 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2008/02/">February 2008</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2026/06/">June 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2014/06/">June 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2014/02/">February 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2011/05/">May 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2011/04/">April 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2009/12/">December 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2009/10/">October 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2008/06/">June 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2008/04/">April 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2008/03/">March 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/dan24678/archives/2008/02/">February 2008</a></li></ul>
     </div>
   </div>
 
@@ -776,6 +785,10 @@ b:7</tt></tt></pre>
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/dan24678/2026/06/03/The-Clock-Problem/">The Clock Problem</a>
+          </li>
         
           <li>
             <a href="/dan24678/2019/12/12/Useless-Stuff-I-Still-Know/">Useless Stuff I Still Know</a>
@@ -793,10 +806,6 @@ b:7</tt></tt></pre>
             <a href="/dan24678/2016/04/17/2016-04-17-ms-7352-manual/">MS-7352 Manual</a>
           </li>
         
-          <li>
-            <a href="/dan24678/2015/11/21/2015-11-21-connection-management/">Connection Management</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -809,7 +818,7 @@ b:7</tt></tt></pre>
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2021 Dan Deming<br>
+      &copy; 2026 Dan Deming<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
@@ -827,11 +836,17 @@ b:7</tt></tt></pre>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/dan24678/fancybox/jquery.fancybox.css">
-  <script src="/dan24678/fancybox/jquery.fancybox.pack.js"></script>
+  
+<link rel="stylesheet" href="/dan24678/fancybox/jquery.fancybox.css">
+
+  
+<script src="/dan24678/fancybox/jquery.fancybox.pack.js"></script>
+
+
 
 
 <script src="/dan24678/js/script.js"></script>
+
 
 
 
