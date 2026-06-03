@@ -12,6 +12,8 @@ npm install
 
 This installs Hexo and the plugins listed in `package.json`.
 
+ENSURE YOU ARE WORKING IN THE master BRANCH
+
 ## 2. Create a new post
 
 You can create a new post using Hexo or by adding a Markdown file manually.
@@ -39,7 +41,7 @@ Include front matter at the top, for example:
 title: "Your Post Title"
 date: 2026-06-01 10:00:00
 categories: Uncategorized
-tags:
+layout: post
 ---
 ```
 
@@ -82,19 +84,12 @@ That command pushes the generated site to the remote repository defined in `_con
 After adding the new post and verifying everything, commit your source changes.
 
 ```bash
-git add .
-git commit -m "Add new blog post: Your Post Title"
+git add . ; git commit -m "Working on new blog post" ; git push
 ```
 
 Then push your source repository branch.
 
-If you are on the `gh-pages` branch, use:
-
-```bash
-git push origin gh-pages
-```
-
-If your content lives on another branch, replace `gh-pages` with that branch name.
+If you are on the `gh-pages` branch, DONT BE. Editing the gh-pages branch directly is a bad idea.
 
 ## Notes
 

@@ -6,4 +6,6 @@ New first post in 9 years... Ain't that something?
 
 Anyway, this is going to be a post about my new project at https://github.com/dan24678/clock-problem
 
-This project started when I noticed that one of the LEDs on my oven's clock had broken.
+This project started when I noticed that one of the LEDs on my oven's clock had broken:
+
+[<img class="aligncenter size-medium wp-image-336" alt="clock" src="/dan24678/images/clock.jpg" width="300" height="152" />](/dan24678/images/clock.jpg)
