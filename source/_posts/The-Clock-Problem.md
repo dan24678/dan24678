@@ -6,4 +6,4 @@ New first post in 9 years... Ain't that something?
 
 Anyway, this is going to be a post about my new project at https://github.com/dan24678/clock-problem
 
-For now, check out that link for details until I finish building out this blog post.
+This project started when I noticed that one of the LEDs on my oven's clock had broken.
