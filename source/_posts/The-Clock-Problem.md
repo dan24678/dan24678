@@ -8,4 +8,5 @@ Anyway, this is going to be a post about my new project at https://github.com/da
 
 This project started when I noticed that one of the LEDs on my oven's clock had broken:
 
-[<img class="aligncenter size-medium wp-image-336" alt="clock" src="/dan24678/images/uploads/clock.jpg" width="300" height="152" />](/dan24678/images/uploads/clock.jpg)
+![clock](./clock.jpg)
+
