@@ -10,7 +10,7 @@ Here were the original screens. They show **Step 1** and **Step 2** of a &#8220;
   <strong>Step 1</strong>
 </p>
 
-[<img class="aligncenter size-medium wp-image-336" alt="VoiceVibes 2" src="/images/uploads/2017/07/VoiceVibes-2-300x152.png" width="300" height="152" srcset="/images/uploads/2017/07/VoiceVibes-2-300x152.png 300w, /images/uploads/2017/07/VoiceVibes-2.png 768w" sizes="(max-width: 300px) 100vw, 300px" />](/images/uploads/2017/07/VoiceVibes-2.png)
+[<img class="aligncenter size-medium wp-image-336" alt="VoiceVibes 2" src="/dan24678/images/uploads/2017/07/VoiceVibes-2-300x152.png" width="300" height="152" />](/dan24678/images/uploads/2017/07/VoiceVibes-2.png)
 
 &nbsp;
 
@@ -18,7 +18,7 @@ Here were the original screens. They show **Step 1** and **Step 2** of a &#8220;
   <strong>Step 2</strong>
 </p>
 
-[<img class="aligncenter size-medium wp-image-337" alt="VoiceVibes 3" src="/images/uploads/2017/07/VoiceVibes-3-300x169.png" width="300" height="169" srcset="/images/uploads/2017/07/VoiceVibes-3-300x169.png 300w, /images/uploads/2017/07/VoiceVibes-3.png 339w" sizes="(max-width: 300px) 100vw, 300px" />](/images/uploads/2017/07/VoiceVibes-3.png)
+[<img class="aligncenter size-medium wp-image-337" alt="VoiceVibes 3" src="/dan24678/images/uploads/2017/07/VoiceVibes-3-300x169.png" width="300" height="169"  />](/dan24678/images/uploads/2017/07/VoiceVibes-3.png)
 
 &nbsp;
 
@@ -32,4 +32,4 @@ Another solution is to use Javascript to detect and suppress the second &#8220;h
 
 In the end, I tweaked the layout on the **Step 1** design to push the button further down so it no longer overlaps the other button in terms of screen position:
 
-[<img class="aligncenter size-medium wp-image-338" alt="VoiceVibes" src="/images/uploads/2017/07/VoiceVibes-300x193.png" width="300" height="193" srcset="/images/uploads/2017/07/VoiceVibes-300x193.png 300w, /images/uploads/2017/07/VoiceVibes.png 379w" sizes="(max-width: 300px) 100vw, 300px" />](/images/uploads/2017/07/VoiceVibes.png)
+[<img class="aligncenter size-medium wp-image-338" alt="VoiceVibes" src="/dan24678/images/uploads/2017/07/VoiceVibes-300x193.png" width="300" height="193"  />](/dan24678/images/uploads/2017/07/VoiceVibes.png)

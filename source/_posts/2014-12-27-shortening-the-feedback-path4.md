@@ -72,7 +72,7 @@ Manually clicking the refresh button on the browser is for suckers. There are a
   * [grunt-contrib-watch](https://www.npmjs.com/package/grunt-contrib-watch): A Grunt plugin for directory watching. A great option even for non-javascript projects
   * [Tincr](http://tin.cr/): A chrome extension for auto-updating JS/CSS that&#8217;s been changed without needing a full-page reload
   * [fswatch](https://github.com/emcrisostomo/fswatch): A general purpose solution that lets you trigger directory monitoring on-the-fly.
-  * [reload.sh](https://github.com/DrLongGhost/reload): A shell script written by yours truly. It is basically a wrapper around fswatch that lets you specify defaults and has added support for triggering browser reloads on OS-X.
+  * [reload.sh](https://github.com/dan24678/reload): A shell script written by yours truly. It is basically a wrapper around fswatch that lets you specify defaults and has added support for triggering browser reloads on OS-X.
 
 One interesting aside is I&#8217;ve noticed that none of these solutions (even mine) really give me exactly what I want. Sometimes the detection of when a file has changed is slow and I&#8217;m left staring at the browser waiting on it to pick up the change, until I get frustrated and click it myself (thus defeating the purpose of the directory monitoring)*. Other times I will save a file and I _won&#8217;t_ want it to refresh the browser. Or I&#8217;ll save 5 files and only want a refresh on the last save. Still, it&#8217;s worth it for those times when I make a big change then switch over to my browser and the refreshed code is there waiting for me.
 
@@ -80,7 +80,7 @@ One interesting aside is I&#8217;ve noticed that none of these solutions (even m
 
 ## Case Study: Writing reload.sh
 
-I wrote [reload.sh](https://github.com/DrLongGhost/reload) because I wanted to be able to set up browser reloading on-the-fly without needing to configure a Gruntfile. Also, it was a great excuse to write something in bash. My process for writing the script is itself illustrative of several steps I took to shorten the path to feedback.
+I wrote [reload.sh](https://github.com/dan24678/reload) because I wanted to be able to set up browser reloading on-the-fly without needing to configure a Gruntfile. Also, it was a great excuse to write something in bash. My process for writing the script is itself illustrative of several steps I took to shorten the path to feedback.
 
 While it would have been ideal to write tests for reload.sh then use it to trigger tests against a separate instance of itself, this wasn&#8217;t to be. This is unfortunate as it would&#8217;ve been super-meta to be able to use this script on itself. Instead, I opted to simply have it execute an &#8220;echo foo&#8221; when a file changed so I could see it was working. This initially resulted in the following workflow during development:
 

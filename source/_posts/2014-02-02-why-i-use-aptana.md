@@ -26,7 +26,7 @@ My main beef with Aptana at this point is the bizarre window management scheme. 
 Here is how Aptana looks when it&#8217;s behaving itself:
 
 <p style="text-align: center;">
-  <a href="/images/uploads/2014/02/Web_-_drlongghost_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git.png"><a href="/images/uploads/2014/02/Web_-_drlongghost_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git.png"><img class="wp-image-150 aligncenter" alt="Web_-_drlongghost_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git" src="/images/uploads/2014/02/Web_-_drlongghost_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-1024x794.png" width="614" height="476" srcset="/images/uploads/2014/02/Web_-_drlongghost_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-1024x794.png 1024w, /images/uploads/2014/02/Web_-_drlongghost_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-300x232.png 300w" sizes="(max-width: 614px) 100vw, 614px" /></a></a>
+  <a href="/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git.png"><a href="/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git.png"><img class="wp-image-150 aligncenter" alt="Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git" src="/dan24678/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-1024x794.png" width="614" height="476"  /></a></a>
 </p>
 
 &nbsp;
@@ -34,7 +34,7 @@ Here is how Aptana looks when it&#8217;s behaving itself:
 But if I start playing with the windows and moving shit around, I eventually end up with this:
 
 <p style="text-align: center;">
-  <a href="/images/uploads/2014/02/Web_-_drlongghost_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-15.png"><img class="aligncenter  wp-image-151" alt="Web_-_drlongghost_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-15" src="/images/uploads/2014/02/Web_-_drlongghost_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-15-1024x796.png" width="614" height="478" srcset="/images/uploads/2014/02/Web_-_drlongghost_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-15-1024x796.png 1024w, /images/uploads/2014/02/Web_-_drlongghost_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-15-300x233.png 300w" sizes="(max-width: 614px) 100vw, 614px" /></a>
+  <a href="/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-15.png"><img class="aligncenter  wp-image-151" alt="Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-15" src="/dan24678/images/uploads/2014/02/Web_-_dan24678_app_webroot_js_validanguage_api_js_-_Aptana_Studio_3_-__Users_dand_git-15-1024x796.png" width="614" height="478"  /></a>
 </p>
 
 &nbsp;

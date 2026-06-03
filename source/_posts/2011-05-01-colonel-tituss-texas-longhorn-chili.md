@@ -55,33 +55,33 @@ First, you want to prepare the dried chilis.  One thing to note when handling d
 
 Anyway, rinse the chilis in water then arrange them on a couple cookie sheets and toast them in the oven at 300 degrees for about 5 to 10 minutes to help bring out the flavor.  You should be able to smell them in the oven when they&#8217;re ready to come out.
 
-[<img class="alignnone size-medium wp-image-62" title="DSC00896" src="/images/uploads/2011/05/DSC00896-300x225.jpg" alt="Dried chilis" width="300" height="225" srcset="/images/uploads/2011/05/DSC00896-300x225.jpg 300w, /images/uploads/2011/05/DSC00896-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" />](/images/uploads/2011/05/DSC00896.jpg)
+[<img class="alignnone size-medium wp-image-62" title="DSC00896" src="/dan24678/images/uploads/2011/05/DSC00896-300x225.jpg" alt="Dried chilis" width="300" height="225"  />](/dan24678/images/uploads/2011/05/DSC00896.jpg)
 
 Next, you will break apart the chili peppers by hand, **while wearing gloves**.  Place the skin of the chilis in a bowl and discard the seeds and the veins from the inside guts of the chilis.  This lets you get a lot of the flavor from the chilis (the skin) while limiting the amount of heat (seeds and veins).  When you&#8217;re done, you will have a nice bowl of dried chili skins:
 
-[<img class="alignnone size-medium wp-image-63" title="DSC00897" src="/images/uploads/2011/05/DSC00897-300x225.jpg" alt="chili skins" width="300" height="225" srcset="/images/uploads/2011/05/DSC00897-300x225.jpg 300w, /images/uploads/2011/05/DSC00897-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" />](/images/uploads/2011/05/DSC00897.jpg)
+[<img class="alignnone size-medium wp-image-63" title="DSC00897" src="/dan24678/images/uploads/2011/05/DSC00897-300x225.jpg" alt="chili skins" width="300" height="225"  />](/dan24678/images/uploads/2011/05/DSC00897.jpg)
 
 You can discard your gloves now.  The next step is to reconstitute the chilis.  Prepare a sauce pan with the dried chilis, 2 cups of stock or beef broth/beer mixture and the crushed tomatoes.  Bring the mixture to a boil then immediately turn it down to a bare simmer and simmer for 15 minutes.  Then remove this mixture from the stove top and let sit, covered, for 15 minutes.
 
 Next, you will transfer this mixture to a blender and puree it.  Most likely, you will want to fill up the blender 2/3 to the top to leave plenty of room at the top and blend it in two batches.  Don&#8217;t try to fit it all in 1 batch or it will overflow.  When you&#8217;re done, give it a taste; the flavor of the chilis is amazing:
 
-[<img class="alignnone size-medium wp-image-64" title="DSC00901" src="/images/uploads/2011/05/DSC00901-300x225.jpg" alt="" width="300" height="225" srcset="/images/uploads/2011/05/DSC00901-300x225.jpg 300w, /images/uploads/2011/05/DSC00901-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" />](/images/uploads/2011/05/DSC00901.jpg)
+[<img class="alignnone size-medium wp-image-64" title="DSC00901" src="/dan24678/images/uploads/2011/05/DSC00901-300x225.jpg" alt="" width="300" height="225"  />](/dan24678/images/uploads/2011/05/DSC00901.jpg)
 
 On to the meat.  The last time I made this recipe, I used stew beef and ground beef from a local farmer&#8217;s market:
 
-[<img class="alignnone size-medium wp-image-70" title="DSC00859" src="/images/uploads/2011/05/DSC00859-300x225.jpg" alt="" width="300" height="225" srcset="/images/uploads/2011/05/DSC00859-300x225.jpg 300w, /images/uploads/2011/05/DSC00859-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" />](/images/uploads/2011/05/DSC00859.jpg)
+[<img class="alignnone size-medium wp-image-70" title="DSC00859" src="/dan24678/images/uploads/2011/05/DSC00859-300x225.jpg" alt="" width="300" height="225"  />](/dan24678/images/uploads/2011/05/DSC00859.jpg)
 
 The trick with the stew beef is that you want to cut it into very, very small pieces &#8212; as small as your patience allows.  I guess there is an element of personal preference here as some folks may like bigger chunks of meat in their chili.  Personally, I like the texture of the combo of the ground beef with the tiny beef chunks:
 
-[<img class="alignnone size-medium wp-image-73" title="DSC00860" src="/images/uploads/2011/05/DSC00860-300x225.jpg" alt="" width="300" height="225" srcset="/images/uploads/2011/05/DSC00860-300x225.jpg 300w, /images/uploads/2011/05/DSC00860-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" />](/images/uploads/2011/05/DSC00860.jpg)
+[<img class="alignnone size-medium wp-image-73" title="DSC00860" src="/dan24678/images/uploads/2011/05/DSC00860-300x225.jpg" alt="" width="300" height="225"  />](/dan24678/images/uploads/2011/05/DSC00860.jpg)
 
 Next, brown the meat in a skillet with 2T of olive oil. It doesn&#8217;t need to be well-done, medium is fine:
 
-[<img class="alignnone size-medium wp-image-74" title="DSC00900" src="/images/uploads/2011/05/DSC00900-300x225.jpg" alt="" width="300" height="225" srcset="/images/uploads/2011/05/DSC00900-300x225.jpg 300w, /images/uploads/2011/05/DSC00900-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" />](/images/uploads/2011/05/DSC00900.jpg)
+[<img class="alignnone size-medium wp-image-74" title="DSC00900" src="/dan24678/images/uploads/2011/05/DSC00900-300x225.jpg" alt="" width="300" height="225"  />](/dan24678/images/uploads/2011/05/DSC00900.jpg)
 
 You&#8217;ll want to use a large stock pot for cooking the chili in.  Set the meat aside and cook the onions, jalapenos and garlic with 4T of olive oil in the stock pot:
 
-[<img class="alignnone size-medium wp-image-76" title="DSC00905" src="/images/uploads/2011/05/DSC00905-300x225.jpg" alt="" width="300" height="225" srcset="/images/uploads/2011/05/DSC00905-300x225.jpg 300w, /images/uploads/2011/05/DSC00905-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" />](/images/uploads/2011/05/DSC00905.jpg)
+[<img class="alignnone size-medium wp-image-76" title="DSC00905" src="/dan24678/images/uploads/2011/05/DSC00905-300x225.jpg" alt="" width="300" height="225"  />](/dan24678/images/uploads/2011/05/DSC00905.jpg)
 
 Once the vegetables are translucent, add the cooked meat, the chili/tomato mixture and the 4 cups of stock (or 2 cups broth/2 cups beer mix).  Cook this for 2 hours or so on low heat. Then add the spices and cook another 2 -3 hours.  If you are adding the unsweetend chocolate, add it an hour before you expect the chili to be done.
 
@@ -89,7 +89,7 @@ As you cook the chili over the course of the 4 &#8211; 5 hours, it will thicken 
 
 Serve the chili with the following accompaniments:  black beans (see below for the recipe), cheddar cheese, crackers and diced onions or jalapenos.  Bon appetit:
 
-[<img class="alignnone size-medium wp-image-78" title="DSC00907" src="/images/uploads/2011/05/DSC009071-300x225.jpg" alt="" width="300" height="225" srcset="/images/uploads/2011/05/DSC009071-300x225.jpg 300w, /images/uploads/2011/05/DSC009071-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" />](/images/uploads/2011/05/DSC009071.jpg)
+[<img class="alignnone size-medium wp-image-78" title="DSC00907" src="/dan24678/images/uploads/2011/05/DSC009071-300x225.jpg" alt="" width="300" height="225"  />](/dan24678/images/uploads/2011/05/DSC009071.jpg)
 
 ### Colonel T&#8217;s Black Beans Recipe
 

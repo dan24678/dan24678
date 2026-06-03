@@ -4,7 +4,7 @@ date: 2014-06-04T20:45:28+00:00
 ---
 Several months ago I was interviewing with various companies, primarily for senior web developer roles. In total I probably spoke with just under a dozen companies. Some had phone screens and some had in-person interviews. Some had written tests and some used white boards. My favorite of all the different interview approaches were the companies who asked me to build something. And of the companies who asked me to build something, my favorite was being asked to build Conway&#8217;s Game of Life (<a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life" target="_blank">wikipedia link</a>).
 
-[<img class="aligncenter size-medium wp-image-226" alt="Conway_s_Life" src="/images/uploads/2014/06/Conway_s_Life-300x199.png" width="300" height="199" srcset="/images/uploads/2014/06/Conway_s_Life-300x199.png 300w, /images/uploads/2014/06/Conway_s_Life-1024x679.png 1024w, /images/uploads/2014/06/Conway_s_Life.png 1422w" sizes="(max-width: 300px) 100vw, 300px" />](/images/uploads/2014/06/Conway_s_Life.png)
+[<img class="aligncenter size-medium wp-image-226" alt="Conway_s_Life" src="/dan24678/images/uploads/2014/06/Conway_s_Life-300x199.png" width="300" height="199"   />](/dan24678/images/uploads/2014/06/Conway_s_Life.png)
 
 Before I get into Conway&#8217;s Life (the main thrust of this blog post), let me briefly comment on why open-ended assignments are the way to go when it comes to job interviews:
 
@@ -23,7 +23,7 @@ My implementation was written in Javascript and HTML.
 
 Here are a few interesting points about my design:
 
-  * I split the design into two modules. The <a href="https://github.com/DrLongGhost/life-program/blob/master/src/life.js" target="_blank"><strong>life</strong></a> class implements an internal state of the Life board and the <a href="https://github.com/DrLongGhost/life-program/blob/master/src/lifedom.js" target="_blank"><strong>lifedom</strong></a> class handles exposing this state via the DOM.
+  * I split the design into two modules. The <a href="https://github.com/dan24678/life-program/blob/master/src/life.js" target="_blank"><strong>life</strong></a> class implements an internal state of the Life board and the <a href="https://github.com/dan24678/life-program/blob/master/src/lifedom.js" target="_blank"><strong>lifedom</strong></a> class handles exposing this state via the DOM.
   * The animation in **lifedom** works by toggling the background of the table cells on and off. Originally, the animation was so fast that I actually needed to slow it down (via setTimeout) to create a more aesthetically appealing effect. I added a slider that lets you slow down or speed up the animation by changing the value of the timeout.
   * I added unit tests. They make sense for the **life** class, less so for **lifedom**, so I got lazy as I added various bells and whistles to the latter.
   * Because I originally wanted tests for **lifedom**, it lead me to a regrettable design decision: there is HTML in the javascript. I wanted to avoid duplication and only define the HTML of the game board once. Generally speaking, there are 3 ways to do this: 
@@ -41,7 +41,7 @@ It&#8217;s funny because I knew immediately how this would go down:
   * This wouldn&#8217;t work so I&#8217;d get more analytical and go through looking for additional optimizations
   * I would once again fail and resort to replacing the animation with canvas as a last ditch effort to get something that looked decent. I had no idea if this would work.
 
-My first attempt at better performance was to replace **.toggleClass(&#8216;on off&#8217;)** with direct manipulation of the backgroundColor property. My rationale was that this would avoid CSS repaints and perform better. I also added some caching of which cells were &#8220;on&#8221;, which avoided a jQuery **find()** operation. You can see the github changeset <a href="https://github.com/DrLongGhost/life-program/commit/aa1fedf3892dfe4d9526d789b02162a0015c4aaf" target="_blank">here</a>.
+My first attempt at better performance was to replace **.toggleClass(&#8216;on off&#8217;)** with direct manipulation of the backgroundColor property. My rationale was that this would avoid CSS repaints and perform better. I also added some caching of which cells were &#8220;on&#8221;, which avoided a jQuery **find()** operation. You can see the github changeset <a href="https://github.com/dan24678/life-program/commit/aa1fedf3892dfe4d9526d789b02162a0015c4aaf" target="_blank">here</a>.
 
 I added some basic benchmarking to measure the impact (or lack thereof) of this change. I created a running counter of &#8220;turns per second&#8221; which turned out to be a great benchmark. The less the animation slowed down the program, the higher the turns per second would be.
 
@@ -72,9 +72,9 @@ Next, we see the impact of my first attempt at improving the animation performan
 
 I tried some additional optimizations which didn&#8217;t really do much:
 
-  * Instead of turning the entire board off and then turning cells on, figure out which ones should remain on and don&#8217;t turn them off in the first place: <a href="https://github.com/DrLongGhost/life-program/commit/b3b7c51c0bf1b4bdc4fc5154c915769ff85fe1f1" target="_blank">commit</a>.
-  * Keep the internal array state of **life** sorted so we iterate less: <a href="https://github.com/DrLongGhost/life-program/commit/173017b777608c0be70b657e865c9e35c8e51c4b#diff-75e67dc61ab59dcd658eda3bf02a2023L154" target="_blank">commit</a>.
-  * Replace **document.getElementById** with a cache so it only gets called the first time: <a href="https://github.com/DrLongGhost/life-program/commit/3cbb4626ef6382fe796b72df424feda311ffd5bc" target="_blank">commit</a>. This last change made a tiny difference, at least on the iPhone.
+  * Instead of turning the entire board off and then turning cells on, figure out which ones should remain on and don&#8217;t turn them off in the first place: <a href="https://github.com/dan24678/life-program/commit/b3b7c51c0bf1b4bdc4fc5154c915769ff85fe1f1" target="_blank">commit</a>.
+  * Keep the internal array state of **life** sorted so we iterate less: <a href="https://github.com/dan24678/life-program/commit/173017b777608c0be70b657e865c9e35c8e51c4b#diff-75e67dc61ab59dcd658eda3bf02a2023L154" target="_blank">commit</a>.
+  * Replace **document.getElementById** with a cache so it only gets called the first time: <a href="https://github.com/dan24678/life-program/commit/3cbb4626ef6382fe796b72df424feda311ffd5bc" target="_blank">commit</a>. This last change made a tiny difference, at least on the iPhone.
 
 ## Cached DOM Lookups
 
@@ -83,7 +83,7 @@ I tried some additional optimizations which didn&#8217;t really do much:
   * iPad Mini (1st generation): 7tps
   * iPhone 5S: 17tps
 
-At this point, I knew my only hope of getting acceptable performance would be to drop the idea of using a <table> altogether and swap out the table with a <canvas> when the user clicks Play and use that for the animation (<a href="https://github.com/DrLongGhost/life-program/commit/f24eb6da258e9dfba76af9155821636891704661" target="_blank">changeset here</a>). The results were pretty interesting and gratifying. Most importantly, it gets performance to an acceptable level on the iPad Mini.
+At this point, I knew my only hope of getting acceptable performance would be to drop the idea of using a <table> altogether and swap out the table with a <canvas> when the user clicks Play and use that for the animation (<a href="https://github.com/dan24678/life-program/commit/f24eb6da258e9dfba76af9155821636891704661" target="_blank">changeset here</a>). The results were pretty interesting and gratifying. Most importantly, it gets performance to an acceptable level on the iPad Mini.
 
 ## Canvas Animation
 

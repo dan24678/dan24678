@@ -6,7 +6,7 @@ I just added some nice Scriptaculous effects to the Blog page. You can now drag 
 
 You could do that on the rest of the site for the past week, but the Blog page was a little harder to get it working on. To avoid screwing with the blog page layout I had to put the image all the way at the bottom of the page and then move it to the upper right corner of the screen.
 
-Anyway, I&#8217;ve been pretty busy all around. On the music front, I&#8217;m almost finished with the first new Dr. Long Ghost song in years. An mp3 will be forthcoming. My friend Steve has been helping me to finish my basement . We got a lot of dry-walling done yesterday. Once all the drywall is finished, Steve&#8217;s gonna help me build a bar, which will be pretty sweet.
+Anyway, I&#8217;ve been pretty busy all around. On the music front, I&#8217;m almost finished with the first new song in years. An mp3 will be forthcoming. My friend Steve has been helping me to finish my basement . We got a lot of dry-walling done yesterday. Once all the drywall is finished, Steve&#8217;s gonna help me build a bar, which will be pretty sweet.
 
 For those who don&#8217;t know, I am now engaged to my wonderful fiance Nicole. The wedding is gonna be next summer, so we have plenty of time to get ready.
 

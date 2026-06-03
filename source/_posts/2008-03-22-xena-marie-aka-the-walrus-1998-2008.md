@@ -10,4 +10,4 @@ Xena was my first cat and will always be the best there ever was. When I think o
 
 Xena was one of my best friends and she will not soon be forgotten. Rest in peace, Princess&#8230;
 
-[<img src="/images/uploads/2008/03/dsc00159.JPG" alt="Xena attacks!" width="300" />](/images/uploads/2008/03/dsc00159.JPG "Xena attacks!")
+[<img src="/dan24678/images/uploads/2008/03/dsc00159.JPG" alt="Xena attacks!" width="300" />](/dan24678/images/uploads/2008/03/dsc00159.JPG "Xena attacks!")

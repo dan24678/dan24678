@@ -6,7 +6,7 @@ Several weeks ago, a project which I&#8217;d worked on for the better part of tw
 
 Because I can&#8217;t help myself, I&#8217;m going to jump right to the pretty pictures. By leveraging the [Insights reporting backend](http://newrelic.com/insights) provided by New Relic, LeadiD now has access to a full dashboard that tracks all the errors and debug data associated with our customer&#8217;s campaign scripts:
 
-[<img class="aligncenter size-large wp-image-304" alt="Insights__Campaign_JS" src="/images/uploads/2016/05/Insights__Campaign_JS-1024x537.png" width="640" height="335" srcset="/images/uploads/2016/05/Insights__Campaign_JS-1024x537.png 1024w, /images/uploads/2016/05/Insights__Campaign_JS-300x157.png 300w" sizes="(max-width: 640px) 100vw, 640px" />](/images/uploads/2016/05/Insights__Campaign_JS.png)
+[<img class="aligncenter size-large wp-image-304" alt="Insights__Campaign_JS" src="/dan24678/images/uploads/2016/05/Insights__Campaign_JS-1024x537.png" width="640" height="335"  />](/dan24678/images/uploads/2016/05/Insights__Campaign_JS.png)
 
 ## Why is this Cool?
 
@@ -18,7 +18,7 @@ Specifically, whenever an individual consumer triggers an error in our campaign 
 
 ## How Does it Work?
 
-[<img class="alignleft size-medium wp-image-318" alt="campaign_js_blog" src="/images/uploads/2016/05/campaign_js_blog-300x274.png" width="300" height="274" srcset="/images/uploads/2016/05/campaign_js_blog-300x274.png 300w, /images/uploads/2016/05/campaign_js_blog.png 520w" sizes="(max-width: 300px) 100vw, 300px" />](/images/uploads/2016/05/campaign_js_blog.png)As shown in the diagram, a customer site AwesomeWalruses.com has implemented the LeadiD campaign javascript. Every time a visitor encounters an error in our script (or if debug logging, which I&#8217;ll discuss later, is enabled) a record is sent back to a logging microservice running on our domain. Typically, this request is sent as an asynchronous XmlHttpRequest from the client browser and includes all the available details about the error. From there, the microservice pushes the data into New Relic Insights.
+[<img class="alignleft size-medium wp-image-318" alt="campaign_js_blog" src="/dan24678/images/uploads/2016/05/campaign_js_blog-300x274.png" width="300" height="274"  />](/dan24678/images/uploads/2016/05/campaign_js_blog.png)As shown in the diagram, a customer site AwesomeWalruses.com has implemented the LeadiD campaign javascript. Every time a visitor encounters an error in our script (or if debug logging, which I&#8217;ll discuss later, is enabled) a record is sent back to a logging microservice running on our domain. Typically, this request is sent as an asynchronous XmlHttpRequest from the client browser and includes all the available details about the error. From there, the microservice pushes the data into New Relic Insights.
 
 One key item to note is that regular javascript errors on AwesomeWalruses.com are not reported back to our logging system. It is only errors in <span style="text-decoration: underline;"><strong>our</strong></span> campaign javascript which are being tracked.
 
@@ -35,7 +35,7 @@ LeadiD was already using New Relic for server monitoring and [RayGun](https://ra
 With assistance from our first-rate Dev Ops team, I prototyped a backend that injected data into all the services except Elk, which we never tested due to the effort. (The prototype microservice was thankfully thrown away and reimplemented by Senior Engineer Ian Carpenter, which is what you hope for when you build a prototype). Next, we drew up a comparison table showing each choice&#8217;s strengths:
 
 <p style="text-align: center;">
-  <a href="/images/uploads/2016/05/Campaign_JS_Logging_Backend_-_Engineering_-_LeadiD_Confluence.png"><img class="aligncenter size-medium wp-image-308" alt="Campaign_JS_Logging_Backend_-_Engineering_-_LeadiD_Confluence" src="/images/uploads/2016/05/Campaign_JS_Logging_Backend_-_Engineering_-_LeadiD_Confluence-300x232.png" width="300" height="232" srcset="/images/uploads/2016/05/Campaign_JS_Logging_Backend_-_Engineering_-_LeadiD_Confluence-300x232.png 300w, /images/uploads/2016/05/Campaign_JS_Logging_Backend_-_Engineering_-_LeadiD_Confluence-1024x795.png 1024w, /images/uploads/2016/05/Campaign_JS_Logging_Backend_-_Engineering_-_LeadiD_Confluence.png 1110w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+  <a href="/images/uploads/2016/05/Campaign_JS_Logging_Backend_-_Engineering_-_LeadiD_Confluence.png"><img class="aligncenter size-medium wp-image-308" alt="Campaign_JS_Logging_Backend_-_Engineering_-_LeadiD_Confluence" src="/dan24678/images/uploads/2016/05/Campaign_JS_Logging_Backend_-_Engineering_-_LeadiD_Confluence-300x232.png" width="300" height="232"   /></a>
 </p>
 
 To cut the chase, New Relic Insights was very compelling for 2 reasons:
@@ -46,7 +46,7 @@ To cut the chase, New Relic Insights was very compelling for 2 reasons:
 One of the interesting realizations we had when comparing the chart above with our &#8220;technical requirements&#8221; was that error data and logging data are fundamentally two different things. Three of the four alternatives are more directly geared toward error data than storing normal application logging data, but New Relic Insights (which is essentially a NoSQL database masquerading as a relational one) proved itself able to be molded to fit both error messages **and** logging data. A few of the negatives to New Relic noted in the table ended up not mattering after all:
 
   * The 256-character limit on tag length is mitigated by simply spreading your data across multiple fields
-  * While we relinquish some control by having our error and logging data stored in New Relic&#8217;s system, the [Insights API](https://docs.newrelic.com/docs/insights/new-relic-insights/adding-querying-data/querying-your-data-remotely) allows integrations with this data. (I even wrote a script called [insights2csv](https://github.com/DrLongGhost/insights2csv) to easily pull down our data so we can import it into PostgreSQL and elsewhere)
+  * While we relinquish some control by having our error and logging data stored in New Relic&#8217;s system, the [Insights API](https://docs.newrelic.com/docs/insights/new-relic-insights/adding-querying-data/querying-your-data-remotely) allows integrations with this data. (I even wrote a script called [insights2csv](https://github.com/dan24678/insights2csv) to easily pull down our data so we can import it into PostgreSQL and elsewhere)
 
 ## The Results
 

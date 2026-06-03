@@ -1,2 +1,13 @@
-theme: jekyll-theme-slate
-root: dan24678
+title: Dan's Blog
+author: Dan Deming
+remote_theme: mmistakes/minimal-mistakes
+root: /dan24678/
+deploy:
+  type: git
+  repo: https://github.com/dan24678/dan24678.git
+  branch: gh-pages
+  message: deploy
+post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
