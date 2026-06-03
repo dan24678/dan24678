@@ -57,29 +57,8 @@ npx hexo server
 
 Open `http://localhost:4000` and verify the new content.
 
-## 4. Generate the static site
 
-Once the post looks good, generate the site output:
-
-```bash
-npx hexo clean ; npx hexo generate
-```
-
-The generated site files will be placed in the `public/` directory.
-
-## 5. Deploy to GitHub Pages
-
-This project is configured in `_config.yml` to deploy using GitHub Pages with `gh-pages`.
-
-Run:
-
-```bash
-npx hexo deploy
-```
-
-That command pushes the generated site to the remote repository defined in `_config.yml`.
-
-## 6. Commit the source changes
+## 4. Commit the source changes
 
 After adding the new post and verifying everything, commit your source changes.
 
@@ -87,9 +66,22 @@ After adding the new post and verifying everything, commit your source changes.
 git add . ; git commit -m "Working on new blog post" ; git push
 ```
 
-Then push your source repository branch.
-
 If you are on the `gh-pages` branch, DONT BE. Editing the gh-pages branch directly is a bad idea.
+
+
+## 5. Generate the static site and Deploy to GitHub Pages
+
+Once the post looks good, generate the site output:
+
+```bash
+npx hexo clean ; npx hexo generate ; npx hexo deploy ; git pull
+```
+
+The generated site files will be placed in the `public/` directory.
+
+This project is configured in `_config.yml` to deploy using GitHub Pages with `gh-pages`.
+
+That command pushes the generated site to the remote repository defined in `_config.yml`.
 
 ## Notes
 
