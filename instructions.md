@@ -74,7 +74,7 @@ If you are on the `gh-pages` branch, DONT BE. Editing the gh-pages branch direct
 Once the post looks good, generate the site output:
 
 ```bash
-npx hexo clean ; npx hexo generate ; npx hexo deploy ; git pull
+npx hexo clean ; npx hexo generate ; npx hexo deploy ; git pull ; git stash
 ```
 
 The generated site files will be placed in the `public/` directory.
