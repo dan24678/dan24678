@@ -8,7 +8,7 @@ Anyway, this is going to be a post about my new project at https://github.com/da
 
 This project started when I noticed that one of the LEDs on my oven's clock had broken:
 
-![clock](https://github.com/dan24678/clock-problem/blob/main/image.jpg)
+![clock](clock.jpg)
 
 I found myself wondering if the LED which broke was the one which was illuminated most frequently. After asking myself that question, I realized what a great coding challenge that would be. Unfortunately, I wasn't interviewing any candidates as part of my job at the time, so I just kind of sat on the idea for almost a year.
 
