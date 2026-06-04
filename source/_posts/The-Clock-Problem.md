@@ -6,11 +6,7 @@ New first post in 9 years... Ain't that something?
 
 Anyway, this is going to be a post about my new project at https://github.com/dan24678/clock-problem
 
-This project started when I noticed that one of the LEDs on my oven's clock had broken:
-
-![clock](clock.jpg)
-
-I found myself wondering if the LED which broke was the one which was illuminated most frequently. After asking myself that question, I realized what a great coding challenge that would be. Unfortunately, I wasn't interviewing any candidates as part of my job at the time, so I just kind of sat on the idea for almost a year.
+This project started when I noticed that one of the LEDs on my oven's clock had broken. I found myself wondering if the LED which broke was the one which was illuminated most frequently. After asking myself that question, I realized what a great coding challenge that would be. Unfortunately, I wasn't interviewing any candidates as part of my job at the time, so I just kind of sat on the idea for almost a year.
 
 Then the other day, I decided to give it a try myself and coded it out. You can see my implementation on Github at the URL above. Anyway, it turns out that the LED which burned out was tied for second place in terms of most frequently used.
 
